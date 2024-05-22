@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Reaction</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chemical Reaction</h1>
+        <button id="openReactionBtn">Open Reaction Container</button>
+        <div id="reactionContainer" style="display: none;">
+            <h2>Reactants</h2>
+            <div id="reactants">
+                <!-- Reactant inputs will be added here dynamically -->
+            </div>
+            <button id="addReactantBtn">Add Reactant</button>
+            <h2>Products</h2>
+            <div id="products">
+                <!-- Product inputs will be added here dynamically -->
+            </div>
+            <button id="addProductBtn">Add Product</button>
+            <button id="submitReactionBtn">Submit Reaction</button>
+        </div>
+        <div id="environmentalReport" style="display: none;">
+            <h2>Environmental Report</h2>
+            <div id="reportContent"></div>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
+
+
