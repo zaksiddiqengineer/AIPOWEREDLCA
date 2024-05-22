@@ -1,4 +1,5 @@
-/* static/css/styles.css */
+/* styles.css */
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -28,4 +29,46 @@ button {
     width: 100%;
     padding: 5px;
     font-size: 14px;
+}
+
+.material-impacts-emissions,
+.material-impacts-waste,
+.material-impacts-energy,
+.material-impacts-transportation,
+.material-impacts-economic,
+.material-innovations,
+.material-impacts-soil,
+.material-impacts-water,
+.material-impacts-air,
+.material-impacts-eol {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.material-impacts-emissions h3,
+.material-impacts-waste h3,
+.material-impacts-energy h3,
+.material-impacts-transportation h3,
+.material-impacts-economic h3,
+.material-innovations h3,
+.material-impacts-soil h3,
+.material-impacts-water h3,
+.material-impacts-air h3,
+.material-impacts-eol h3 {
+    margin-top: 0;
+}
+
+.material-impacts-emissions p,
+.material-impacts-waste p,
+.material-impacts-energy p,
+.material-impacts-transportation p,
+.material-impacts-economic p,
+.material-innovations p,
+.material-impacts-soil p,
+.material-impacts-water p,
+.material-impacts-air p,
+.material-impacts-eol p {
+    margin-bottom: 0;
 }

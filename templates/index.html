@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chemical Reaction</title>
     <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -26,11 +27,15 @@
         <div id="environmentalReport" style="display: none;">
             <h2>Environmental Report</h2>
             <div id="reportContent"></div>
+            <h3>Aggregate Score Radar Plot</h3>
+            <canvas id="aggregateScoreChart"></canvas>
+            <h3>Individual Reactant Score Radar Plots</h3>
+            <div id="reactantScorePlots"></div>
+            <h3>Individual Product Score Radar Plots</h3>
+            <div id="productScorePlots"></div>
         </div>
     </div>
 
     <script src="../static/js/script.js"></script>
 </body>
 </html>
-
-
