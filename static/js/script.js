@@ -56,20 +56,20 @@ document.getElementById('submitReactionBtn').addEventListener('click', function(
 
         // Create aggregate score radar plot
         console.log('Calling createRadarPlot for aggregate scores');
-        createRadarPlot('aggregateScoreChart', data.aggregate_scores);
+        createRadarPlot('aggregateScoreChart', data.aggregate_scores, null, false, true);
 
         // Create individual reactant score radar plots
         console.log('Creating reactant score radar plots');
         for (var reactant in data.reactant_scores) {
             console.log('Calling createRadarPlot for reactant:', reactant);
-            createRadarPlot(`reactantScoreChart-${reactant}`, data.reactant_scores[reactant], reactant);
+            createRadarPlot(`reactantScoreChart-${reactant}`, data.reactant_scores[reactant], reactant, true, false);
         }
 
         // Create individual product score radar plots
         console.log('Creating product score radar plots');
         for (var product in data.product_scores) {
             console.log('Calling createRadarPlot for product:', product);
-            createRadarPlot(`productScoreChart-${product}`, data.product_scores[product], product);
+            createRadarPlot(`productScoreChart-${product}`, data.product_scores[product], product, false, false);
         }
     })
     .catch(error => {
@@ -133,52 +133,84 @@ function updateProductLabels() {
     });
 }
 
-function createRadarPlot(chartId, scores, title) {
-    var ctx = document.getElementById(chartId);
-    if (!ctx) {
+function createRadarPlot(chartId, scores, title, isReactant, isAggregate) {
+    console.log('Creating radar plot with chartId:', chartId);
+    console.log('Scores object:', scores);
+    console.log('Title:', title);
+    console.log('Is Reactant:', isReactant);
+    console.log('Is Aggregate:', isAggregate);
+
+    var existingCtx = document.getElementById(chartId);
+    if (!existingCtx) {
         ctx = document.createElement('canvas');
         ctx.id = chartId;
         console.log('Created canvas element with ID:', chartId);
         if (title) {
             var titleElement = document.createElement('h4');
             titleElement.textContent = title;
-            document.getElementById('environmentalReport').appendChild(titleElement);
+            if (isAggregate) {
+                document.getElementById('aggregateScorePlot').appendChild(titleElement);
+                document.getElementById('aggregateScorePlot').appendChild(ctx);
+            } else if (isReactant) {
+                document.getElementById('reactantScorePlots').appendChild(titleElement);
+                document.getElementById('reactantScorePlots').appendChild(ctx);
+            } else {
+                document.getElementById('productScorePlots').appendChild(titleElement);
+                document.getElementById('productScorePlots').appendChild(ctx);
+            }
             console.log('Created title element for:', title);
         }
-        document.getElementById('environmentalReport').appendChild(ctx);
-        console.log('Appended canvas element to environmentalReport');
+        console.log('Appended canvas element to the correct div');
     } else {
+        ctx = existingCtx;
         console.log('Canvas element already exists with ID:', chartId);
     }
+
+    var labels, values;
+    if (isAggregate) {
+        labels = ['Air', 'Economic', 'Emissions', 'Energy', 'EOL', 'Innovations', 'Soil', 'Transportation', 'Waste', 'Water'];
+        values = labels.map(label => scores[label.toLowerCase()] || 0);
+    } else {
+        labels = Object.keys(scores);
+        values = Object.values(scores);
+    }
+
+    console.log('Extracted labels:', labels);
+    console.log('Extracted values:', values);
 
     new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: Object.keys(scores),
+            labels: labels,
             datasets: [{
                 label: 'Environmental Impact',
-                data: Object.values(scores),
+                data: values,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
             }]
         },
         options: {
-            scale: {
-                ticks: {
-                    beginAtZero: true,
-                    max: 3,
-                    stepSize: 1,
-                    callback: function(value, index, values) {
-                        switch(value) {
-                            case 1: return 'Low';
-                            case 2: return 'Medium';
-                            case 3: return 'High';
-                            default: return '';
+            scales: {
+                r: {
+                    min: 0, // Set the minimum value to 0
+                    max: 3, // Set the maximum value to 3
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1,
+                        callback: function(value, index, values) {
+                            switch(value) {
+                                case 1: return 'Low';
+                                case 2: return 'Medium';
+                                case 3: return 'High';
+                                default: return '';
+                            }
                         }
                     }
                 }
             }
         }
     });
+
+    console.log('Radar plot created for chartId:', chartId);
 }
