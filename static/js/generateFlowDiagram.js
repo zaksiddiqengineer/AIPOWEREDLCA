@@ -185,8 +185,8 @@ async function askQuestion(questionId) {
         Object.keys(question.options).forEach(option => {
             const button = document.createElement('button');
             button.innerText = option;
-            button.onclick = () => {
-                handleAnswer(questionId, option);
+            button.onclick = async () => {
+                await handleAnswer(questionId, option);
                 resolve();
             };
             answerContainer.appendChild(button);
@@ -194,14 +194,14 @@ async function askQuestion(questionId) {
     });
 }
 
-function handleAnswer(questionId, answer) {
+async function handleAnswer(questionId, answer) {
     userInputs[questionId] = answer;
-    const nextQuestionId = decisionTree[questionId].options[answer.toLowerCase()];
+    const nextQuestionId = decisionTree[questionId].options[answer]; // Removed .toLowerCase() transformation
     if (nextQuestionId) {
         if (nextQuestionId === "multipleReactorsFinal" || nextQuestionId === "singleReactorFinal") {
             generateResult(nextQuestionId);
         } else {
-            askQuestion(nextQuestionId);
+            await askQuestion(nextQuestionId);
         }
     } else {
         generateResult(questionId);
@@ -239,329 +239,329 @@ function generateResult(finalQuestionId) {
 
 function evaluateFlowDiagram(flowDiagramOutput) {
     const scores = {
-        "Waste Generation": 0,
-        "Energy Consumption": 0,
-        "Emissions Potential": 0,
-        "Equipment Cost": 0,
-        "Installation Cost": 0,
-        "Materials of Construction": 0,
-        "Operational Energy Consumption": 0,
-        "Maintenance": 0,
-        "Labor": 0
+        "Waste Generation": 1,
+        "Energy Consumption": 1,
+        "Emissions Potential": 1,
+        "Equipment Cost": 1,
+        "Installation Cost": 1,
+        "Materials of Construction": 1,
+        "Operational Energy Consumption": 1,
+        "Maintenance": 1,
+        "Labor": 1
     };
 
     // Define impact of each question on each score category
     const impactMatrix = {
         question1: {
             one: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -1,
-                "Equipment Cost": -1,
-                "Installation Cost": -1,
-                "Materials of Construction": -1,
-                "Operational Energy Consumption": -1,
-                "Maintenance": -1,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -0.5,
+                "Installation Cost": -0.5,
+                "Materials of Construction": -0.5,
+                "Operational Energy Consumption": -0.5,
+                "Maintenance": -0.5,
+                "Labor": -0.5
             },
             moreThanOne: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 1,
-                "Installation Cost": 1,
-                "Materials of Construction": 1,
-                "Operational Energy Consumption": 1,
-                "Maintenance": 1,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 0.5,
+                "Installation Cost": 0.5,
+                "Materials of Construction": 0.5,
+                "Operational Energy Consumption": 0.5,
+                "Maintenance": 0.5,
+                "Labor": 0.5
             }
         },
         question2: {
             yes: {
-                "Waste Generation": -2,
-                "Energy Consumption": 1,
-                "Emissions Potential": -2,
+                "Waste Generation": -1,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": -1,
+                "Equipment Cost": 0.5,
+                "Installation Cost": 0.5,
+                "Materials of Construction": 0.5,
+                "Operational Energy Consumption": 0.5,
+                "Maintenance": 0.5,
+                "Labor": 0.5
+            },
+            no: {
+                "Waste Generation": 1,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": 1,
+                "Equipment Cost": -0.5,
+                "Installation Cost": -0.5,
+                "Materials of Construction": -0.5,
+                "Operational Energy Consumption": -0.5,
+                "Maintenance": -0.5,
+                "Labor": -0.5
+            }
+        },
+        question3: {
+            yes: {
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 0.5,
+                "Maintenance": 1,
+                "Labor": 0.5
+            },
+            no: {
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -0.5,
+                "Installation Cost": -0.5,
+                "Materials of Construction": -0.5,
+                "Operational Energy Consumption": -0.5,
+                "Maintenance": -0.5,
+                "Labor": -0.5
+            }
+        },
+        question4: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 0.5,
+                "Installation Cost": 0.5,
+                "Materials of Construction": 0.5,
+                "Operational Energy Consumption": 0.5,
+                "Maintenance": 1,
+                "Labor": 0.5
+            },
+            no: {
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -0.5,
+                "Installation Cost": -0.5,
+                "Materials of Construction": -0.5,
+                "Operational Energy Consumption": -0.5,
+                "Maintenance": -0.5,
+                "Labor": -0.5
+            }
+        },
+        question5: {
+            yes: {
+                "Waste Generation": 1.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 1,
                 "Equipment Cost": 1,
                 "Installation Cost": 1,
                 "Materials of Construction": 1,
                 "Operational Energy Consumption": 1,
                 "Maintenance": 1,
-                "Labor": 1
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": 2,
-                "Energy Consumption": -1,
-                "Emissions Potential": 2,
-                "Equipment Cost": -1,
-                "Installation Cost": -1,
-                "Materials of Construction": -1,
-                "Operational Energy Consumption": -1,
-                "Maintenance": -1,
-                "Labor": -1
-            }
-        },
-        question3: {
-            yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 1,
-                "Maintenance": 2,
-                "Labor": 1
-            },
-            no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
+                "Waste Generation": -1.5,
+                "Energy Consumption": -0.5,
                 "Emissions Potential": -1,
                 "Equipment Cost": -1,
                 "Installation Cost": -1,
                 "Materials of Construction": -1,
                 "Operational Energy Consumption": -1,
                 "Maintenance": -1,
-                "Labor": -1
-            }
-        },
-        question4: {
-            yes: {
-                "Waste Generation": 2,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 1,
-                "Installation Cost": 1,
-                "Materials of Construction": 1,
-                "Operational Energy Consumption": 1,
-                "Maintenance": 2,
-                "Labor": 1
-            },
-            no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -1,
-                "Equipment Cost": -1,
-                "Installation Cost": -1,
-                "Materials of Construction": -1,
-                "Operational Energy Consumption": -1,
-                "Maintenance": -1,
-                "Labor": -1
-            }
-        },
-        question5: {
-            yes: {
-                "Waste Generation": 3,
-                "Energy Consumption": 1,
-                "Emissions Potential": 2,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 2,
-                "Labor": 1
-            },
-            no: {
-                "Waste Generation": -3,
-                "Energy Consumption": -1,
-                "Emissions Potential": -2,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -2,
-                "Labor": -1
+                "Labor": -0.5
             }
         },
         question6: {
             yes: {
-                "Waste Generation": 2,
-                "Energy Consumption": 2,
-                "Emissions Potential": 2,
-                "Equipment Cost": 3,
-                "Installation Cost": 3,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 3,
-                "Labor": 2
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 1.5,
+                "Installation Cost": 1.5,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1.5,
+                "Labor": 1
             },
             no: {
-                "Waste Generation": -2,
-                "Energy Consumption": -2,
-                "Emissions Potential": -2,
-                "Equipment Cost": -3,
-                "Installation Cost": -3,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -3,
-                "Labor": -2
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -1.5,
+                "Installation Cost": -1.5,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1.5,
+                "Labor": -1
             }
         },
         question7: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 2,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 1,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -2,
-                "Emissions Potential": -1,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -1,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         },
         question8: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 2,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 3,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 1,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1.5,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -2,
-                "Emissions Potential": -1,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -3,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -1,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1.5,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         },
         question9: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 3,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 1,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 1.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 0.5,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -3,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -1,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -1.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -0.5,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         },
         question10: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 3,
-                "Installation Cost": 3,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 3,
-                "Labor": 2
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1.5,
+                "Installation Cost": 1.5,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1.5,
+                "Labor": 1
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -1,
-                "Equipment Cost": -3,
-                "Installation Cost": -3,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -3,
-                "Labor": -2
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1.5,
+                "Installation Cost": -1.5,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1.5,
+                "Labor": -1
             }
         },
         question11: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -1,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         },
         question12: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 2,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 3,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 1,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1.5,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -2,
-                "Emissions Potential": -1,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -3,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -1,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1.5,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         },
         question13: {
             yes: {
-                "Waste Generation": 1,
-                "Energy Consumption": 1,
-                "Emissions Potential": 1,
-                "Equipment Cost": 2,
-                "Installation Cost": 2,
-                "Materials of Construction": 2,
-                "Operational Energy Consumption": 2,
-                "Maintenance": 2,
-                "Labor": 1
+                "Waste Generation": 0.5,
+                "Energy Consumption": 0.5,
+                "Emissions Potential": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
-                "Energy Consumption": -1,
-                "Emissions Potential": -1,
-                "Equipment Cost": -2,
-                "Installation Cost": -2,
-                "Materials of Construction": -2,
-                "Operational Energy Consumption": -2,
-                "Maintenance": -2,
-                "Labor": -1
+                "Waste Generation": -0.5,
+                "Energy Consumption": -0.5,
+                "Emissions Potential": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -0.5
             }
         }
     };
@@ -582,8 +582,8 @@ function evaluateFlowDiagram(flowDiagramOutput) {
         if (scores[key] > 5) {
             scores[key] = 5;
         }
-        if (scores[key] < 0) {
-            scores[key] = 0;
+        if (scores[key] < 1) {
+            scores[key] = 1;
         }
     }
 
@@ -615,11 +615,18 @@ function renderRadarPlots(scores) {
         type: 'radar',
         data: radarData,
         options: {
-            scale: {
-                ticks: {
-                    beginAtZero: true,
-                    max: 5,
-                    stepSize: 1
+            scales: {
+                r: { // Change from scale to scales
+                    beginAtZero: true, // Ensure ticks start at 0
+                    min: 0,            // Set minimum value to 0
+                    max: 5,            // Set maximum value to 5
+                    stepSize: 0.5,     // Define step size as 0.5
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 5,
+                        stepSize: 0.5
+                    }
                 }
             }
         }
@@ -628,7 +635,6 @@ function renderRadarPlots(scores) {
     // Render the radar plot
     new Chart(ctx, radarConfig);
 }
-
 
 
 async function startDecisionTree() {
