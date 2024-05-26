@@ -211,27 +211,425 @@ function handleAnswer(questionId, answer) {
 function generateResult(finalQuestionId) {
     let result = "Process Flow Diagram:<br>";
     if (finalQuestionId === "multipleReactorsFinal") {
-        result += "The commercial process will likely use multiple reactors in series.<br>";
+        result += "The commercial process will likely use multiple reactors in series. This setup helps in better managing heat and potentially improving yield/selectivity.<br>";
     } else if (finalQuestionId === "singleReactorFinal") {
-        result += "The commercial process will likely use a single reactor.<br>";
+        result += "The commercial process will likely use a single reactor. This approach can simplify the process but may have limitations in managing heat and yield.<br>";
     }
 
     // Add detailed logic based on userInputs to compile the process flow diagram
     result += "<br>Details:<br>";
-    result += `Number of reactions: ${userInputs.question1 === "one" ? "One" : "More than one"}<br>`;
-    result += `Reaction completion: ${userInputs.question2 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Byproducts: ${userInputs.question5 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Purification: ${userInputs.question6 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Temperature constraints: ${userInputs.question7 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Exothermic: ${userInputs.question8 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Gaseous byproducts: ${userInputs.question9 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Specific mixing: ${userInputs.question10 === "yes" ? "Yes" : "No"}<br>`;
-    result += `pH constraints: ${userInputs.question11 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Solvent recovery: ${userInputs.question12 === "yes" ? "Yes" : "No"}<br>`;
-    result += `Time-sensitive: ${userInputs.question13 === "yes" ? "Yes" : "No"}<br>`;
+    result += `Number of reactions: ${userInputs.question1 === "one" ? "The process involves a single reaction, simplifying the process flow." : "The process involves multiple reactions, necessitating a more complex process flow with potential intermediate steps."}<br>`;
+    result += `Reaction completion: ${userInputs.question2 === "yes" ? "The reaction goes to completion with exact stoichiometric amounts of reactants, ensuring maximum conversion and minimal waste." : "The reaction does not go to completion or uses excess reactants, which may lead to inefficiencies and additional separation steps."}<br>`;
+    result += `Byproducts: ${userInputs.question5 === "yes" ? "The process involves the formation of solid or liquid byproducts, requiring separation and waste management." : "The process does not involve the formation of solid or liquid byproducts, simplifying waste management."}<br>`;
+    result += `Purification: ${userInputs.question6 === "yes" ? "The final product requires purification to remove unreacted reactants or byproducts, adding complexity to the process." : "The final product does not require purification, streamlining the process."}<br>`;
+    result += `Temperature constraints: ${userInputs.question7 === "yes" ? "There are temperature constraints or sensitivities for the reactions, necessitating precise temperature control systems." : "There are no temperature constraints or sensitivities for the reactions, allowing for simpler equipment and control."}<br>`;
+    result += `Exothermic: ${userInputs.question8 === "yes" ? "The reaction is highly exothermic, requiring effective heat management to ensure safety and efficiency." : "The reaction is not highly exothermic, reducing the need for extensive heat management systems."}<br>`;
+    result += `Gaseous byproducts: ${userInputs.question9 === "yes" ? "The reaction produces gaseous byproducts that need to be managed, requiring gas-liquid separation systems." : "The reaction does not produce gaseous byproducts, simplifying the process."}<br>`;
+    result += `Specific mixing: ${userInputs.question10 === "yes" ? "The reaction requires specific agitation or mixing regimes to ensure uniformity, demanding specialized equipment." : "The reaction does not require specific agitation or mixing regimes, reducing equipment complexity."}<br>`;
+    result += `pH constraints: ${userInputs.question11 === "yes" ? "There are pH constraints or requirements for the reactions, necessitating pH control systems." : "There are no pH constraints or requirements for the reactions, simplifying process control."}<br>`;
+    result += `Solvent recovery: ${userInputs.question12 === "yes" ? "The process requires solvent recovery or recycling steps, adding to the operational complexity and equipment needs." : "The process does not require solvent recovery or recycling steps, simplifying the operation."}<br>`;
+    result += `Time-sensitive: ${userInputs.question13 === "yes" ? "The reaction is time-sensitive and requires precise control over reaction duration, increasing the need for sophisticated timing and control systems." : "The reaction is not time-sensitive and does not require precise control over reaction duration, reducing control system requirements."}<br>`;
+
+    const scores = evaluateFlowDiagram(result);
+    renderRadarPlots(scores);
 
     document.getElementById('flowDiagramOutput').innerHTML = result;
 }
+
+
+function evaluateFlowDiagram(flowDiagramOutput) {
+    const scores = {
+        "Waste Generation": 0,
+        "Energy Consumption": 0,
+        "Emissions Potential": 0,
+        "Equipment Cost": 0,
+        "Installation Cost": 0,
+        "Materials of Construction": 0,
+        "Operational Energy Consumption": 0,
+        "Maintenance": 0,
+        "Labor": 0
+    };
+
+    // Define impact of each question on each score category
+    const impactMatrix = {
+        question1: {
+            one: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -1
+            },
+            moreThanOne: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 1
+            }
+        },
+        question2: {
+            yes: {
+                "Waste Generation": -2,
+                "Energy Consumption": 1,
+                "Emissions Potential": -2,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": 2,
+                "Energy Consumption": -1,
+                "Emissions Potential": 2,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -1
+            }
+        },
+        question3: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -1
+            }
+        },
+        question4: {
+            yes: {
+                "Waste Generation": 2,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
+                "Labor": -1
+            }
+        },
+        question5: {
+            yes: {
+                "Waste Generation": 3,
+                "Energy Consumption": 1,
+                "Emissions Potential": 2,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -3,
+                "Energy Consumption": -1,
+                "Emissions Potential": -2,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question6: {
+            yes: {
+                "Waste Generation": 2,
+                "Energy Consumption": 2,
+                "Emissions Potential": 2,
+                "Equipment Cost": 3,
+                "Installation Cost": 3,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 3,
+                "Labor": 2
+            },
+            no: {
+                "Waste Generation": -2,
+                "Energy Consumption": -2,
+                "Emissions Potential": -2,
+                "Equipment Cost": -3,
+                "Installation Cost": -3,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -3,
+                "Labor": -2
+            }
+        },
+        question7: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 2,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -2,
+                "Emissions Potential": -1,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question8: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 2,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 3,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -2,
+                "Emissions Potential": -1,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -3,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question9: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 3,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -3,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question10: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 3,
+                "Installation Cost": 3,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 3,
+                "Labor": 2
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -3,
+                "Installation Cost": -3,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -3,
+                "Labor": -2
+            }
+        },
+        question11: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question12: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 2,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 3,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -2,
+                "Emissions Potential": -1,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -3,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        },
+        question13: {
+            yes: {
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 2,
+                "Installation Cost": 2,
+                "Materials of Construction": 2,
+                "Operational Energy Consumption": 2,
+                "Maintenance": 2,
+                "Labor": 1
+            },
+            no: {
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -2,
+                "Installation Cost": -2,
+                "Materials of Construction": -2,
+                "Operational Energy Consumption": -2,
+                "Maintenance": -2,
+                "Labor": -1
+            }
+        }
+    };
+
+    // Apply the impacts based on the user's answers
+    for (let questionId in userInputs) {
+        let answer = userInputs[questionId];
+        if (impactMatrix[questionId] && impactMatrix[questionId][answer]) {
+            let impacts = impactMatrix[questionId][answer];
+            for (let category in impacts) {
+                scores[category] += impacts[category];
+            }
+        }
+    }
+
+    // Normalize scores to a maximum of 5 and minimum of 0
+    for (let key in scores) {
+        if (scores[key] > 5) {
+            scores[key] = 5;
+        }
+        if (scores[key] < 0) {
+            scores[key] = 0;
+        }
+    }
+
+    return scores;
+}
+
+
+function renderRadarPlots(scores) {
+    const ctx = document.getElementById('FlowDiagramScorePlots').getContext('2d');
+
+    // Extract the labels and data from the scores object
+    const labels = Object.keys(scores);
+    const data = Object.values(scores);
+
+    // Create the radar plot data object
+    const radarData = {
+        labels: labels,
+        datasets: [{
+            label: 'Flow Diagram Feasibility',
+            data: data,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    // Create the radar plot configuration
+    const radarConfig = {
+        type: 'radar',
+        data: radarData,
+        options: {
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    max: 5,
+                    stepSize: 1
+                }
+            }
+        }
+    };
+
+    // Render the radar plot
+    new Chart(ctx, radarConfig);
+}
+
+
 
 async function startDecisionTree() {
     askQuestion("question1");
