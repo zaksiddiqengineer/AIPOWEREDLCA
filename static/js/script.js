@@ -1,5 +1,6 @@
 import { generateScaleUpAnalysis } from '../js/generateScaleUp.js';
 import { startDecisionTree } from './generateFlowDiagram.js';
+import { askQuestion } from './generateSafety.js';
 
 // static/js/script.js
 var reactantCount = 0;
@@ -231,3 +232,9 @@ document.getElementById("FlowDiagramAnalysisButton").addEventListener("click", (
     startDecisionTree();
 });
 
+document.getElementById('safetyAnalysisButton').addEventListener('click', () => {
+    document.getElementById('safetyContainer').style.display = 'none';
+    document.getElementById('safetyWizard').style.display = 'block';
+    document.getElementById('safetyScorePlotContainer').style.display = 'block';
+    askQuestion('newChemicalUsage');
+});

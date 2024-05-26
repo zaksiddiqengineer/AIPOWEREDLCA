@@ -59,15 +59,25 @@
         <div id="flowDiagramOutput"></div>
         <canvas id="FlowDiagramScorePlots"></canvas>
 
-        <div id="reactionKineticsContainer" style="display: none;">
-            <button id="reactionKineticsAnalysisButton">Proceed to Kinetic Analysis</button>
+        <div id="safetyContainer" style="display: none;">
+            <button id="safetyAnalysisButton">Proceed to safety Analysis</button>
         </div>
+
+        <div id="safetyWizard" style="display: none;">
+            <h2>Safety Analysis</h2>
+            <div id="safetyQuestion"></div>
+            <div id="safetyAnswers"></div>
+        </div>
+        <div id="safetyScorePlotContainer" style="display: none;">
+            <canvas id="safetyScorePlots"></canvas>
+        </div>
+
 
     </div>
 
     <script type="module" src="../static/js/generateScaleUp.js"></script>
     <script type="module" src="../static/js/generateFlowDiagram.js"></script>
-    <script type="module" src="../static/js/generateReactionKinetics.js"></script>
+    <script type="module" src="../static/js/generateSafety.js"></script>
     <script type="module" src="../static/js/script.js"></script>
 </body>
 </html>

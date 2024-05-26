@@ -236,7 +236,7 @@ function generateResult(finalQuestionId) {
     const scores = evaluateFlowDiagram(result);
     renderRadarPlots(scores);
 
-    const proceedButtonContainer = document.getElementById('reactionKineticsContainer');
+    const proceedButtonContainer = document.getElementById('safetyContainer');
     proceedButtonContainer.style.display = 'block';;
  
 }
@@ -596,8 +596,15 @@ function evaluateFlowDiagram(flowDiagramOutput) {
 }
 
 
+let flowDiagramChart = null;
+
 function renderRadarPlots(scores) {
     const ctx = document.getElementById('FlowDiagramScorePlots').getContext('2d');
+
+    // Destroy the previous chart instance if it exists
+    if (flowDiagramChart) {
+        flowDiagramChart.destroy();
+    }
 
     // Extract the labels and data from the scores object
     const labels = Object.keys(scores);
@@ -621,11 +628,11 @@ function renderRadarPlots(scores) {
         data: radarData,
         options: {
             scales: {
-                r: { // Change from scale to scales
-                    beginAtZero: true, // Ensure ticks start at 0
-                    min: 0,            // Set minimum value to 0
-                    max: 5,            // Set maximum value to 5
-                    stepSize: 0.5,     // Define step size as 0.5
+                r: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 5,
+                    stepSize: 0.5,
                     ticks: {
                         beginAtZero: true,
                         min: 0,
@@ -638,8 +645,9 @@ function renderRadarPlots(scores) {
     };
 
     // Render the radar plot
-    new Chart(ctx, radarConfig);
+    flowDiagramChart = new Chart(ctx, radarConfig);
 }
+
 
 
 async function startDecisionTree() {
