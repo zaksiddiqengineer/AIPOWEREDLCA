@@ -743,6 +743,9 @@ export function askQuestion(questionKey) {
             } else {
                 const scores = evaluateSafety();
                 renderRadarPlot(scores);
+
+                const recycleContainer = document.getElementById('recycleContainer');
+                recycleContainer.style.display = 'block';
             }
         });
         answersDiv.appendChild(button);

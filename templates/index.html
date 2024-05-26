@@ -72,12 +72,28 @@
             <canvas id="safetyScorePlots"></canvas>
         </div>
 
+        <div id="recycleContainer" style="display: none;">
+            <button id="recycleAnalysisButton">Proceed to recycle Analysis</button>
+        </div>
+        <div id="recycleWizard" style="display: none;">
+            <h2>Recycle Analysis</h2>
+            <div id="recycleQuestion"></div>
+            <div id="recycleAnswers"></div>
+        </div>
+        <div id="recycleScorePlotContainer" style="display: none;">
+            <canvas id="recycleScorePlots"></canvas>
+        </div>
+
+        <div id="reactionKineticsContainer" style="display: none;">
+            <button id="reactionKineticsAnalysisButton">Proceed to reaction kinetics Analysis</button>
+        </div>
 
     </div>
 
     <script type="module" src="../static/js/generateScaleUp.js"></script>
     <script type="module" src="../static/js/generateFlowDiagram.js"></script>
     <script type="module" src="../static/js/generateSafety.js"></script>
+    <script type="module" src="../static/js/generateRecycle.js"></script>
     <script type="module" src="../static/js/script.js"></script>
 </body>
 </html>

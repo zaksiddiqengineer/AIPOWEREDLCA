@@ -1,6 +1,8 @@
 import { generateScaleUpAnalysis } from '../js/generateScaleUp.js';
 import { startDecisionTree } from './generateFlowDiagram.js';
 import { askQuestion } from './generateSafety.js';
+import { askQuestionRecycle } from './generateRecycle.js';
+
 
 // static/js/script.js
 var reactantCount = 0;
@@ -237,4 +239,11 @@ document.getElementById('safetyAnalysisButton').addEventListener('click', () => 
     document.getElementById('safetyWizard').style.display = 'block';
     document.getElementById('safetyScorePlotContainer').style.display = 'block';
     askQuestion('newChemicalUsage');
+});
+
+document.getElementById('recycleAnalysisButton').addEventListener('click', () => {
+    document.getElementById('recycleContainer').style.display = 'none';
+    document.getElementById('recycleWizard').style.display = 'block';
+    document.getElementById('recycleScorePlotContainer').style.display = 'block';
+    askQuestionRecycle('costConsiderations');
 });
