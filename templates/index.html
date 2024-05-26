@@ -22,7 +22,8 @@
                 <!-- Product inputs will be added here dynamically -->
             </div>
             <button id="addProductBtn">Add Product</button>
-            <button id="submitReactionBtn">Submit Reaction</button>
+            <button id="generateLCABtn">Generate Life Cycle Analysis</button>
+            <button id="generateScaleUpBtn">Generate Scale Up Analysis</button>
         </div>
         <div id="environmentalReport" style="display: none;">
             <h2>Environmental Report</h2>
@@ -34,8 +35,32 @@
             <h3>Individual Product Score Radar Plots</h3>
             <div id="productScorePlots"></div>
         </div>
+
+        <div id="scaleUpWizard" style="display: none;">
+            <h2>Scale-Up Analysis</h2>
+            <div id="wizardSteps">
+              <!-- Steps will be dynamically added here -->
+            </div>
+            <button id="prevBtn" disabled>Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+        
+        <div id="recommendationContainer"></div>
+        <div id="flowDiagramContainer" style="display: none;">
+            <p id="originalRecommendation"></p>
+            <button id="FlowDiagramAnalysisButton">Proceed to flow diagram analysis</button>
+        </div>
+
+        <div id="flowDiagramWizard" style="display: none;">
+            <h2>Flow Diagram Analysis</h2>
+            <div id="flowDiagramQuestion"></div>
+            <div id="flowDiagramAnswers"></div>
+        </div>
+        <div id="flowDiagramOutput"></div>
     </div>
 
-    <script src="../static/js/script.js"></script>
+    <script type="module" src="../static/js/generateScaleUp.js"></script>
+    <script type="module" src="../static/js/generateFlowDiagram.js"></script>
+    <script type="module" src="../static/js/script.js"></script>
 </body>
 </html>

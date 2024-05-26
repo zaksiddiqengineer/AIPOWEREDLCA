@@ -1,3 +1,6 @@
+import { generateScaleUpAnalysis } from '../js/generateScaleUp.js';
+import { startDecisionTree } from './generateFlowDiagram.js';
+
 // static/js/script.js
 var reactantCount = 0;
 var productCount = 0;
@@ -16,7 +19,7 @@ document.getElementById('addProductBtn').addEventListener('click', function() {
     createProductInput(productCount);
 });
 
-document.getElementById('submitReactionBtn').addEventListener('click', function() {
+document.getElementById('generateLCABtn').addEventListener('click', function() {
     var reactants = [];
     var products = [];
 
@@ -78,6 +81,8 @@ document.getElementById('submitReactionBtn').addEventListener('click', function(
         document.getElementById('reportContent').innerText = 'An error occurred while fetching the response.';
     });
 });
+
+
 
 function createReactantInput(index) {
     var reactantsDiv = document.getElementById('reactants');
@@ -214,3 +219,15 @@ function createRadarPlot(chartId, scores, title, isReactant, isAggregate) {
 
     console.log('Radar plot created for chartId:', chartId);
 }
+
+document.getElementById('generateScaleUpBtn').addEventListener('click', function() {
+    document.getElementById('scaleUpWizard').style.display = 'block';
+    generateScaleUpAnalysis();
+  });
+
+document.getElementById("FlowDiagramAnalysisButton").addEventListener("click", () => {
+    document.getElementById("flowDiagramContainer").style.display = "none";
+    document.getElementById("flowDiagramWizard").style.display = "block";
+    startDecisionTree();
+});
+
