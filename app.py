@@ -120,6 +120,7 @@ def get_chemical_info():
         "aggregate_scores": {k: sum(v) / len(v) for k, v in aggregate_scores.items() if len(v) > 0}
     })
 
+
 def ask_koboldcpp(prompt):
     url = "http://localhost:5001/api/v1/generate"
     payload = {
@@ -138,5 +139,10 @@ def ask_koboldcpp(prompt):
     else:
         return {"text": f"Error: Unable to fetch response from KoboldCpp. Status Code: {response.status_code}"}
 
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+

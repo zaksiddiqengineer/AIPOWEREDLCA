@@ -230,10 +230,15 @@ function generateResult(finalQuestionId) {
     result += `Solvent recovery: ${userInputs.question12 === "yes" ? "The process requires solvent recovery or recycling steps, adding to the operational complexity and equipment needs." : "The process does not require solvent recovery or recycling steps, simplifying the operation."}<br>`;
     result += `Time-sensitive: ${userInputs.question13 === "yes" ? "The reaction is time-sensitive and requires precise control over reaction duration, increasing the need for sophisticated timing and control systems." : "The reaction is not time-sensitive and does not require precise control over reaction duration, reducing control system requirements."}<br>`;
 
+    const outputContainer = document.getElementById('flowDiagramOutput');
+    outputContainer.innerHTML = result;
+
     const scores = evaluateFlowDiagram(result);
     renderRadarPlots(scores);
 
-    document.getElementById('flowDiagramOutput').innerHTML = result;
+    const proceedButtonContainer = document.getElementById('reactionKineticsContainer');
+    proceedButtonContainer.style.display = 'block';;
+ 
 }
 
 
