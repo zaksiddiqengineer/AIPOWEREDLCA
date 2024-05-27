@@ -2,6 +2,7 @@ import { generateScaleUpAnalysis } from '../js/generateScaleUp.js';
 import { startDecisionTree } from './generateFlowDiagram.js';
 import { askQuestion } from './generateSafety.js';
 import { askQuestionRecycle } from './generateRecycle.js';
+import { estimateHeatOfReaction } from './generateReactionKinetics.js';
 
 
 // static/js/script.js
@@ -247,3 +248,13 @@ document.getElementById('recycleAnalysisButton').addEventListener('click', () =>
     document.getElementById('recycleScorePlotContainer').style.display = 'block';
     askQuestionRecycle('costConsiderations');
 });
+
+document.getElementById('reactionKineticsAnalysisButton').addEventListener('click', function() {
+    document.getElementById('reactionKineticsContainer').style.display = 'block';
+    document.getElementById('heatOfReactionButtonContainer').style.display = 'block';
+});
+
+document.getElementById('calculateHeatOfReactionButton').addEventListener('click', function() {
+    estimateHeatOfReaction();
+});
+

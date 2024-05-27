@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, jsonify
 import requests
 import json
 import re
+import subprocess
 
 app = Flask(__name__)
 
@@ -9,6 +10,46 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+
+@app.route('/calculate_enthalpy', methods=['POST'])
+def calculate_enthalpy():
+    try:
+        reactants = request.form['reactants']
+        products = request.form['products']
+
+        # Save reactants and products to temporary JSON files
+        with open('reactants.json', 'w') as reactants_file:
+            reactants_file.write(reactants)
+        with open('products.json', 'w') as products_file:
+            products_file.write(products)
+
+        # Create the command to run the batch file
+        script_path = 'run_enthalpy.bat'
+        command = f'{script_path} reactants.json products.json'
+
+        # Debug: Print the command to ensure it is correct
+        print(f"Running command: {command}")
+
+        # Run the batch file and capture the output
+        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+
+        # Debug: Print the output to verify it
+        print(f"Output from script: {result.stdout}")
+        print(f"Error from script: {result.stderr}")
+
+        # Parse the JSON output from the batch file
+        output = result.stdout.strip().split('\n')[-1]
+        result_json = json.loads(output)
+        enthalpy_change = result_json.get('enthalpyChange')
+        if enthalpy_change is not None:
+            return jsonify({'enthalpyChange': enthalpy_change})
+        else:
+            return jsonify({'error': 'Invalid output from enthalpy calculation.'}), 500
+
+    except Exception as e:
+        print(f"Error in calculate_enthalpy: {str(e)}")
+        return jsonify({'error': 'An error occurred during enthalpy calculation.'}), 500
+    
 def extract_scores(text):
     score = 0  # Initialize score with a default valu
     score_match = re.search(r'Overall Score:\s*(High|Medium|Low)', text, re.IGNORECASE)
