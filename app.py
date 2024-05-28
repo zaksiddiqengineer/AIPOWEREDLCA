@@ -292,21 +292,21 @@ def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hou
     Q_annual = Q_monthly * months_per_year
 
     # Determine if heating or cooling is required
-    if Q_monthly < 0:
-        heating_cooling_needed = "cooling"
-    else:
-        heating_cooling_needed = "heating"
+    heating_cooling_needed = "cooling" if Q_monthly < 0 else "heating"
+
+    # Use the absolute value of Q_monthly for the following calculations
+    abs_Q_monthly = abs(Q_monthly)
 
     # Calculate CO2 emissions
-    CO2_emissions_monthly = Q_monthly * co2_ef
+    CO2_emissions_monthly = abs_Q_monthly * co2_ef
     CO2_emissions_annual = CO2_emissions_monthly * months_per_year
 
     # Calculate the mass of the heating/cooling fluid required
-    mass_fluid_monthly = abs(Q_monthly) / (eff_cp * delta_T)
+    mass_fluid_monthly = abs_Q_monthly / (eff_cp * delta_T)
 
     # Calculate the cost of heating/cooling
     cost_per_kWh = 0.10  # Assuming $0.10 per kWh
-    Q_monthly_kWh = Q_monthly / 3600
+    Q_monthly_kWh = abs_Q_monthly / 3600  # Convert from kJ to kWh
     cost_monthly = Q_monthly_kWh * cost_per_kWh
     cost_annual = cost_monthly * months_per_year
 
@@ -323,6 +323,7 @@ def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hou
     }
 
     return result
+
 
 
 
