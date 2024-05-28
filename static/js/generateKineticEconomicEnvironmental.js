@@ -97,6 +97,9 @@ export function openEconomicEnvironmentalAnalysis() {
     
                 const result = await response.json();
                 console.log('Calculation result:', result);
+
+                //display the results
+                displayCalculationResult(result)
                 // Handle the result as needed
             } catch (error) {
                 console.error('Error submitting data:', error);
@@ -104,6 +107,30 @@ export function openEconomicEnvironmentalAnalysis() {
         }
     });
 }
+
+function displayCalculationResult(result) {
+    var resultContainer = document.getElementById('calculationResult');
+    
+    if (!resultContainer) {
+        resultContainer = document.createElement('div');
+        resultContainer.id = 'calculationResult';
+        document.body.appendChild(resultContainer);
+    }
+
+    resultContainer.innerHTML = `
+        <h3>Calculation Result</h3>
+        <p>Moles per Month: ${result.moles_per_month}</p>
+        <p>Q Monthly (kJ): ${result.Q_monthly_kJ}</p>
+        <p>Q Annual (kJ): ${result.Q_annual_kJ}</p>
+        <p>Heating/Cooling Needed: ${result.heating_cooling_needed}</p>
+        <p>CO2 Emissions Monthly (kg): ${result.CO2_emissions_monthly_kg}</p>
+        <p>CO2 Emissions Annual (kg): ${result.CO2_emissions_annual_kg}</p>
+        <p>Mass of Fluid Monthly (kg): ${result.mass_fluid_monthly_kg}</p>
+        <p>Cost Monthly (USD): ${result.cost_monthly_usd}</p>
+        <p>Cost Annual (USD): ${result.cost_annual_usd}</p>
+    `;
+}
+
 
 // Function to populate the fuel type dropdown
 async function populateFuelTypeDropdown() {
