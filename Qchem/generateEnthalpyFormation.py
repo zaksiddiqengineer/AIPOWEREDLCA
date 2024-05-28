@@ -26,31 +26,21 @@ def compute_enthalpy(smiles):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Compute enthalpy of formation.')
-    parser.add_argument('--reactants_file', type=str, required=True, help='Path to JSON file of reactants SMILES')
-    parser.add_argument('--products_file', type=str, required=True, help='Path to JSON file of products SMILES')
+    parser.add_argument('json_file', type=str, help='Path to JSON file containing reactants and products SMILES')
     args = parser.parse_args()
 
-    # Debug: Print the received arguments
-    print(f"Received reactants file: {args.reactants_file}")
-    print(f"Received products file: {args.products_file}")
-
-    if not os.path.exists(args.reactants_file) or not os.path.exists(args.products_file):
-        print("Error: One of the input files does not exist.")
+    try:
+        with open(args.json_file, 'r') as f:
+            data = json.load(f)
+        reactants = data['reactants']
+        products = data['products']
+    except (json.JSONDecodeError, KeyError, FileNotFoundError) as e:
+        print(f"Error decoding JSON: {e}")
         exit(1)
 
-    with open(args.reactants_file, 'r') as f:
-        try:
-            reactants = json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"Error decoding reactants JSON: {e}")
-            exit(1)
-
-    with open(args.products_file, 'r') as f:
-        try:
-            products = json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"Error decoding products JSON: {e}")
-            exit(1)
+    # Debug: Print the received arguments
+    print(f"Received reactants: {reactants}")
+    print(f"Received products: {products}")
 
     reactant_enthalpies = [compute_enthalpy(smile) for smile in reactants]
     product_enthalpies = [compute_enthalpy(smile) for smile in products]

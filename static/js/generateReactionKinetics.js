@@ -40,7 +40,10 @@ export function estimateHeatOfReaction() {
         } else {
             let enthalpyChange = parseFloat(data.enthalpyChange).toFixed(2);
             // Display the calculated enthalpy change in the UI
-            document.getElementById('enthalpyChangeResult').textContent = 'Heat of reaction: ' + data.enthalpyChange + ' kJ/mol';
+            document.getElementById('enthalpyChangeResult').textContent = 'Heat of reaction: ' + enthalpyChange + ' kJ/mol';
+
+            // Show the button to advance to the economic and environmental analysis
+            document.getElementById('reactionKineticsEconomicalEnvironmentalContainer').style.display = 'block';
         }
     })
     .catch(error => {

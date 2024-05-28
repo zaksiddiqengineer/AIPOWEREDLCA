@@ -2,13 +2,95 @@ from flask import Flask, request, render_template, jsonify
 import requests
 import json
 import re
+import os
+import csv
 import subprocess
+import shlex
+import tempfile  
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/calculate_emissions_and_mass', methods=['POST'])
+def calculate_emissions_and_mass_route():
+    try:
+        data = request.json
+        heat_of_reaction = float(data.get('enthalpyChangeResult'))
+        production_rate_per_hour = float(data.get('productionRate'))
+        hours_per_day = float(data.get('hoursPerDay'))
+        days_per_month = float(data.get('daysPerMonth'))
+        months_per_year = float(data.get('monthsPerYear'))
+        co2_ef = float(data.get('co2Ef'))
+        eff_cp = float(data.get('effCp'))
+
+        result = calculate_emissions_and_mass(
+            heat_of_reaction,
+            production_rate_per_hour,
+            hours_per_day,
+            days_per_month,
+            months_per_year,
+            co2_ef,
+            eff_cp
+        ) 
+
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/get_fuel_types', methods=['GET'])
+def get_fuel_types():
+    fuel_types = []
+    file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'
+    
+    with open(file_path, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            fuel_type = row['Ultimate Fuel Type']
+            if fuel_type not in fuel_types:
+                fuel_types.append(fuel_type)
+    
+    return jsonify(fuel_types)
+
+
+@app.route('/get_utilities', methods=['GET'])
+def get_utilities():
+    fuel_type = request.args.get('fuel_type')
+    utilities = []
+    
+    file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'
+    
+    with open(file_path, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            if row['Ultimate Fuel Type'] == fuel_type:
+                utility = row['Utility']
+                if utility not in utilities:
+                    utilities.append(utility)
+    
+    return jsonify(utilities)
+
+
+@app.route('/get_emission_data', methods=['GET'])
+def get_emission_data():
+    fuel_type = request.args.get('fuel_type')
+    utility = request.args.get('utility')
+    
+    file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'
+    
+    with open(file_path, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            if row['Ultimate Fuel Type'] == fuel_type and row['Utility'] == utility:
+                co2_ef = float(row['CO2 EF [KG/KJ]'])
+                eff_cp = float(row['Eff Cp[KJ/KG-C]'])
+                return jsonify({'co2_ef': co2_ef, 'eff_cp': eff_cp})
+    
+    return jsonify({'error': 'Data not found'})
+
 
 
 @app.route('/calculate_enthalpy', methods=['POST'])
@@ -17,15 +99,24 @@ def calculate_enthalpy():
         reactants = request.form['reactants']
         products = request.form['products']
 
-        # Save reactants and products to temporary JSON files
-        with open('reactants.json', 'w') as reactants_file:
-            reactants_file.write(reactants)
-        with open('products.json', 'w') as products_file:
-            products_file.write(products)
+        # Debug: Print the reactants and products
+        print(f"Reactants: {reactants}")
+        print(f"Products: {products}")
+
+        # Create the JSON string containing reactants and products
+        reactants_products_json = {
+            "reactants": json.loads(reactants),
+            "products": json.loads(products)
+        }
+
+        # Write the JSON string to a temporary file
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as temp_json_file:
+            json.dump(reactants_products_json, temp_json_file)
+            temp_json_file_path = temp_json_file.name
 
         # Create the command to run the batch file
-        script_path = 'run_enthalpy.bat'
-        command = f'{script_path} reactants.json products.json'
+        script_path = r'C:\Users\zaksi\LLMTESTER\run_enthalpy.bat'
+        command = f'cmd.exe /c "{script_path} {temp_json_file_path}"'
 
         # Debug: Print the command to ensure it is correct
         print(f"Running command: {command}")
@@ -37,19 +128,28 @@ def calculate_enthalpy():
         print(f"Output from script: {result.stdout}")
         print(f"Error from script: {result.stderr}")
 
+        # Debug: Print the raw output before splitting
+        print(f"Raw output: {result.stdout.strip()}")
+
         # Parse the JSON output from the batch file
         output = result.stdout.strip().split('\n')[-1]
+
+        # Debug: Print the parsed output
+        print(f"Parsed output: {output}")
+
         result_json = json.loads(output)
         enthalpy_change = result_json.get('enthalpyChange')
+
+        # Remove the temporary JSON file
+        os.remove(temp_json_file_path)
+
         if enthalpy_change is not None:
             return jsonify({'enthalpyChange': enthalpy_change})
         else:
             return jsonify({'error': 'Invalid output from enthalpy calculation.'}), 500
-
     except Exception as e:
         print(f"Error in calculate_enthalpy: {str(e)}")
         return jsonify({'error': 'An error occurred during enthalpy calculation.'}), 500
-    
 def extract_scores(text):
     score = 0  # Initialize score with a default valu
     score_match = re.search(r'Overall Score:\s*(High|Medium|Low)', text, re.IGNORECASE)
@@ -180,10 +280,51 @@ def ask_koboldcpp(prompt):
     else:
         return {"text": f"Error: Unable to fetch response from KoboldCpp. Status Code: {response.status_code}"}
 
+def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hours_per_day, days_per_month, months_per_year, co2_ef, eff_cp):
+    # Assumed temperature change (Delta T)
+    delta_T = 10  # °C, assumed value for heating/cooling
 
+    # Convert the production rate to moles per month
+    moles_per_month = production_rate_per_hour * hours_per_day * days_per_month
+
+    # Calculate the monthly and annual energy requirements
+    Q_monthly = heat_of_reaction * moles_per_month
+    Q_annual = Q_monthly * months_per_year
+
+    # Determine if heating or cooling is required
+    if Q_monthly < 0:
+        heating_cooling_needed = "cooling"
+    else:
+        heating_cooling_needed = "heating"
+
+    # Calculate CO2 emissions
+    CO2_emissions_monthly = Q_monthly * co2_ef
+    CO2_emissions_annual = CO2_emissions_monthly * months_per_year
+
+    # Calculate the mass of the heating/cooling fluid required
+    mass_fluid_monthly = abs(Q_monthly) / (eff_cp * delta_T)
+
+    # Calculate the cost of heating/cooling
+    cost_per_kWh = 0.10  # Assuming $0.10 per kWh
+    Q_monthly_kWh = Q_monthly / 3600
+    cost_monthly = Q_monthly_kWh * cost_per_kWh
+    cost_annual = cost_monthly * months_per_year
+
+    result = {
+        "moles_per_month": moles_per_month,
+        "Q_monthly_kJ": Q_monthly,
+        "Q_annual_kJ": Q_annual,
+        "heating_cooling_needed": heating_cooling_needed,
+        "CO2_emissions_monthly_kg": CO2_emissions_monthly,
+        "CO2_emissions_annual_kg": CO2_emissions_annual,
+        "mass_fluid_monthly_kg": mass_fluid_monthly,
+        "cost_monthly_usd": cost_monthly,
+        "cost_annual_usd": cost_annual
+    }
+
+    return result
 
 
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-

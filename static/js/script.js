@@ -3,7 +3,7 @@ import { startDecisionTree } from './generateFlowDiagram.js';
 import { askQuestion } from './generateSafety.js';
 import { askQuestionRecycle } from './generateRecycle.js';
 import { estimateHeatOfReaction } from './generateReactionKinetics.js';
-
+import { openEconomicEnvironmentalAnalysis } from './generateKineticEconomicEnvironmental.js';
 
 // static/js/script.js
 var reactantCount = 0;
@@ -256,5 +256,9 @@ document.getElementById('reactionKineticsAnalysisButton').addEventListener('clic
 
 document.getElementById('calculateHeatOfReactionButton').addEventListener('click', function() {
     estimateHeatOfReaction();
+});
+
+document.getElementById('reactionKineticsEconomicalEnvironmentalButton').addEventListener('click', function() {
+    openEconomicEnvironmentalAnalysis();
 });
 

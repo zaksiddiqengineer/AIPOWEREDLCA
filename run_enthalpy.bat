@@ -1,15 +1,28 @@
 @echo off
 setlocal
 
-set REACTANTS_FILE=reactants.json
-set PRODUCTS_FILE=products.json
+REM Activate the psi4 environment
+call conda activate psi4_env
 
-rem Write JSON to files
-python -c "import sys, json; json.dump(json.loads(sys.argv[1]), open(sys.argv[2], 'w'))" "%~1" %REACTANTS_FILE%
-python -c "import sys, json; json.dump(json.loads(sys.argv[1]), open(sys.argv[2], 'w'))" "%~2" %PRODUCTS_FILE%
+REM Check if the environment activated successfully
+if %errorlevel% neq 0 (
+    echo Failed to activate psi4 environment
+    exit /b %errorlevel%
+)
 
-rem Activate the psi4_env environment and run the Python script
-call C:\Users\zaksi\anaconda3\Scripts\activate psi4_env
-python "C:\Users\zaksi\LLMTESTER\Qchem\generateEnthalpyFormation.py" --reactants_file %REACTANTS_FILE% --products_file %PRODUCTS_FILE%
+REM Read JSON file path from argument
+set JSON_FILE=%1
+
+REM Debug: Print the JSON file path
+echo JSON file path: %JSON_FILE%
+
+REM Run the Python script with the JSON file
+python C:\Users\zaksi\LLMTESTER\Qchem\generateEnthalpyFormation.py %JSON_FILE%
+
+REM Check if the Python script ran successfully
+if %errorlevel% neq 0 (
+    echo Python script execution failed
+    exit /b %errorlevel%
+)
 
 endlocal
