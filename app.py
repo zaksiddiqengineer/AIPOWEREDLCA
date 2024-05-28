@@ -7,6 +7,7 @@ import csv
 import subprocess
 import shlex
 import tempfile  
+import logging
 
 app = Flask(__name__)
 
@@ -23,8 +24,22 @@ def calculate_emissions_and_mass_route():
         hours_per_day = float(data.get('hoursPerDay'))
         days_per_month = float(data.get('daysPerMonth'))
         months_per_year = float(data.get('monthsPerYear'))
+        
+        t_in = data.get('tIn')
+        t_react = data.get('tReact')
+        
+        if t_in is None or t_react is None:
+            return jsonify({'error': 'Missing temperature values'}), 400
+        
+        t_in = float(t_in)
+        t_react = float(t_react)
+        
         co2_ef = float(data.get('co2Ef'))
         eff_cp = float(data.get('effCp'))
+        U = float(data.get('UValue'))
+        A = float(data.get('AValue'))
+
+        print(f"Data received: {data}")  # Print the received data for debugging
 
         result = calculate_emissions_and_mass(
             heat_of_reaction,
@@ -32,12 +47,19 @@ def calculate_emissions_and_mass_route():
             hours_per_day,
             days_per_month,
             months_per_year,
+            t_in,
+            t_react,
             co2_ef,
-            eff_cp
-        ) 
+            eff_cp,
+            U,
+            A
+        )
+
+        print(f"Calculation result: {result}")  # Print the calculation result for debugging
 
         return jsonify(result)
     except Exception as e:
+        print(f"Error: {str(e)}")  # Print the error message for debugging
         return jsonify({'error': str(e)}), 500
 
 
@@ -78,20 +100,91 @@ def get_utilities():
 def get_emission_data():
     fuel_type = request.args.get('fuel_type')
     utility = request.args.get('utility')
-    
+
+    logging.debug(f'Received request with fuel_type={fuel_type}, utility={utility}')
+
     file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'
+
+    try:
+        with open(file_path, 'r') as file:
+            csv_reader = csv.DictReader(file)
+            for row in csv_reader:
+                if row['Ultimate Fuel Type'] == fuel_type and row['Utility'] == utility:
+                    co2_ef = float(row['CO2 EF [KG/KJ]'])
+                    eff_cp = float(row['Eff Cp[KJ/KG-C]'])
+                    return jsonify({'co2_ef': co2_ef, 'eff_cp': eff_cp})
+    
+    except Exception as e:
+        logging.error(f'Error processing request: {e}')
+        return jsonify({'error': str(e)}), 500
+
+    return jsonify({'error': 'Data not found'}), 404
+
+@app.route('/get_U_value', methods=['GET'])
+def get_U_value():
+    reactor_volume = request.args.get('reactor_volume')
+    
+    # Retrieve the U value from the CSV based on the reactor volume
+    U_value = retrieve_U_value_from_csv(reactor_volume)
+    
+    return jsonify({'U': U_value})
+
+def retrieve_U_value_from_csv(reactor_volume):
+    file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'  # Replace with the actual path to your CSV file
+    
+    volume_mappings = {
+        'very_large': 'Very Large Reactor U W/m²·K',
+        'large': 'Large Reactor U W/m²·K',
+        'medium': 'Medium Reactor U W/m²·K',
+        'small': 'Small Reactor U W/m²·K'
+    }
+    
+    if reactor_volume not in volume_mappings:
+        return None
+    
+    U_key = volume_mappings[reactor_volume]
     
     with open(file_path, 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
-            if row['Ultimate Fuel Type'] == fuel_type and row['Utility'] == utility:
-                co2_ef = float(row['CO2 EF [KG/KJ]'])
-                eff_cp = float(row['Eff Cp[KJ/KG-C]'])
-                return jsonify({'co2_ef': co2_ef, 'eff_cp': eff_cp})
+            if U_key in row:
+                return float(row[U_key])
     
-    return jsonify({'error': 'Data not found'})
+    return None
 
 
+@app.route('/get_A_value', methods=['GET'])
+def get_A_value():
+    reactor_volume = request.args.get('reactor_volume')
+    
+    # Retrieve the A value from the CSV based on the reactor volume
+    A_value = retrieve_A_value_from_csv(reactor_volume)
+    
+    return jsonify({'A': A_value})
+
+def retrieve_A_value_from_csv(reactor_volume):
+    file_path = 'C:\\Users\\zaksi\\LLMTESTER\\data\\EMISSIONFACTORDATABASE.csv'  # Replace with the actual path to your CSV file
+    
+    volume_mappings = {
+        'very_large': 'Very Large Reactor A M²',
+        'large': 'Large Reactor A M²',
+        'medium': 'Medium Reactor A M²',
+        'small': 'Small Reactor A M²'
+    }
+    
+    if reactor_volume not in volume_mappings:
+        return None
+    
+    A_key = volume_mappings[reactor_volume]
+    
+    with open(file_path, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            if A_key in row:
+                value = row[A_key].replace(',', '')  # Remove commas from the value
+                return float(value)
+    
+    return None
 
 @app.route('/calculate_enthalpy', methods=['POST'])
 def calculate_enthalpy():
@@ -280,10 +373,7 @@ def ask_koboldcpp(prompt):
     else:
         return {"text": f"Error: Unable to fetch response from KoboldCpp. Status Code: {response.status_code}"}
 
-def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hours_per_day, days_per_month, months_per_year, co2_ef, eff_cp):
-    # Assumed temperature change (Delta T)
-    delta_T = 10  # °C, assumed value for heating/cooling
-
+def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hours_per_day, days_per_month, months_per_year, t_in, t_react, co2_ef, eff_cp, U, A):
     # Convert the production rate to moles per month
     moles_per_month = production_rate_per_hour * hours_per_day * days_per_month
 
@@ -294,15 +384,21 @@ def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hou
     # Determine if heating or cooling is required
     heating_cooling_needed = "cooling" if Q_monthly < 0 else "heating"
 
-    # Use the absolute value of Q_monthly for the following calculations
+    # Calculate the absolute energy requirement
     abs_Q_monthly = abs(Q_monthly)
+
+    # Convert Q from kJ/hr to W
+    Q_monthly_W = abs_Q_monthly * 1000 / 3600  # 1 kJ = 1000 W, 1 hour = 3600 seconds
+
+    # Calculate Delta T using the formula Q = U * A * Delta T
+    Delta_T = Q_monthly_W / (U * A)
 
     # Calculate CO2 emissions
     CO2_emissions_monthly = abs_Q_monthly * co2_ef
     CO2_emissions_annual = CO2_emissions_monthly * months_per_year
 
     # Calculate the mass of the heating/cooling fluid required
-    mass_fluid_monthly = abs_Q_monthly / (eff_cp * delta_T)
+    mass_fluid_monthly = abs_Q_monthly / (eff_cp * Delta_T)
 
     # Calculate the cost of heating/cooling
     cost_per_kWh = 0.10  # Assuming $0.10 per kWh
@@ -315,6 +411,7 @@ def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hou
         "Q_monthly_kJ": Q_monthly,
         "Q_annual_kJ": Q_annual,
         "heating_cooling_needed": heating_cooling_needed,
+        "Delta_T_K": Delta_T,
         "CO2_emissions_monthly_kg": CO2_emissions_monthly,
         "CO2_emissions_annual_kg": CO2_emissions_annual,
         "mass_fluid_monthly_kg": mass_fluid_monthly,

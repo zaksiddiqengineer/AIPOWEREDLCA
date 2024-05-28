@@ -21,6 +21,26 @@ export function openEconomicEnvironmentalAnalysis() {
             <input type="number" id="monthsPerYear" name="monthsPerYear" min="1" max="12" value="12" required>
         </div>
         <div>
+            <label for="temperatureIn">Temperature In:</label>
+            <input type="number" id="temperatureIn" name="temperatureIn" min="-1000" max="1000" value="25" required>
+        </div>
+        <div>
+            <label for="temperatureReaction">Temperature Reaction:</label>
+            <input type="number" id="temperatureReaction" name="temperatureReaction" min="-1000" max="1000" value="25" required>
+        </div>
+
+        <div>
+        <label for="reactorVolume">Reactor Volume:</label>
+        <select id="reactorVolume" name="reactorVolume" required>
+            <option value="">Select Reactor Volume</option>
+            <option value="very_large">Very Large Reactor 10000-20,000 m³</option>
+            <option value="large">Large Reactor 1000-10,000 m³</option>
+            <option value="medium">Medium Reactor 100-1,000 m³</option>
+            <option value="small">Small Reactor 0-100 m³</option>
+        </select>
+        </div>
+        
+        <div>
             <label for="fuelType">Ultimate Fuel Type:</label>
             <select id="fuelType" name="fuelType" required>
                 <option value="">Select Fuel Type</option>
@@ -54,6 +74,9 @@ export function openEconomicEnvironmentalAnalysis() {
         var hoursPerDay = document.getElementById('hoursPerDay').value;
         var daysPerMonth = document.getElementById('daysPerMonth').value;
         var monthsPerYear = document.getElementById('monthsPerYear').value;
+        var temperatureIn = document.getElementById('temperatureIn').value;
+        var temperatureReaction = document.getElementById('temperatureReaction').value;
+        var reactorVolume = document.getElementById('reactorVolume').value;
         var fuelType = document.getElementById('fuelType').value;
         var utility = document.getElementById('utility').value;
     
@@ -62,6 +85,9 @@ export function openEconomicEnvironmentalAnalysis() {
         if (emissionData) {
             var co2Ef = emissionData.co2_ef;
             var effCp = emissionData.eff_cp;
+
+            var UValue = await getUValue(reactorVolume);
+            var AValue = await getAValue(reactorVolume);
     
             // Retrieve the enthalpy change result and extract the numeric value
             var enthalpyChangeResultElement = document.getElementById('enthalpyChangeResult');
@@ -79,7 +105,12 @@ export function openEconomicEnvironmentalAnalysis() {
                 hoursPerDay: parseFloat(hoursPerDay),
                 daysPerMonth: parseFloat(daysPerMonth),
                 monthsPerYear: parseFloat(monthsPerYear),
+                monthsPerYear: parseFloat(monthsPerYear),
+                tIn: parseFloat(temperatureIn),
+                tReact: parseFloat(temperatureReaction),
                 co2Ef: parseFloat(co2Ef),
+                UValue: parseFloat(UValue),
+                AValue: parseFloat(AValue),
                 effCp: parseFloat(effCp),
                 enthalpyChangeResult: enthalpyChangeResult
             };
@@ -182,6 +213,28 @@ async function getEmissionData() {
         return emissionData;
     } catch (error) {
         console.error('Error fetching emission data:', error);
+        return null;
+    }
+}
+
+async function getUValue(reactorVolume) {
+    try {
+        const response = await fetch(`/get_U_value?reactor_volume=${encodeURIComponent(reactorVolume)}`);
+        const data = await response.json();
+        return data.U;
+    } catch (error) {
+        console.error('Error fetching U value:', error);
+        return null;
+    }
+}
+
+async function getAValue(reactorVolume) {
+    try {
+        const response = await fetch(`/get_A_value?reactor_volume=${encodeURIComponent(reactorVolume)}`);
+        const data = await response.json();
+        return data.A;
+    } catch (error) {
+        console.error('Error fetching A value:', error);
         return null;
     }
 }
