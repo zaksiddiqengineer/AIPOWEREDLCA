@@ -93,18 +93,17 @@
         </div>
 
         <div id="reactionKineticsEconomicalEnvironmentalContainer" style="display: none;">
-            <button id="reactionKineticsEconomicalEnvironmentalButton">Advance to the economic and envrionmental Analysis</button>
+            <button id="reactionKineticsEconomicalEnvironmentalButton">Advance to the economic and environmental Analysis</button>
         </div>
-        <div id="calculationResult"></div>
 
-        <div id="reactionMTSRContainer" style="display: none;">
-            <button id="reactionMTSRButton">Proceed Reaction Heat Adiabatic Temperature Rise MTSR </button>
-            <div id="reactionMTSRButtonContainer" style="display: none;">
-                <button id="calculateHeatOfReactionButton">Calculate the heat of reaction</button>
+        <div id="economicEnvironmentalContainer">
+            <div id="economicEnvironmentalFormContainer"></div>
+            <div id="calculationResult"></div>
+            <div id="reactionMTSRContainer" style="display: none;">
+                <button id="reactionMTSRButton">Proceed to  Reaction Heat Adiabatic Temperature Rise MTSR</button>
+                <button id="reactionMTSRSkipButton">Skip Reaction Heat Adiabatic Temperature Rise MTSR</button>
             </div>
-            <div id="enthalpyChangeResult"></div>
         </div>
-
     </div>
 
     <script type="module" src="../static/js/generateScaleUp.js"></script>
@@ -113,6 +112,7 @@
     <script type="module" src="../static/js/generateRecycle.js"></script>
     <script type="module" src="../static/js/generateReactionKinetics.js"></script>
     <script type="module" src="../static/js/generateKineticEconomicEnvironmental.js"></script>
+    <script type="module" src="../static/js/generateMSTR.js"></script>
     <script type="module" src="../static/js/script.js"></script>
     
 </body>

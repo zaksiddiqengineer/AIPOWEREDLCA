@@ -1,5 +1,4 @@
 export function openEconomicEnvironmentalAnalysis() {
-    // Create the container for the economic and environmental analysis
     var container = document.createElement('div');
     container.id = 'economicEnvironmentalAnalysis';
     container.innerHTML = `
@@ -28,48 +27,36 @@ export function openEconomicEnvironmentalAnalysis() {
             <label for="temperatureReaction">Temperature Reaction:</label>
             <input type="number" id="temperatureReaction" name="temperatureReaction" min="-1000" max="1000" value="25" required>
         </div>
-
         <div>
-        <label for="reactorVolume">Reactor Volume:</label>
-        <select id="reactorVolume" name="reactorVolume" required>
-            <option value="">Select Reactor Volume</option>
-            <option value="very_large">Very Large Reactor 10000-20,000 m³</option>
-            <option value="large">Large Reactor 1000-10,000 m³</option>
-            <option value="medium">Medium Reactor 100-1,000 m³</option>
-            <option value="small">Small Reactor 0-100 m³</option>
-        </select>
+            <label for="reactorVolume">Reactor Volume:</label>
+            <select id="reactorVolume" name="reactorVolume" required>
+                <option value="">Select Reactor Volume</option>
+                <option value="very_large">Very Large Reactor 10000-20,000 m³</option>
+                <option value="large">Large Reactor 1000-10,000 m³</option>
+                <option value="medium">Medium Reactor 100-1,000 m³</option>
+                <option value="small">Small Reactor 0-100 m³</option>
+            </select>
         </div>
-        
         <div>
             <label for="fuelType">Ultimate Fuel Type:</label>
             <select id="fuelType" name="fuelType" required>
                 <option value="">Select Fuel Type</option>
-                <!-- Fuel type options will be populated dynamically -->
             </select>
         </div>
         <div>
             <label for="utility">Utility:</label>
             <select id="utility" name="utility" required>
                 <option value="">Select Utility</option>
-                <!-- Utility options will be populated dynamically -->
             </select>
         </div>
         <button id="submitEconomicEnvironmentalData">Submit Data</button>
     `;
 
-    // Append the container to the document body or a specific parent element
-    document.body.appendChild(container);
-    // Or use a specific parent element, e.g., document.getElementById('parentElement').appendChild(container);
+    document.getElementById('economicEnvironmentalFormContainer').appendChild(container);
 
-    // Populate the fuel type dropdown
     populateFuelTypeDropdown();
-
-    // Add event listener for the fuel type dropdown change
     document.getElementById('fuelType').addEventListener('change', populateUtilityDropdown);
-
-    // Add event listener for the "Submit Data" button
     document.getElementById('submitEconomicEnvironmentalData').addEventListener('click', async function() {
-        // Retrieve the entered values
         var productionRate = document.getElementById('productionRate').value;
         var hoursPerDay = document.getElementById('hoursPerDay').value;
         var daysPerMonth = document.getElementById('daysPerMonth').value;
@@ -79,8 +66,7 @@ export function openEconomicEnvironmentalAnalysis() {
         var reactorVolume = document.getElementById('reactorVolume').value;
         var fuelType = document.getElementById('fuelType').value;
         var utility = document.getElementById('utility').value;
-    
-        // Retrieve the emission data
+
         var emissionData = await getEmissionData();
         if (emissionData) {
             var co2Ef = emissionData.co2_ef;
@@ -88,23 +74,16 @@ export function openEconomicEnvironmentalAnalysis() {
 
             var UValue = await getUValue(reactorVolume);
             var AValue = await getAValue(reactorVolume);
-    
-            // Retrieve the enthalpy change result and extract the numeric value
+
             var enthalpyChangeResultElement = document.getElementById('enthalpyChangeResult');
             var enthalpyChangeResultText = enthalpyChangeResultElement.textContent.trim();
-            
-            console.log('enthalpyChangeResultText:', enthalpyChangeResultText);
-
             var enthalpyChangeResultMatch = enthalpyChangeResultText.match(/-?\d+(\.\d+)?/);
             var enthalpyChangeResult = enthalpyChangeResultMatch ? parseFloat(enthalpyChangeResultMatch[0]) : NaN;
 
-        console.log('enthalpyChangeResult:', enthalpyChangeResult);
-        // Prepare data to be sent to the backend
             var data = {
                 productionRate: parseFloat(productionRate),
                 hoursPerDay: parseFloat(hoursPerDay),
                 daysPerMonth: parseFloat(daysPerMonth),
-                monthsPerYear: parseFloat(monthsPerYear),
                 monthsPerYear: parseFloat(monthsPerYear),
                 tIn: parseFloat(temperatureIn),
                 tReact: parseFloat(temperatureReaction),
@@ -114,9 +93,7 @@ export function openEconomicEnvironmentalAnalysis() {
                 effCp: parseFloat(effCp),
                 enthalpyChangeResult: enthalpyChangeResult
             };
-            console.log('Data to be sent:', data);
-    
-            // Send data to the backend
+
             try {
                 const response = await fetch('/calculate_emissions_and_mass', {
                     method: 'POST',
@@ -125,15 +102,10 @@ export function openEconomicEnvironmentalAnalysis() {
                     },
                     body: JSON.stringify(data)
                 });
-    
+
                 const result = await response.json();
-                console.log('Calculation result:', result);
+                displayCalculationResult(result);
 
-                //display the results
-                displayCalculationResult(result)
-                // Handle the result as needed
-
-                // Show the reactionMTSRContainer
                 document.getElementById('reactionMTSRContainer').style.display = 'block';
             } catch (error) {
                 console.error('Error submitting data:', error);
@@ -164,7 +136,6 @@ function displayCalculationResult(result) {
         <p>Cost Annual (USD): ${result.cost_annual_usd}</p>
     `;
 }
-
 
 // Function to populate the fuel type dropdown
 async function populateFuelTypeDropdown() {
@@ -241,4 +212,3 @@ async function getAValue(reactorVolume) {
         return null;
     }
 }
-

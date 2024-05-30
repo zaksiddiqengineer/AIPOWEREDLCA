@@ -95,3 +95,23 @@ button {
 .kinetics-option-btn:hover {
     background-color: #0056b3;
 }
+
+#economicEnvironmentalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+#economicEnvironmentalFormContainer {
+    margin-bottom: 20px;
+}
+
+#calculationResult {
+    margin-top: 20px;
+}
+
+#reactionMTSRContainer {
+    margin-top: 20px;
+}
