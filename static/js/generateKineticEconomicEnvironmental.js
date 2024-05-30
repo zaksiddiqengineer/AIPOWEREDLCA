@@ -132,6 +132,9 @@ export function openEconomicEnvironmentalAnalysis() {
                 //display the results
                 displayCalculationResult(result)
                 // Handle the result as needed
+
+                // Show the reactionMTSRContainer
+                document.getElementById('reactionMTSRContainer').style.display = 'block';
             } catch (error) {
                 console.error('Error submitting data:', error);
             }

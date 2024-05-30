@@ -191,58 +191,77 @@ def calculate_enthalpy():
     try:
         reactants = request.form['reactants']
         products = request.form['products']
-
+        
         # Debug: Print the reactants and products
         print(f"Reactants: {reactants}")
         print(f"Products: {products}")
-
+        
         # Create the JSON string containing reactants and products
         reactants_products_json = {
             "reactants": json.loads(reactants),
             "products": json.loads(products)
         }
-
+        
         # Write the JSON string to a temporary file
         with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as temp_json_file:
             json.dump(reactants_products_json, temp_json_file)
             temp_json_file_path = temp_json_file.name
-
+        
         # Create the command to run the batch file
         script_path = r'C:\Users\zaksi\LLMTESTER\run_enthalpy.bat'
         command = f'cmd.exe /c "{script_path} {temp_json_file_path}"'
-
+        
         # Debug: Print the command to ensure it is correct
         print(f"Running command: {command}")
-
+        
         # Run the batch file and capture the output
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
-
+        
         # Debug: Print the output to verify it
         print(f"Output from script: {result.stdout}")
         print(f"Error from script: {result.stderr}")
-
+        
         # Debug: Print the raw output before splitting
         print(f"Raw output: {result.stdout.strip()}")
-
+        
         # Parse the JSON output from the batch file
         output = result.stdout.strip().split('\n')[-1]
-
+        
         # Debug: Print the parsed output
         print(f"Parsed output: {output}")
-
+        
         result_json = json.loads(output)
+        
+        # Extract all the thermochemical properties
         enthalpy_change = result_json.get('enthalpyChange')
-
+        reactant_enthalpies = result_json.get('reactantEnthalpies')
+        reactant_gibbs = result_json.get('reactantGibbs')
+        reactant_zpves = result_json.get('reactantZPVEs')
+        reactant_cps = result_json.get('reactantCPs')
+        product_enthalpies = result_json.get('productEnthalpies')
+        product_gibbs = result_json.get('productGibbs')
+        product_zpves = result_json.get('productZPVEs')
+        product_cps = result_json.get('productCPs')
+        
         # Remove the temporary JSON file
         os.remove(temp_json_file_path)
-
-        if enthalpy_change is not None:
-            return jsonify({'enthalpyChange': enthalpy_change})
-        else:
-            return jsonify({'error': 'Invalid output from enthalpy calculation.'}), 500
+        
+        # Return all the extracted data as a JSON response
+        return jsonify({
+            'enthalpyChange': enthalpy_change,
+            'reactantEnthalpies': reactant_enthalpies,
+            'reactantGibbs': reactant_gibbs,
+            'reactantZPVEs': reactant_zpves,
+            'reactantCPs': reactant_cps,
+            'productEnthalpies': product_enthalpies,
+            'productGibbs': product_gibbs,
+            'productZPVEs': product_zpves,
+            'productCPs': product_cps
+        })
     except Exception as e:
         print(f"Error in calculate_enthalpy: {str(e)}")
         return jsonify({'error': 'An error occurred during enthalpy calculation.'}), 500
+    
 def extract_scores(text):
     score = 0  # Initialize score with a default valu
     score_match = re.search(r'Overall Score:\s*(High|Medium|Low)', text, re.IGNORECASE)
