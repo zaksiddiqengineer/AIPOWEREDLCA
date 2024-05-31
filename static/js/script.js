@@ -4,7 +4,7 @@ import { askQuestion } from './generateSafety.js';
 import { askQuestionRecycle } from './generateRecycle.js';
 import { estimateHeatOfReaction } from './generateReactionKinetics.js';
 import { openEconomicEnvironmentalAnalysis } from './generateKineticEconomicEnvironmental.js';
-import { calculateMTSR } from './generateMSTR.js';
+import { calculateMTSR } from './generateMTSR.js';
 
 // static/js/script.js
 var reactantCount = 0;

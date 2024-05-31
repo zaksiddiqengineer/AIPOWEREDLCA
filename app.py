@@ -8,12 +8,93 @@ import subprocess
 import shlex
 import tempfile  
 import logging
+from rdkit import Chem
+from rdkit.Chem import AllChem
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/calculate_mtsr', methods=['POST'])
+def calculate_mtsr():
+    data = request.get_json()
+    reactants = data['reactants']
+    products = data['products']
+    enthalpy_change = data['enthalpyChange']  # in kJ/mol
+
+    # Calculate molar masses of reactants and products
+    molar_masses = {}
+    for reactant in reactants:
+        smile = reactant['smile']
+        mol = Chem.MolFromSmiles(smile)
+        molar_mass = AllChem.CalcExactMolWt(mol)
+        molar_masses[smile] = molar_mass
+
+    for product in products:
+        smile = product['smile']
+        mol = Chem.MolFromSmiles(smile)
+        molar_mass = AllChem.CalcExactMolWt(mol)
+        molar_masses[smile] = molar_mass
+
+    print("Molar Masses:", molar_masses)
+
+    # Convert Heat of Reaction to kJ/kg
+    total_product_mass = sum(float(product['mass']) for product in products)  # in kg
+    total_product_moles = sum((float(product['mass']) * 1000) / molar_masses[product['smile']] for product in products)  # converting mass to g
+    # Average molar mass of products (g/mol)
+    average_molar_mass_products = total_product_mass * 1000 / total_product_moles  # converting total_product_mass to g for consistency
+    # Convert average molar mass to kg/mol for final division
+    average_molar_mass_products_kg_mol = average_molar_mass_products / 1000  # converting g/mol to kg/mol
+    # Convert enthalpy change from kJ/mol to kJ/kg
+    delta_hr_kj_kg = enthalpy_change / average_molar_mass_products_kg_mol  # kJ/kg
+
+    print("Total Product Mass (kg):", total_product_mass)
+    print("Total Product Moles:", total_product_moles)
+    print("Average Molar Mass of Products (kg/mol):", average_molar_mass_products_kg_mol)
+    print("Delta H (kJ/kg):", delta_hr_kj_kg)
+
+    # Convert Specific Heat Capacities to kJ/kgK
+    specific_heat_capacities = {}
+    for reactant in reactants:
+        smile = reactant['smile']
+        cp_cal_mol_k = float(reactant['cp'])
+        cp_kj_mol_k = cp_cal_mol_k * 0.004184
+        cp_kj_kg_k = cp_kj_mol_k / molar_masses[smile] * 1000  # convert from per mol to per kg
+        specific_heat_capacities[smile] = cp_kj_kg_k
+
+    print("Specific Heat Capacities (kJ/kgK):", specific_heat_capacities)
+
+    # Calculate the Specific Heat Capacity of the Mixture
+    cp_mixture = 0
+    for reactant in reactants:
+        smile = reactant['smile']
+        mass = float(reactant['mass'])
+        mass_fraction = mass / sum(float(r['mass']) for r in reactants)
+        cp_mixture += mass_fraction * specific_heat_capacities[smile]
+
+    print("Mixture Specific Heat Capacity (kJ/kgK):", cp_mixture)
+
+    # Calculate the Adiabatic Temperature Rise (ΔTad)
+    delta_tad = -delta_hr_kj_kg / cp_mixture
+
+    # Calculate the Maximum Temperature of the Synthesis Reaction (MTSR)
+    t_process = 298.15  # Example value, replace with actual initial process temperature
+    mtsr = t_process + delta_tad
+
+    print("Adiabatic Temperature Rise (ΔTad):", delta_tad)
+    print("Maximum Temperature of the Synthesis Reaction (MTSR):", mtsr)
+
+    return jsonify({
+        'mtsr': mtsr,
+        'deltaTad': delta_tad
+        
+    })
+
+
+
 
 @app.route('/calculate_emissions_and_mass', methods=['POST'])
 def calculate_emissions_and_mass_route():

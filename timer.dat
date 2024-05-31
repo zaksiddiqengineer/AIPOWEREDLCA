@@ -2071,3 +2071,553 @@ Grad: JK                            :      0.000u      0.000s     29.396w     79
 Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
 
 **************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 18:29:01 2024
+Timers Off: Thu May 30 18:30:11 2024
+
+Wall Time:       70.14 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.538w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.535w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.288w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.031w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.541w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.498w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.165w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.149w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.148w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.004w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.003w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.948w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.304w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.098w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     27.008w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.538w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.891w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.288w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.031w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.541w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.498w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.165w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.149w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.148w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.004w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.003w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.948w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.304w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.098w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     27.008w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.644w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 18:34:38 2024
+Timers Off: Thu May 30 18:35:52 2024
+
+Wall Time:       73.71 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     13.369w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.608w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.311w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.038w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.612w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.564w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.169w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.154w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.152w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.002w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.316w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.103w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.589w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     13.369w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.938w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.311w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.038w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.612w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.564w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.169w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.154w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.152w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.002w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.316w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.103w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.589w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.670w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 18:39:55 2024
+Timers Off: Thu May 30 18:41:10 2024
+
+Wall Time:       74.48 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     13.186w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.656w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.324w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.045w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.522w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.475w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.158w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.143w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.142w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.004w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.974w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.311w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.102w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.651w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     13.186w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.998w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.324w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.045w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.522w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.475w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.158w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.143w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.142w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.004w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.974w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.311w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.102w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.651w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.658w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 19:58:25 2024
+Timers Off: Thu May 30 19:59:39 2024
+
+Wall Time:       73.78 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.755w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.416w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.323w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.044w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.599w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.552w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.143w    785 calls
+JK: D                               :      0.000u      0.000s      0.005w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.127w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.125w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.256w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.319w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.108w     79 calls
+Grad: S                             :      0.000u      0.000s      0.017w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.522w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.755w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.846w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.323w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.044w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.599w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.552w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.143w    785 calls
+| JK: D                             :      0.000u      0.000s      0.005w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.127w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.125w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.256w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.319w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.108w     79 calls
+Grad: S                             :      0.000u      0.000s      0.017w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.522w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.570w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 20:44:51 2024
+Timers Off: Thu May 30 20:46:02 2024
+
+Wall Time:       71.22 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.704w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.571w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.280w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.035w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.557w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.511w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.194w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.178w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.177w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.980w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.313w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.110w     79 calls
+Grad: S                             :      0.000u      0.000s      0.016w     79 calls
+Grad: JK                            :      0.000u      0.000s     27.697w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.704w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.925w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.280w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.035w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.557w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.511w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.194w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.178w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.177w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.980w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.313w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.110w     79 calls
+Grad: S                             :      0.000u      0.000s      0.016w     79 calls
+Grad: JK                            :      0.000u      0.000s     27.697w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.645w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 20:52:23 2024
+Timers Off: Thu May 30 20:53:33 2024
+
+Wall Time:       70.71 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.892w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.720w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.248w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.033w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.679w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.636w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.177w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.161w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.159w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.959w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.307w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.100w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.471w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.892w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      1.013w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.248w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.033w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.679w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.636w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.177w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.161w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.159w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      1.959w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.307w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.100w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.471w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.707w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 21:46:23 2024
+Timers Off: Thu May 30 21:47:34 2024
+
+Wall Time:       71.40 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.888w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.443w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.303w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.040w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.531w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.487w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.146w    785 calls
+JK: D                               :      0.000u      0.000s      0.005w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.129w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.127w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.160w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.317w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.104w     79 calls
+Grad: S                             :      0.000u      0.000s      0.017w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.350w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.888w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.874w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.303w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.040w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.531w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.487w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.146w    785 calls
+| JK: D                             :      0.000u      0.000s      0.005w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.129w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.127w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.160w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.317w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.104w     79 calls
+Grad: S                             :      0.000u      0.000s      0.017w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.350w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.569w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 21:48:33 2024
+Timers Off: Thu May 30 21:49:47 2024
+
+Wall Time:       73.94 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.971w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.464w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.280w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.036w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.550w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.504w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.154w    785 calls
+JK: D                               :      0.000u      0.000s      0.005w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.136w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.135w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.072w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.316w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.105w     79 calls
+Grad: S                             :      0.000u      0.000s      0.016w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.458w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.971w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.880w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.280w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.036w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.550w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.504w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.154w    785 calls
+| JK: D                             :      0.000u      0.000s      0.005w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.136w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.135w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      2.072w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.316w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.105w     79 calls
+Grad: S                             :      0.000u      0.000s      0.016w     79 calls
+Grad: JK                            :      0.000u      0.000s     28.458w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.584w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Thu May 30 21:50:46 2024
+Timers Off: Thu May 30 21:51:00 2024
+
+Wall Time:       14.43 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s      1.238w     11 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      0.185w     32 calls
+HF: Form core H                     :      0.000u      0.000s      0.039w     11 calls
+HF: Form S/X                        :      0.000u      0.000s      0.004w     11 calls
+HF: Guess                           :      0.000u      0.000s      0.350w     11 calls
+SAD Guess                           :      0.000u      0.000s      0.344w     11 calls
+HF: Form G                          :      0.000u      0.000s      0.090w    106 calls
+JK: D                               :      0.000u      0.000s      0.000w    106 calls
+JK: USO2AO                          :      0.000u      0.000s      0.000w    106 calls
+JK: JK                              :      0.000u      0.000s      0.088w    106 calls
+PK computes JK                      :      0.000u      0.000s      0.088w    106 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    106 calls
+HF: Form F                          :      0.000u      0.000s      0.001w    106 calls
+HF: Form D                          :      0.000u      0.000s      0.000w    106 calls
+HF: DIIS                            :      0.000u      0.000s      0.427w     95 calls
+HF: Form C                          :      0.000u      0.000s      0.036w     95 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.010w     10 calls
+Grad: S                             :      0.000u      0.000s      0.002w     10 calls
+Grad: JK                            :      0.000u      0.000s      2.502w     10 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     10 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s      1.238w     11 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.112w     22 calls
+HF: Form core H                     :      0.000u      0.000s      0.039w     11 calls
+HF: Form S/X                        :      0.000u      0.000s      0.004w     11 calls
+HF: Guess                           :      0.000u      0.000s      0.350w     11 calls
+| SAD Guess                         :      0.000u      0.000s      0.344w     11 calls
+HF: Form G                          :      0.000u      0.000s      0.090w    106 calls
+| JK: D                             :      0.000u      0.000s      0.000w    106 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.000w    106 calls
+| JK: JK                            :      0.000u      0.000s      0.088w    106 calls
+| | PK computes JK                  :      0.000u      0.000s      0.088w    106 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    106 calls
+HF: Form F                          :      0.000u      0.000s      0.001w    106 calls
+HF: Form D                          :      0.000u      0.000s      0.000w    106 calls
+HF: DIIS                            :      0.000u      0.000s      0.427w     95 calls
+HF: Form C                          :      0.000u      0.000s      0.036w     95 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.010w     10 calls
+Grad: S                             :      0.000u      0.000s      0.002w     10 calls
+Grad: JK                            :      0.000u      0.000s      2.502w     10 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.073w     10 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     10 calls
+
+**************************************************************************************
+
+Host: zak_rig
+
+Timers On : Fri May 31 15:19:25 2024
+Timers Off: Fri May 31 15:20:36 2024
+
+Wall Time:       71.49 seconds
+
+                                                       Time (seconds)
+Module                                       User      System        Wall        Calls
+Total PK formation time             :      0.000u      0.000s     12.403w     82 calls
+Libint2ERI::Libint2ERI              :      0.000u      0.000s      1.407w    243 calls
+HF: Form core H                     :      0.000u      0.000s      0.300w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.036w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.637w     82 calls
+SAD Guess                           :      0.000u      0.000s      2.594w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.148w    785 calls
+JK: D                               :      0.000u      0.000s      0.004w    785 calls
+JK: USO2AO                          :      0.000u      0.000s      0.001w    785 calls
+JK: JK                              :      0.000u      0.000s      1.133w    785 calls
+PK computes JK                      :      0.000u      0.000s      1.132w    785 calls
+JK: AO2USO                          :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      3.035w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.297w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.101w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     26.643w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+--------------------------------------------------------------------------------------
+Total PK formation time             :      0.000u      0.000s     12.403w     82 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.831w    164 calls
+HF: Form core H                     :      0.000u      0.000s      0.300w     82 calls
+HF: Form S/X                        :      0.000u      0.000s      0.036w     82 calls
+HF: Guess                           :      0.000u      0.000s      2.637w     82 calls
+| SAD Guess                         :      0.000u      0.000s      2.594w     82 calls
+HF: Form G                          :      0.000u      0.000s      1.148w    785 calls
+| JK: D                             :      0.000u      0.000s      0.004w    785 calls
+| JK: USO2AO                        :      0.000u      0.000s      0.001w    785 calls
+| JK: JK                            :      0.000u      0.000s      1.133w    785 calls
+| | PK computes JK                  :      0.000u      0.000s      1.132w    785 calls
+| JK: AO2USO                        :      0.000u      0.000s      0.000w    785 calls
+HF: Form F                          :      0.000u      0.000s      0.005w    785 calls
+HF: Form D                          :      0.000u      0.000s      0.004w    785 calls
+HF: DIIS                            :      0.000u      0.000s      3.035w    703 calls
+HF: Form C                          :      0.000u      0.000s      0.297w    703 calls
+Grad: V T Perturb                   :      0.000u      0.000s      0.101w     79 calls
+Grad: S                             :      0.000u      0.000s      0.015w     79 calls
+Grad: JK                            :      0.000u      0.000s     26.643w     79 calls
+| Libint2ERI::Libint2ERI            :      0.000u      0.000s      0.575w     79 calls
+Grad: XC                            :      0.000u      0.000s      0.000w     79 calls
+
+**************************************************************************************

@@ -67,6 +67,24 @@ export function estimateHeatOfReaction() {
             let productGibbs = data.productGibbs;
             let productZPVEs = data.productZPVEs;
             let productCPs = data.productCPs;
+
+            // Log the received reactantCPs and productCPs arrays
+            console.log('Received reactantCPs:', reactantCPs);
+            console.log('Received productCPs:', productCPs);
+
+             // Store the variables in local storage
+            localStorage.setItem('enthalpyChange', enthalpyChange);
+            localStorage.setItem('reactantCPs', JSON.stringify(reactantCPs));
+            localStorage.setItem('productCPs', JSON.stringify(productCPs));
+
+            // Retrieve the stored variables from local storage and log them
+            let storedEnthalpyChange = localStorage.getItem('enthalpyChange');
+            let storedReactantCPs = JSON.parse(localStorage.getItem('reactantCPs'));
+            let storedProductCPs = JSON.parse(localStorage.getItem('productCPs'));
+            console.log('Stored enthalpyChange:', storedEnthalpyChange);
+            console.log('Stored reactantCPs:', storedReactantCPs);
+            console.log('Stored productCPs:', storedProductCPs);
+
     
             // Display only the calculated enthalpy change in the UI
             document.getElementById('enthalpyChangeResult').textContent = 'Heat of reaction: ' + enthalpyChange + ' kJ/mol';
