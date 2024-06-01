@@ -1,0 +1,23 @@
+Utility,Cost index [Cost/KJ],Eff Cp[KJ/KG-C],Ultimate Fuel Type,CO2 EF [KG/KJ],Heat exchanger Type,Delta T
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Cooling Water,2.12E-07,4.183,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Air,1.00E-09,1,USTitle40: Natural gas,5.03E-05,Air Cooler,25
+Refrigerant 1,2.74E-06,4,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 2,3.36E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 3,5.88E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Refrigerant 4,8.53E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,15
+Very Low Temperature,8.90E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,50
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Cooling Water,2.12E-07,4.183,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Air,1.00E-09,1,USTitle40: Wood,5.03E-05,Air Cooler,25
+Refrigerant 1,2.74E-06,4,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 2,3.36E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 3,5.88E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Refrigerant 4,8.53E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,15
+Very Low Temperature,8.90E-06,1.341,USTitle40: Wood,5.03E-05,Shell & Tube,50

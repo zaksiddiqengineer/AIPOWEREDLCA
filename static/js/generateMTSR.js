@@ -49,8 +49,15 @@ export function calculateMTSR() {
       document.getElementById('mtsrResult').textContent = 'MTSR: ' + mtsrData.mtsr;
       document.getElementById('deltaTadResult').textContent = 'ΔTad: ' + mtsrData.deltaTad;
 
+      // Save the additional variables to localStorage
+      localStorage.setItem('cpMixture', mtsrData.cpMixture);
+      localStorage.setItem('totalHeat', mtsrData.totalHeat);
+      localStorage.setItem('totalProductMass', mtsrData.totalProductMass);
+      localStorage.setItem('totalProductMoles', mtsrData.totalProductMoles);
+
+
       // Show the button to advance to the economic and environmental analysis
-      document.getElementById('reactionKineticsEconomicalEnvironmentalContainer').style.display = 'block';
+      document.getElementById('MTSREconomicalContainer').style.display = 'block';
 
 
     })

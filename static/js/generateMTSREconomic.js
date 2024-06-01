@@ -1,67 +1,60 @@
+
 export function openMTSREconomicAnalysis() {
     var container = document.createElement('div');
-    container.id = 'MTSReconomicAnalysis';
+    container.id = 'MTSREconomicAnalysis';
     container.innerHTML = `
-        <h2>Economic And evironmental  Analysis</h2>
+        <h2>Economic And Environmental Analysis</h2>
         <div>
-            <label for="fuelType">Ultimate Fuel Type:</label>
-            <select id="fuelType" name="fuelType" required>
+            <label for="fuelTypeMTSR">Ultimate Fuel Type:</label>
+            <select id="fuelTypeMTSR" name="fuelType" required>
                 <option value="">Select Fuel Type</option>
             </select>
         </div>
         <div>
-            <label for="utility">Utility:</label>
-            <select id="utility" name="utility" required>
+            <label for="utilityMTSR">Utility:</label>
+            <select id="utilityMTSR" name="utility" required>
                 <option value="">Select Utility</option>
             </select>
         </div>
-        <button id="submitEconomicEnvironmentalData">Submit Data</button>
+        <button id="submitEconomicEnvironmentalDataMTSR">Submit Data</button>
     `;
 
-    document.getElementById('economicEnvironmentalFormContainer').appendChild(container);
+    document.getElementById('MTSREconomicalContainer').appendChild(container);
 
-    populateFuelTypeDropdown();
-    document.getElementById('fuelType').addEventListener('change', populateUtilityDropdown);
-    document.getElementById('submitEconomicEnvironmentalData').addEventListener('click', async function() {
-        var productionRate = document.getElementById('productionRate').value;
-        var hoursPerDay = document.getElementById('hoursPerDay').value;
-        var daysPerMonth = document.getElementById('daysPerMonth').value;
-        var monthsPerYear = document.getElementById('monthsPerYear').value;
-        var temperatureIn = document.getElementById('temperatureIn').value;
-        var temperatureReaction = document.getElementById('temperatureReaction').value;
-        var reactorVolume = document.getElementById('reactorVolume').value;
-        var fuelType = document.getElementById('fuelType').value;
-        var utility = document.getElementById('utility').value;
+    populateFuelTypeDropdownMTSR();
+    document.getElementById('fuelTypeMTSR').addEventListener('change', populateUtilityDropdownMTSR);
 
-        var emissionData = await getEmissionData();
+    document.getElementById('submitEconomicEnvironmentalDataMTSR').addEventListener('click', async function() {
+        var fuelType = document.getElementById('fuelTypeMTSR').value;
+        var utility = document.getElementById('utilityMTSR').value;
+        var cpMixture = parseFloat(localStorage.getItem('cpMixture'));
+        var totalHeat = parseFloat(localStorage.getItem('totalHeat'));
+        var totalProductMass = parseFloat(localStorage.getItem('totalProductMass'));
+        var totalProductMoles = parseFloat(localStorage.getItem('totalProductMoles'));
+
+        var emissionData = await getEmissionDataMTSR();
         if (emissionData) {
             var co2Ef = emissionData.co2_ef;
             var effCp = emissionData.eff_cp;
-
-            var UValue = await getUValue(reactorVolume);
-            var AValue = await getAValue(reactorVolume);
-
-            var enthalpyChangeResultElement = document.getElementById('enthalpyChangeResult');
-            var enthalpyChangeResultText = enthalpyChangeResultElement.textContent.trim();
-            var enthalpyChangeResultMatch = enthalpyChangeResultText.match(/-?\d+(\.\d+)?/);
-            var enthalpyChangeResult = enthalpyChangeResultMatch ? parseFloat(enthalpyChangeResultMatch[0]) : NaN;
+            var deltaT = emissionData.deltaT;
+            var costIndex = emissionData.costIndex;
 
             var data = {
-                productionRate: parseFloat(productionRate),
-                hoursPerDay: parseFloat(hoursPerDay),
-                daysPerMonth: parseFloat(daysPerMonth),
-                monthsPerYear: parseFloat(monthsPerYear),
-                tIn: parseFloat(temperatureIn),
-                tReact: parseFloat(temperatureReaction),
+                cpMixture: parseFloat(cpMixture),
+                totalHeat: parseFloat(totalHeat),
+                totalProductMass: parseFloat(totalProductMass),
+                totalProductMoles: parseFloat(totalProductMoles),
                 co2Ef: parseFloat(co2Ef),
-                UValue: parseFloat(UValue),
-                AValue: parseFloat(AValue),
                 effCp: parseFloat(effCp),
-                enthalpyChangeResult: enthalpyChangeResult
+                deltaT: parseFloat(deltaT),
+                costIndex: parseFloat(costIndex)
             };
 
+            // Log all data to the console
+            console.log('Data for calculation:', data);
+
             try {
-                const response = await fetch('/calculate_emissions_and_mass', {
+                const response = await fetch('/calculate_water', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -72,7 +65,6 @@ export function openMTSREconomicAnalysis() {
                 const result = await response.json();
                 displayCalculationResult(result);
 
-                document.getElementById('reactionMTSRContainer').style.display = 'block';
             } catch (error) {
                 console.error('Error submitting data:', error);
             }
@@ -81,34 +73,27 @@ export function openMTSREconomicAnalysis() {
 }
 
 function displayCalculationResult(result) {
-    var resultContainer = document.getElementById('calculationResult');
+    var resultContainer = document.getElementById('MSTRCalculationResult');
     
     if (!resultContainer) {
         resultContainer = document.createElement('div');
-        resultContainer.id = 'calculationResult';
+        resultContainer.id = 'MSTRCalculationResult';
         document.body.appendChild(resultContainer);
     }
 
     resultContainer.innerHTML = `
-        <h3>Calculation Result</h3>
-        <p>Moles per Month: ${result.moles_per_month}</p>
-        <p>Q Monthly (kJ): ${result.Q_monthly_kJ}</p>
-        <p>Q Annual (kJ): ${result.Q_annual_kJ}</p>
-        <p>Heating/Cooling Needed: ${result.heating_cooling_needed}</p>
-        <p>CO2 Emissions Monthly (kg): ${result.CO2_emissions_monthly_kg}</p>
-        <p>CO2 Emissions Annual (kg): ${result.CO2_emissions_annual_kg}</p>
-        <p>Mass of Fluid Monthly (kg): ${result.mass_fluid_monthly_kg}</p>
-        <p>Cost Monthly (USD): ${result.cost_monthly_usd}</p>
-        <p>Cost Annual (USD): ${result.cost_annual_usd}</p>
+        <p>Mass of Cooling Liquid: ${result.massCoolingLiquid} kg</p>
+        <p>Emissions: ${result.emissions} kg CO2</p>
+        <p>Cost: ${result.cost}</p>
     `;
 }
 
 // Function to populate the fuel type dropdown
-async function populateFuelTypeDropdown() {
+async function populateFuelTypeDropdownMTSR() {
     try {
-        const response = await fetch('/get_fuel_types');
+        const response = await fetch('/get_fuel_types_MTSR');
         const fuelTypes = await response.json();
-        const fuelTypeDropdown = document.getElementById('fuelType');
+        const fuelTypeDropdown = document.getElementById('fuelTypeMTSR');
         
         fuelTypes.forEach(fuelType => {
             const option = document.createElement('option');
@@ -116,19 +101,22 @@ async function populateFuelTypeDropdown() {
             option.textContent = fuelType;
             fuelTypeDropdown.appendChild(option);
         });
+
+        console.log('Fuel Types:', fuelTypes);  // Log the fuel types received
+        console.log('Fuel Type Dropdown:', fuelTypeDropdown.innerHTML);  // Verify if the options are added correctly
     } catch (error) {
         console.error('Error fetching fuel types:', error);
     }
 }
 
 // Function to populate the utility dropdown based on the selected fuel type
-async function populateUtilityDropdown() {
-    const fuelType = document.getElementById('fuelType').value;
-    const utilityDropdown = document.getElementById('utility');
+async function populateUtilityDropdownMTSR() {
+    const fuelType = document.getElementById('fuelTypeMTSR').value;
+    const utilityDropdown = document.getElementById('utilityMTSR');
     utilityDropdown.innerHTML = '<option value="">Select Utility</option>';
     
     try {
-        const response = await fetch(`/get_utilities?fuel_type=${encodeURIComponent(fuelType)}`);
+        const response = await fetch(`/get_utilities_MTSR?fuel_type=${encodeURIComponent(fuelType)}`);
         const utilities = await response.json();
         
         utilities.forEach(utility => {
@@ -137,44 +125,43 @@ async function populateUtilityDropdown() {
             option.textContent = utility;
             utilityDropdown.appendChild(option);
         });
+
+        console.log('Utilities:', utilities);  // Log the utilities received
+        console.log('Utility Dropdown:', utilityDropdown.innerHTML);  // Verify if the options are added correctly
     } catch (error) {
         console.error('Error fetching utilities:', error);
     }
 }
 
-// Function to retrieve the emission data based on the selected fuel type and utility
-async function getEmissionData() {
-    const fuelType = document.getElementById('fuelType').value;
-    const utility = document.getElementById('utility').value;
-    
+async function getEmissionDataMTSR() {
+    const fuelType = document.getElementById('fuelTypeMTSR').value;
+    const utility = document.getElementById('utilityMTSR').value;
+
     try {
-        const response = await fetch(`/get_emission_data?fuel_type=${encodeURIComponent(fuelType)}&utility=${encodeURIComponent(utility)}`);
-        const emissionData = await response.json();
-        return emissionData;
+        const emissionResponse = await fetch(`/get_emission_data?fuel_type=${encodeURIComponent(fuelType)}&utility=${encodeURIComponent(utility)}`);
+        const emissionData = await emissionResponse.json();
+
+        const deltaTResponse = await fetch(`/get_utility_deltaT?utility=${encodeURIComponent(utility)}`);
+        const deltaTData = await deltaTResponse.json();
+
+        const costIndexResponse = await fetch(`/get_utility_cost_index?utility=${encodeURIComponent(utility)}`);
+        const costIndexData = await costIndexResponse.json();
+
+        if (emissionData.error || deltaTData.error || costIndexData.error) {
+            console.error(`Error fetching data: ${emissionData.error || deltaTData.error || costIndexData.error}`);
+            return null;
+        }
+
+        return {
+            co2_ef: emissionData.co2_ef,
+            eff_cp: emissionData.eff_cp,
+            deltaT: deltaTData.deltaT,
+            costIndex: costIndexData.costIndex
+        };
     } catch (error) {
         console.error('Error fetching emission data:', error);
         return null;
     }
 }
 
-async function getUValue(reactorVolume) {
-    try {
-        const response = await fetch(`/get_U_value?reactor_volume=${encodeURIComponent(reactorVolume)}`);
-        const data = await response.json();
-        return data.U;
-    } catch (error) {
-        console.error('Error fetching U value:', error);
-        return null;
-    }
-}
 
-async function getAValue(reactorVolume) {
-    try {
-        const response = await fetch(`/get_A_value?reactor_volume=${encodeURIComponent(reactorVolume)}`);
-        const data = await response.json();
-        return data.A;
-    } catch (error) {
-        console.error('Error fetching A value:', error);
-        return null;
-    }
-}

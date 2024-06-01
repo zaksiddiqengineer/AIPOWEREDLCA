@@ -4,6 +4,7 @@ import { askQuestion } from './generateSafety.js';
 import { askQuestionRecycle } from './generateRecycle.js';
 import { estimateHeatOfReaction } from './generateReactionKinetics.js';
 import { openEconomicEnvironmentalAnalysis } from './generateKineticEconomicEnvironmental.js';
+import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
 
 // static/js/script.js
@@ -264,4 +265,8 @@ document.getElementById('reactionKineticsEconomicalEnvironmentalButton').addEven
 });
 
 document.getElementById('reactionMTSRButton').addEventListener('click', calculateMTSR);
+
+document.getElementById('economicMTSRButton').addEventListener('click', function() {
+    openMTSREconomicAnalysis();
+});
 
