@@ -1,4 +1,3 @@
-
 export function openMTSREconomicAnalysis() {
     var container = document.createElement('div');
     container.id = 'MTSREconomicAnalysis';
@@ -50,9 +49,6 @@ export function openMTSREconomicAnalysis() {
                 costIndex: parseFloat(costIndex)
             };
 
-            // Log all data to the console
-            console.log('Data for calculation:', data);
-
             try {
                 const response = await fetch('/calculate_water', {
                     method: 'POST',
@@ -78,7 +74,10 @@ function displayCalculationResult(result) {
     if (!resultContainer) {
         resultContainer = document.createElement('div');
         resultContainer.id = 'MSTRCalculationResult';
-        document.body.appendChild(resultContainer);
+        document.getElementById('MTSREconomicAnalysis').appendChild(resultContainer);
+    } else {
+        // Move resultContainer to the end of MTSREconomicAnalysis if it already exists
+        document.getElementById('MTSREconomicAnalysis').appendChild(resultContainer);
     }
 
     resultContainer.innerHTML = `
@@ -102,8 +101,8 @@ async function populateFuelTypeDropdownMTSR() {
             fuelTypeDropdown.appendChild(option);
         });
 
-        console.log('Fuel Types:', fuelTypes);  // Log the fuel types received
-        console.log('Fuel Type Dropdown:', fuelTypeDropdown.innerHTML);  // Verify if the options are added correctly
+        console.log('Fuel Types:', fuelTypes);
+        console.log('Fuel Type Dropdown:', fuelTypeDropdown.innerHTML);
     } catch (error) {
         console.error('Error fetching fuel types:', error);
     }
@@ -126,8 +125,8 @@ async function populateUtilityDropdownMTSR() {
             utilityDropdown.appendChild(option);
         });
 
-        console.log('Utilities:', utilities);  // Log the utilities received
-        console.log('Utility Dropdown:', utilityDropdown.innerHTML);  // Verify if the options are added correctly
+        console.log('Utilities:', utilities);
+        console.log('Utility Dropdown:', utilityDropdown.innerHTML);
     } catch (error) {
         console.error('Error fetching utilities:', error);
     }
@@ -163,5 +162,3 @@ async function getEmissionDataMTSR() {
         return null;
     }
 }
-
-
