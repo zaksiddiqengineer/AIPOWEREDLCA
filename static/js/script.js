@@ -7,6 +7,7 @@ import { openEconomicEnvironmentalAnalysis } from './generateKineticEconomicEnvi
 import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
 import { askQuestionMixing } from './generateMixing.js';
+import { askQuestionRate } from './generateRate.js';
 
 // static/js/script.js
 var reactantCount = 0;
@@ -276,5 +277,12 @@ document.getElementById('mixingAnalysisButton').addEventListener('click', () => 
     document.getElementById('mixingWizard').style.display = 'block';
     document.getElementById('mixingScorePlotContainer').style.display = 'block';
     askQuestionMixing('typeOfReaction');
+});
+
+document.getElementById('rateAnalysisButton').addEventListener('click', () => {
+    document.getElementById('rateContainer').style.display = 'none';
+    document.getElementById('rateWizard').style.display = 'block';
+    document.getElementById('rateScorePlotContainer').style.display = 'block';
+    askQuestionRate('impactOnYield');
 });
 

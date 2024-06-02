@@ -5521,6 +5521,7 @@ export function askQuestionMixing(questionKey) {
 
                 // const reactionKineticsContainer = document.getElementById('reactionKineticsContainer');
                 // reactionKineticsContainer.style.display = 'block';
+                document.getElementById('rateContainer').style.display = 'block';
             }
         });
         answersDiv.appendChild(button);
