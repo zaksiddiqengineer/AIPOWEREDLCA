@@ -23,7 +23,8 @@
             </div>
             <button id="addProductBtn">Add Product</button>
             <button id="generateLCABtn">Generate Life Cycle Analysis</button>
-            <button id="generateScaleUpBtn">Generate Scale Up Analysis</button>
+            <button id="generateScaleUpBtn">Scale Up Assesment</button>
+            <button id="generateAIScaleUpBtn">Generate Scale Up Assesment</button>
         </div>
         <div id="environmentalReport" style="display: none;">
             <h2>Environmental Report</h2>
@@ -110,8 +111,24 @@
         <div id="MTSREconomicalContainer" style="display: none;">
             <button id="economicMTSRButton">Proceed to  Reaction Heat Adiabatic Temperature Rise MTSR economics</button>
             <div id="MSTRCalculationResult"></div>
-
         </div>
+
+        <div id="mixingContainer" style="display: none;">
+            <button id="mixingAnalysisButton">Proceed to  reaction mixing </button>
+        </div>
+        <div id="mixingWizard" style="display: none;">
+            <h2>mixing Analysis</h2>
+            <div id="mixingQuestion"></div>
+            <div id="mixingAnswers"></div>
+        </div>
+        <div id="mixingScorePlotContainer" style="display: none;">
+            <canvas id="mixingScorePlots"></canvas>
+        </div>
+
+        <div id="rateContainer" style="display: none;">
+            <button id="rateAnalysisButton">Proceed to   reaction rate </button>
+        </div>
+
 
     </div>
 
@@ -123,6 +140,8 @@
     <script type="module" src="../static/js/generateKineticEconomicEnvironmental.js"></script>
     <script type="module" src="../static/js/generateMTSR.js"></script>
     <script type="module" src="../static/js/generateMTSREconomic.js"></script>
+    <script type="module" src="../static/js/generateMixing.js"></script>
+    <script type="module" src="../static/js/generateRate.js"></script>
     <script type="module" src="../static/js/script.js"></script>
     
 </body>

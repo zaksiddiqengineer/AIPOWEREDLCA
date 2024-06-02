@@ -6,6 +6,7 @@ import { estimateHeatOfReaction } from './generateReactionKinetics.js';
 import { openEconomicEnvironmentalAnalysis } from './generateKineticEconomicEnvironmental.js';
 import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
+import { askQuestionMixing } from './generateMixing.js';
 
 // static/js/script.js
 var reactantCount = 0;
@@ -268,5 +269,12 @@ document.getElementById('reactionMTSRButton').addEventListener('click', calculat
 
 document.getElementById('economicMTSRButton').addEventListener('click', function() {
     openMTSREconomicAnalysis();
+});
+
+document.getElementById('mixingAnalysisButton').addEventListener('click', () => {
+    document.getElementById('mixingContainer').style.display = 'none';
+    document.getElementById('mixingWizard').style.display = 'block';
+    document.getElementById('mixingScorePlotContainer').style.display = 'block';
+    askQuestionMixing('typeOfReaction');
 });
 

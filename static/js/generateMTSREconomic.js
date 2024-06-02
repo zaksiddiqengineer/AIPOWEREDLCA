@@ -61,6 +61,9 @@ export function openMTSREconomicAnalysis() {
                 const result = await response.json();
                 displayCalculationResult(result);
 
+                // Show the button to advance to the economic and environmental analysis
+                document.getElementById('mixingContainer').style.display = 'block';
+
             } catch (error) {
                 console.error('Error submitting data:', error);
             }

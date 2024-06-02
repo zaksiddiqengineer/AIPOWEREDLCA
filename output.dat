@@ -8,7 +8,7 @@ Scratch directory: C:\Users\zaksi\AppData\Local\Temp/
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:31 2024
+*** at Sun Jun  2 18:43:41 2024
 
    => Loading Basis Set <=
 
@@ -204,15 +204,15 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:32 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:41 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         28 seconds =       0.47 minutes
+	total time  =         26 seconds =       0.43 minutes
 
          ----------------------------------------------------------
                                    FINDIF
@@ -273,9 +273,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -338,7 +338,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:32 2024
+*** at Sun Jun  2 18:43:41 2024
 
    => Loading Basis Set <=
 
@@ -536,18 +536,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:32 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:42 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         28 seconds =       0.47 minutes
+	total time  =         27 seconds =       0.45 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:32 2024
+*** at Sun Jun  2 18:43:42 2024
 
 
          ------------------------------------------------------------
@@ -609,18 +609,18 @@ Total time:
        8        0.001128765014    -0.010864606785    -0.006972598124
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:33 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:42 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         29 seconds =       0.48 minutes
+	total time  =         27 seconds =       0.45 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -655,9 +655,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -720,7 +720,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:33 2024
+*** at Sun Jun  2 18:43:42 2024
 
    => Loading Basis Set <=
 
@@ -919,18 +919,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:33 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:43 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         29 seconds =       0.48 minutes
+	total time  =         28 seconds =       0.47 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:33 2024
+*** at Sun Jun  2 18:43:43 2024
 
 
          ------------------------------------------------------------
@@ -992,7 +992,7 @@ Total time:
        8        0.001156983142    -0.010858049599    -0.006971671226
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:33 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:43 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -1000,10 +1000,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         29 seconds =       0.48 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.96
 
 
     -----------------------------------------------------------------------
@@ -1038,9 +1038,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -1103,7 +1103,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:34 2024
+*** at Sun Jun  2 18:43:43 2024
 
    => Loading Basis Set <=
 
@@ -1302,18 +1302,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:34 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:44 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         30 seconds =       0.50 minutes
+	total time  =         29 seconds =       0.48 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:34 2024
+*** at Sun Jun  2 18:43:44 2024
 
 
          ------------------------------------------------------------
@@ -1375,7 +1375,7 @@ Total time:
        8        0.001100496594    -0.010871161260    -0.006973517249
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:34 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:44 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -1383,10 +1383,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         30 seconds =       0.50 minutes
+	total time  =         29 seconds =       0.48 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.98
 
 
     -----------------------------------------------------------------------
@@ -1421,9 +1421,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -1486,7 +1486,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:35 2024
+*** at Sun Jun  2 18:43:44 2024
 
    => Loading Basis Set <=
 
@@ -1685,18 +1685,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:35 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:45 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         31 seconds =       0.52 minutes
+	total time  =         30 seconds =       0.50 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:35 2024
+*** at Sun Jun  2 18:43:45 2024
 
 
          ------------------------------------------------------------
@@ -1758,7 +1758,7 @@ Total time:
        8        0.001073130082    -0.010873119684    -0.006971527450
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:35 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:45 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -1766,10 +1766,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         31 seconds =       0.52 minutes
+	total time  =         30 seconds =       0.50 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.99
 
 
     -----------------------------------------------------------------------
@@ -1804,9 +1804,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -1869,7 +1869,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:35 2024
+*** at Sun Jun  2 18:43:45 2024
 
    => Loading Basis Set <=
 
@@ -2068,7 +2068,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:36 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:46 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -2076,10 +2076,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         32 seconds =       0.53 minutes
+	total time  =         31 seconds =       0.52 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:36 2024
+*** at Sun Jun  2 18:43:46 2024
 
 
          ------------------------------------------------------------
@@ -2141,7 +2141,7 @@ Total time:
        8        0.001184411271    -0.010856111054    -0.006973657594
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:36 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:46 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -2149,10 +2149,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         32 seconds =       0.53 minutes
+	total time  =         31 seconds =       0.52 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -2187,9 +2187,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -2252,7 +2252,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:36 2024
+*** at Sun Jun  2 18:43:46 2024
 
    => Loading Basis Set <=
 
@@ -2450,18 +2450,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:37 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:46 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         33 seconds =       0.55 minutes
+	total time  =         31 seconds =       0.52 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:37 2024
+*** at Sun Jun  2 18:43:46 2024
 
 
          ------------------------------------------------------------
@@ -2523,18 +2523,18 @@ Total time:
        8        0.001090493833    -0.010870543118    -0.006972297857
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:37 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:47 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         33 seconds =       0.55 minutes
+	total time  =         32 seconds =       0.53 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -2569,9 +2569,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -2634,7 +2634,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:37 2024
+*** at Sun Jun  2 18:43:47 2024
 
    => Loading Basis Set <=
 
@@ -2832,18 +2832,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:38 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:47 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         34 seconds =       0.57 minutes
+	total time  =         32 seconds =       0.53 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:38 2024
+*** at Sun Jun  2 18:43:47 2024
 
 
          ------------------------------------------------------------
@@ -2905,18 +2905,18 @@ Total time:
        8        0.001167021564    -0.010858666881    -0.006972918199
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:38 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:48 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         34 seconds =       0.57 minutes
+	total time  =         33 seconds =       0.55 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -2951,9 +2951,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -3016,7 +3016,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:38 2024
+*** at Sun Jun  2 18:43:48 2024
 
    => Loading Basis Set <=
 
@@ -3215,18 +3215,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:39 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:48 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         35 seconds =       0.58 minutes
+	total time  =         33 seconds =       0.55 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:39 2024
+*** at Sun Jun  2 18:43:48 2024
 
 
          ------------------------------------------------------------
@@ -3288,18 +3288,18 @@ Total time:
        8        0.001401900902    -0.011051768092    -0.007104061166
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:39 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:49 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         35 seconds =       0.58 minutes
+	total time  =         34 seconds =       0.57 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.90
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -3334,9 +3334,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -3399,7 +3399,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:39 2024
+*** at Sun Jun  2 18:43:49 2024
 
    => Loading Basis Set <=
 
@@ -3598,18 +3598,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:40 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:49 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         36 seconds =       0.60 minutes
+	total time  =         34 seconds =       0.57 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:40 2024
+*** at Sun Jun  2 18:43:49 2024
 
 
          ------------------------------------------------------------
@@ -3671,18 +3671,18 @@ Total time:
        8        0.000855850247    -0.010676760228    -0.006840698514
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:40 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:50 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         36 seconds =       0.60 minutes
+	total time  =         35 seconds =       0.58 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -3717,9 +3717,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -3782,7 +3782,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:40 2024
+*** at Sun Jun  2 18:43:50 2024
 
    => Loading Basis Set <=
 
@@ -3981,18 +3981,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:41 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:50 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         37 seconds =       0.62 minutes
+	total time  =         35 seconds =       0.58 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:41 2024
+*** at Sun Jun  2 18:43:50 2024
 
 
          ------------------------------------------------------------
@@ -4054,18 +4054,18 @@ Total time:
        8        0.000894941419    -0.010376207468    -0.006734422526
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:41 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:51 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         37 seconds =       0.62 minutes
+	total time  =         36 seconds =       0.60 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.97
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -4100,9 +4100,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -4165,7 +4165,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:41 2024
+*** at Sun Jun  2 18:43:51 2024
 
    => Loading Basis Set <=
 
@@ -4364,18 +4364,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:42 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:51 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         38 seconds =       0.63 minutes
+	total time  =         36 seconds =       0.60 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:42 2024
+*** at Sun Jun  2 18:43:51 2024
 
 
          ------------------------------------------------------------
@@ -4437,18 +4437,18 @@ Total time:
        8        0.001360821828    -0.011351075488    -0.007208634836
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:42 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:52 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         38 seconds =       0.63 minutes
+	total time  =         37 seconds =       0.62 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.96
 
 
     -----------------------------------------------------------------------
@@ -4483,9 +4483,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -4548,7 +4548,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:42 2024
+*** at Sun Jun  2 18:43:52 2024
 
    => Loading Basis Set <=
 
@@ -4746,18 +4746,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:43 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:52 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         39 seconds =       0.65 minutes
+	total time  =         37 seconds =       0.62 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:43 2024
+*** at Sun Jun  2 18:43:52 2024
 
 
          ------------------------------------------------------------
@@ -4819,18 +4819,18 @@ Total time:
        8        0.000968072136    -0.010632069523    -0.006655636253
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:43 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:53 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         39 seconds =       0.65 minutes
+	total time  =         38 seconds =       0.63 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -4865,9 +4865,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -4930,7 +4930,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:43 2024
+*** at Sun Jun  2 18:43:53 2024
 
    => Loading Basis Set <=
 
@@ -5129,18 +5129,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:44 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:53 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         40 seconds =       0.67 minutes
+	total time  =         38 seconds =       0.63 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:44 2024
+*** at Sun Jun  2 18:43:53 2024
 
 
          ------------------------------------------------------------
@@ -5202,18 +5202,18 @@ Total time:
        8        0.001288688635    -0.011096049005    -0.007289536572
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:44 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:54 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         40 seconds =       0.67 minutes
+	total time  =         39 seconds =       0.65 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -5248,9 +5248,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -5313,7 +5313,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:44 2024
+*** at Sun Jun  2 18:43:54 2024
 
    => Loading Basis Set <=
 
@@ -5512,7 +5512,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:44 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:54 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -5520,10 +5520,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         40 seconds =       0.67 minutes
+	total time  =         39 seconds =       0.65 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:44 2024
+*** at Sun Jun  2 18:43:54 2024
 
 
          ------------------------------------------------------------
@@ -5585,7 +5585,7 @@ Total time:
        8        0.001278995532    -0.010924049131    -0.007021486230
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:45 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:55 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -5593,10 +5593,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         41 seconds =       0.68 minutes
+	total time  =         40 seconds =       0.67 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -5631,9 +5631,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -5696,7 +5696,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:45 2024
+*** at Sun Jun  2 18:43:55 2024
 
    => Loading Basis Set <=
 
@@ -5895,7 +5895,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:45 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:55 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -5903,10 +5903,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         41 seconds =       0.68 minutes
+	total time  =         40 seconds =       0.67 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:45 2024
+*** at Sun Jun  2 18:43:55 2024
 
 
          ------------------------------------------------------------
@@ -5968,7 +5968,7 @@ Total time:
        8        0.000978448229    -0.010805057013    -0.006923625095
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:46 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:56 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -5976,9 +5976,9 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         42 seconds =       0.70 minutes
+	total time  =         41 seconds =       0.68 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
     Psi4 wall time for execution: 0:00:00.93
 
 
@@ -6014,9 +6014,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -6079,7 +6079,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:46 2024
+*** at Sun Jun  2 18:43:56 2024
 
    => Loading Basis Set <=
 
@@ -6278,7 +6278,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:46 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:56 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -6286,10 +6286,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         42 seconds =       0.70 minutes
+	total time  =         41 seconds =       0.68 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:46 2024
+*** at Sun Jun  2 18:43:56 2024
 
 
          ------------------------------------------------------------
@@ -6351,7 +6351,7 @@ Total time:
        8        0.001042440055    -0.010696948721    -0.006887825655
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:47 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:57 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -6359,10 +6359,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         43 seconds =       0.72 minutes
+	total time  =         42 seconds =       0.70 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -6397,9 +6397,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -6462,7 +6462,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:47 2024
+*** at Sun Jun  2 18:43:57 2024
 
    => Loading Basis Set <=
 
@@ -6661,7 +6661,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:47 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:57 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -6669,10 +6669,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         43 seconds =       0.72 minutes
+	total time  =         42 seconds =       0.70 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:47 2024
+*** at Sun Jun  2 18:43:57 2024
 
 
          ------------------------------------------------------------
@@ -6734,7 +6734,7 @@ Total time:
        8        0.001214923255    -0.011031972870    -0.007057081203
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:48 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:58 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -6742,10 +6742,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         44 seconds =       0.73 minutes
+	total time  =         43 seconds =       0.72 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.96
 
 
     -----------------------------------------------------------------------
@@ -6780,9 +6780,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -6845,7 +6845,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:48 2024
+*** at Sun Jun  2 18:43:58 2024
 
    => Loading Basis Set <=
 
@@ -7044,7 +7044,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:48 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:58 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7052,10 +7052,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         44 seconds =       0.73 minutes
+	total time  =         43 seconds =       0.72 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:48 2024
+*** at Sun Jun  2 18:43:58 2024
 
 
          ------------------------------------------------------------
@@ -7117,7 +7117,7 @@ Total time:
        8        0.001062939096    -0.010782907616    -0.006865154388
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:49 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:59 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7125,10 +7125,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         45 seconds =       0.75 minutes
+	total time  =         44 seconds =       0.73 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.95
+    Psi4 stopped on: Sunday, 02 June 2024 06:43PM
+    Psi4 wall time for execution: 0:00:00.96
 
 
     -----------------------------------------------------------------------
@@ -7163,9 +7163,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -7228,7 +7228,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:49 2024
+*** at Sun Jun  2 18:43:59 2024
 
    => Loading Basis Set <=
 
@@ -7427,7 +7427,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:49 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:43:59 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7435,10 +7435,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         45 seconds =       0.75 minutes
+	total time  =         44 seconds =       0.73 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:49 2024
+*** at Sun Jun  2 18:43:59 2024
 
 
          ------------------------------------------------------------
@@ -7500,7 +7500,7 @@ Total time:
        8        0.001194503848    -0.010946142244    -0.007080023094
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:50 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:00 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7508,10 +7508,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         46 seconds =       0.77 minutes
+	total time  =         45 seconds =       0.75 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -7546,9 +7546,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -7611,7 +7611,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:50 2024
+*** at Sun Jun  2 18:44:00 2024
 
    => Loading Basis Set <=
 
@@ -7810,7 +7810,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:50 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:00 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7818,10 +7818,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         46 seconds =       0.77 minutes
+	total time  =         45 seconds =       0.75 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:50 2024
+*** at Sun Jun  2 18:44:00 2024
 
 
          ------------------------------------------------------------
@@ -7883,7 +7883,7 @@ Total time:
        8        0.001257385719    -0.010949456938    -0.007032601165
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:51 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:01 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -7891,10 +7891,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         47 seconds =       0.78 minutes
+	total time  =         46 seconds =       0.77 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -7929,9 +7929,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -7994,7 +7994,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:51 2024
+*** at Sun Jun  2 18:44:01 2024
 
    => Loading Basis Set <=
 
@@ -8193,7 +8193,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:51 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:01 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -8201,10 +8201,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         47 seconds =       0.78 minutes
+	total time  =         46 seconds =       0.77 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:51 2024
+*** at Sun Jun  2 18:44:01 2024
 
 
          ------------------------------------------------------------
@@ -8266,18 +8266,18 @@ Total time:
        8        0.001000195466    -0.010779629828    -0.006912529426
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:52 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:01 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         48 seconds =       0.80 minutes
+	total time  =         46 seconds =       0.77 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.92
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -8312,9 +8312,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -8377,7 +8377,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:52 2024
+*** at Sun Jun  2 18:44:02 2024
 
    => Loading Basis Set <=
 
@@ -8576,7 +8576,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:52 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:02 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -8584,10 +8584,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         48 seconds =       0.80 minutes
+	total time  =         47 seconds =       0.78 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:52 2024
+*** at Sun Jun  2 18:44:02 2024
 
 
          ------------------------------------------------------------
@@ -8649,18 +8649,18 @@ Total time:
        8        0.001013595446    -0.010650655670    -0.006870485434
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:53 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:02 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         49 seconds =       0.82 minutes
+	total time  =         47 seconds =       0.78 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.91
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -8695,9 +8695,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -8760,7 +8760,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:53 2024
+*** at Sun Jun  2 18:44:03 2024
 
    => Loading Basis Set <=
 
@@ -8959,7 +8959,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:53 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:03 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -8967,10 +8967,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         49 seconds =       0.82 minutes
+	total time  =         48 seconds =       0.80 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:53 2024
+*** at Sun Jun  2 18:44:03 2024
 
 
          ------------------------------------------------------------
@@ -9032,18 +9032,18 @@ Total time:
        8        0.001243576360    -0.011078200036    -0.007074286471
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:54 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:03 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         50 seconds =       0.83 minutes
+	total time  =         48 seconds =       0.80 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.90
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -9078,9 +9078,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -9143,7 +9143,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:54 2024
+*** at Sun Jun  2 18:44:03 2024
 
    => Loading Basis Set <=
 
@@ -9342,18 +9342,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:54 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:04 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         50 seconds =       0.83 minutes
+	total time  =         49 seconds =       0.82 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:54 2024
+*** at Sun Jun  2 18:44:04 2024
 
 
          ------------------------------------------------------------
@@ -9415,7 +9415,7 @@ Total time:
        8        0.001053091973    -0.010765066711    -0.006837327557
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:54 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:04 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -9423,10 +9423,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         50 seconds =       0.83 minutes
+	total time  =         49 seconds =       0.82 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.91
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -9461,9 +9461,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -9526,7 +9526,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:55 2024
+*** at Sun Jun  2 18:44:04 2024
 
    => Loading Basis Set <=
 
@@ -9725,18 +9725,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:55 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:05 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         51 seconds =       0.85 minutes
+	total time  =         50 seconds =       0.83 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:55 2024
+*** at Sun Jun  2 18:44:05 2024
 
 
          ------------------------------------------------------------
@@ -9798,7 +9798,7 @@ Total time:
        8        0.001204282343    -0.010963940660    -0.007107871160
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:55 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:05 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -9806,10 +9806,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         51 seconds =       0.85 minutes
+	total time  =         50 seconds =       0.83 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -9844,9 +9844,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -9909,7 +9909,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:55 2024
+*** at Sun Jun  2 18:44:05 2024
 
    => Loading Basis Set <=
 
@@ -10108,7 +10108,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:56 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:06 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10116,10 +10116,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         52 seconds =       0.87 minutes
+	total time  =         51 seconds =       0.85 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:56 2024
+*** at Sun Jun  2 18:44:06 2024
 
 
          ------------------------------------------------------------
@@ -10181,7 +10181,7 @@ Total time:
        8        0.001294111333    -0.010973244765    -0.007050324729
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:56 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:06 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10189,9 +10189,9 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         52 seconds =       0.87 minutes
+	total time  =         51 seconds =       0.85 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
     Psi4 wall time for execution: 0:00:00.93
 
 
@@ -10227,9 +10227,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -10292,7 +10292,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:56 2024
+*** at Sun Jun  2 18:44:06 2024
 
    => Loading Basis Set <=
 
@@ -10491,7 +10491,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:57 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:07 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10499,10 +10499,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         53 seconds =       0.88 minutes
+	total time  =         52 seconds =       0.87 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:57 2024
+*** at Sun Jun  2 18:44:07 2024
 
 
          ------------------------------------------------------------
@@ -10564,7 +10564,7 @@ Total time:
        8        0.000963491768    -0.010755773120    -0.006894733824
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:57 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:07 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10572,9 +10572,9 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         53 seconds =       0.88 minutes
+	total time  =         52 seconds =       0.87 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
     Psi4 wall time for execution: 0:00:00.93
 
 
@@ -10610,9 +10610,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -10675,7 +10675,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:57 2024
+*** at Sun Jun  2 18:44:07 2024
 
    => Loading Basis Set <=
 
@@ -10874,7 +10874,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:58 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:08 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10882,10 +10882,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         54 seconds =       0.90 minutes
+	total time  =         53 seconds =       0.88 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:58 2024
+*** at Sun Jun  2 18:44:08 2024
 
 
          ------------------------------------------------------------
@@ -10947,7 +10947,7 @@ Total time:
        8        0.000984197078    -0.010594475068    -0.006837199631
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:58 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:08 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -10955,10 +10955,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         54 seconds =       0.90 minutes
+	total time  =         53 seconds =       0.88 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
     -----------------------------------------------------------------------
@@ -10993,9 +10993,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -11058,7 +11058,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:58 2024
+*** at Sun Jun  2 18:44:08 2024
 
    => Loading Basis Set <=
 
@@ -11257,7 +11257,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:59 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:09 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -11265,10 +11265,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         55 seconds =       0.92 minutes
+	total time  =         54 seconds =       0.90 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:59 2024
+*** at Sun Jun  2 18:44:09 2024
 
 
          ------------------------------------------------------------
@@ -11330,7 +11330,7 @@ Total time:
        8        0.001272756389    -0.011134100031    -0.007107296775
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:57:59 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:09 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -11338,10 +11338,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         55 seconds =       0.92 minutes
+	total time  =         54 seconds =       0.90 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:57PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.90
 
 
     -----------------------------------------------------------------------
@@ -11376,9 +11376,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -11441,7 +11441,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:57:59 2024
+*** at Sun Jun  2 18:44:09 2024
 
    => Loading Basis Set <=
 
@@ -11640,7 +11640,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:00 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:10 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -11648,10 +11648,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         56 seconds =       0.93 minutes
+	total time  =         55 seconds =       0.92 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:00 2024
+*** at Sun Jun  2 18:44:10 2024
 
 
          ------------------------------------------------------------
@@ -11713,7 +11713,7 @@ Total time:
        8        0.001025815525    -0.010734096350    -0.006791090161
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:00 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:10 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -11721,10 +11721,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         56 seconds =       0.93 minutes
+	total time  =         55 seconds =       0.92 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.95
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -11759,9 +11759,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -11824,7 +11824,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:00 2024
+*** at Sun Jun  2 18:44:10 2024
 
    => Loading Basis Set <=
 
@@ -12023,7 +12023,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:01 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:11 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -12031,10 +12031,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         57 seconds =       0.95 minutes
+	total time  =         56 seconds =       0.93 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:01 2024
+*** at Sun Jun  2 18:44:11 2024
 
 
          ------------------------------------------------------------
@@ -12096,7 +12096,7 @@ Total time:
        8        0.001231450674    -0.010994763182    -0.007154108754
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:01 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:11 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -12104,10 +12104,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         57 seconds =       0.95 minutes
+	total time  =         56 seconds =       0.93 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.94
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.91
 
 
     -----------------------------------------------------------------------
@@ -12142,9 +12142,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -12207,7 +12207,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:01 2024
+*** at Sun Jun  2 18:44:11 2024
 
    => Loading Basis Set <=
 
@@ -12406,18 +12406,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:02 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:11 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         58 seconds =       0.97 minutes
+	total time  =         56 seconds =       0.93 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:02 2024
+*** at Sun Jun  2 18:44:11 2024
 
 
          ------------------------------------------------------------
@@ -12479,18 +12479,18 @@ Total time:
        8        0.001353538522    -0.011090586768    -0.007031855339
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:02 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:12 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         58 seconds =       0.97 minutes
+	total time  =         57 seconds =       0.95 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.91
 
 
     -----------------------------------------------------------------------
@@ -12525,9 +12525,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -12590,7 +12590,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:02 2024
+*** at Sun Jun  2 18:44:12 2024
 
    => Loading Basis Set <=
 
@@ -12789,18 +12789,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:03 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:12 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         59 seconds =       0.98 minutes
+	total time  =         57 seconds =       0.95 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:03 2024
+*** at Sun Jun  2 18:44:12 2024
 
 
          ------------------------------------------------------------
@@ -12862,18 +12862,18 @@ Total time:
        8        0.000904149262    -0.010638270725    -0.006913049174
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:03 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:13 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         59 seconds =       0.98 minutes
+	total time  =         58 seconds =       0.97 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.95
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -12908,9 +12908,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -12973,7 +12973,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:03 2024
+*** at Sun Jun  2 18:44:13 2024
 
    => Loading Basis Set <=
 
@@ -13172,18 +13172,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:04 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:13 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         60 seconds =       1.00 minutes
+	total time  =         58 seconds =       0.97 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:04 2024
+*** at Sun Jun  2 18:44:13 2024
 
 
          ------------------------------------------------------------
@@ -13245,18 +13245,18 @@ Total time:
        8        0.000956615922    -0.010352687657    -0.006850983712
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:04 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:14 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         60 seconds =       1.00 minutes
+	total time  =         59 seconds =       0.98 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.93
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -13291,9 +13291,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -13356,7 +13356,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:04 2024
+*** at Sun Jun  2 18:44:14 2024
 
    => Loading Basis Set <=
 
@@ -13555,18 +13555,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:05 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:14 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         61 seconds =       1.02 minutes
+	total time  =         59 seconds =       0.98 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:05 2024
+*** at Sun Jun  2 18:44:14 2024
 
 
          ------------------------------------------------------------
@@ -13628,18 +13628,18 @@ Total time:
        8        0.001299776438    -0.011374480920    -0.007093123106
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:05 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:15 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         61 seconds =       1.02 minutes
+	total time  =         60 seconds =       1.00 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.96
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -13674,9 +13674,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -13739,7 +13739,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:05 2024
+*** at Sun Jun  2 18:44:15 2024
 
    => Loading Basis Set <=
 
@@ -13938,18 +13938,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:06 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:15 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         62 seconds =       1.03 minutes
+	total time  =         60 seconds =       1.00 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:06 2024
+*** at Sun Jun  2 18:44:15 2024
 
 
          ------------------------------------------------------------
@@ -14011,18 +14011,18 @@ Total time:
        8        0.001017077508    -0.010581904241    -0.006776113522
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:06 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:16 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         62 seconds =       1.03 minutes
+	total time  =         61 seconds =       1.02 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.98
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -14057,9 +14057,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -14122,7 +14122,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:06 2024
+*** at Sun Jun  2 18:44:16 2024
 
    => Loading Basis Set <=
 
@@ -14321,18 +14321,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:07 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:16 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         63 seconds =       1.05 minutes
+	total time  =         61 seconds =       1.02 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:07 2024
+*** at Sun Jun  2 18:44:16 2024
 
 
          ------------------------------------------------------------
@@ -14394,18 +14394,18 @@ Total time:
        8        0.001239984114    -0.011146901778    -0.007169092758
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:07 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:17 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         63 seconds =       1.05 minutes
+	total time  =         62 seconds =       1.03 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.98
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -14440,9 +14440,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -14505,7 +14505,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:07 2024
+*** at Sun Jun  2 18:44:17 2024
 
    => Loading Basis Set <=
 
@@ -14703,18 +14703,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:08 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:17 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         64 seconds =       1.07 minutes
+	total time  =         62 seconds =       1.03 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:08 2024
+*** at Sun Jun  2 18:44:17 2024
 
 
          ------------------------------------------------------------
@@ -14776,18 +14776,18 @@ Total time:
        8        0.001498629929    -0.011157781983    -0.007232602140
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:08 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:18 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         64 seconds =       1.07 minutes
+	total time  =         63 seconds =       1.05 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:01.06
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.94
 
 
     -----------------------------------------------------------------------
@@ -14822,9 +14822,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -14887,7 +14887,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:08 2024
+*** at Sun Jun  2 18:44:18 2024
 
    => Loading Basis Set <=
 
@@ -15085,18 +15085,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:09 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:18 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         65 seconds =       1.08 minutes
+	total time  =         63 seconds =       1.05 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:09 2024
+*** at Sun Jun  2 18:44:18 2024
 
 
          ------------------------------------------------------------
@@ -15158,18 +15158,18 @@ Total time:
        8        0.000759103136    -0.010570324758    -0.006711916136
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:09 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:19 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         65 seconds =       1.08 minutes
+	total time  =         64 seconds =       1.07 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:00.98
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.95
 
 
     -----------------------------------------------------------------------
@@ -15204,9 +15204,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -15269,7 +15269,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:09 2024
+*** at Sun Jun  2 18:44:19 2024
 
    => Loading Basis Set <=
 
@@ -15468,18 +15468,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:10 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:19 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         66 seconds =       1.10 minutes
+	total time  =         64 seconds =       1.07 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:10 2024
+*** at Sun Jun  2 18:44:19 2024
 
 
          ------------------------------------------------------------
@@ -15541,18 +15541,18 @@ Total time:
        8        0.000867416814    -0.010127263960    -0.006512672844
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:10 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:20 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         66 seconds =       1.10 minutes
+	total time  =         65 seconds =       1.08 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:01.00
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -15587,9 +15587,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -15652,7 +15652,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:10 2024
+*** at Sun Jun  2 18:44:20 2024
 
    => Loading Basis Set <=
 
@@ -15851,18 +15851,18 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:11 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:20 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         67 seconds =       1.12 minutes
+	total time  =         65 seconds =       1.08 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:11 2024
+*** at Sun Jun  2 18:44:20 2024
 
 
          ------------------------------------------------------------
@@ -15924,18 +15924,18 @@ Total time:
        8        0.001387010863    -0.011598154984    -0.007428315367
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:11 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:21 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         67 seconds =       1.12 minutes
+	total time  =         66 seconds =       1.10 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:01.18
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.92
 
 
     -----------------------------------------------------------------------
@@ -15970,9 +15970,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -16035,7 +16035,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:12 2024
+*** at Sun Jun  2 18:44:21 2024
 
    => Loading Basis Set <=
 
@@ -16234,7 +16234,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:12 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:21 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -16242,10 +16242,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         68 seconds =       1.13 minutes
+	total time  =         66 seconds =       1.10 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:12 2024
+*** at Sun Jun  2 18:44:21 2024
 
 
          ------------------------------------------------------------
@@ -16307,18 +16307,18 @@ Total time:
        8        0.000939114673    -0.010491363103    -0.006462996998
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:13 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:21 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         69 seconds =       1.15 minutes
+	total time  =         66 seconds =       1.10 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:01.08
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.91
 
 
     -----------------------------------------------------------------------
@@ -16353,9 +16353,9 @@ Total time:
     -----------------------------------------------------------------------
 
 
-    Psi4 started on: Saturday, 01 June 2024 08:57PM
+    Psi4 started on: Sunday, 02 June 2024 06:42PM
 
-    Process ID: 3073880
+    Process ID: 196260
     Host:       zak_rig
     PSIDATADIR: C:\Users\zaksi\anaconda3\envs\psi4_env\Library\share\psi4
     Memory:     500.0 MiB
@@ -16418,7 +16418,7 @@ gradient() will perform analytic gradient computation.
     Solid Harmonics ordering:            Gaussian
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:13 2024
+*** at Sun Jun  2 18:44:22 2024
 
    => Loading Basis Set <=
 
@@ -16617,7 +16617,7 @@ Properties computed using the SCF density matrix
 
  ------------------------------------------------------------------------------------
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:13 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:22 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
@@ -16625,10 +16625,10 @@ Module time:
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         69 seconds =       1.15 minutes
+	total time  =         67 seconds =       1.12 minutes
 
 *** tstart() called on zak_rig
-*** at Sat Jun  1 20:58:13 2024
+*** at Sun Jun  2 18:44:22 2024
 
 
          ------------------------------------------------------------
@@ -16690,18 +16690,18 @@ Total time:
        8        0.001317225931    -0.011235327611    -0.007481385611
 
 
-*** tstop() called on zak_rig at Sat Jun  1 20:58:14 2024
+*** tstop() called on zak_rig at Sun Jun  2 18:44:22 2024
 Module time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =        nan seconds =        nan minutes
 	system time =        nan seconds =        nan minutes
-	total time  =         70 seconds =       1.17 minutes
+	total time  =         67 seconds =       1.12 minutes
 
-    Psi4 stopped on: Saturday, 01 June 2024 08:58PM
-    Psi4 wall time for execution: 0:00:01.05
+    Psi4 stopped on: Sunday, 02 June 2024 06:44PM
+    Psi4 wall time for execution: 0:00:00.93
 
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
