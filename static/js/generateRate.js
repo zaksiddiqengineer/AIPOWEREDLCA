@@ -277,32 +277,32 @@ const decisionTree = {
 function evaluateSafety() {
 
     const scores = {
-        "Reaction Yield": 1,
-        "Selectivity": 1,
-        "Rate Control": 1,
-        "Sensitivity to Rate Changes": 1,
-        "Addition Rate of Reactants": 1,
-        "Temperature Influence": 1,
-        "Concentration Influence": 1,
-        "Pressure Influence": 1,
-        "Catalyst Influence": 1,
-        "Mixing Influence": 1,
-        "By-Product Formation": 1,
-        "Safety Impact": 1,
-        "Energy Requirements": 1,
-        "Scalability": 1,
-        "Environmental Impact": 1,
-        "Impurities Influence": 1,
-        "Solvent Influence": 1,
-        "Product Quality": 1,
-        "Process Reproducibility": 1,
-        "External Factors Influence": 1,
-        "Downstream Processing Impact": 1,
-        "Process Control Strategies": 1,
-        "Monitoring Changes": 1,
-        "Crystallization Impact": 1,
-        "Filtration/Separation Impact": 1,
-        "Equipment Scale Requirements": 1
+        "Reaction Yield": 0,
+        "Selectivity": 0,
+        "Rate Control": 0,
+        "Sensitivity to Rate Changes": 0,
+        "Addition Rate of Reactants": 0,
+        "Temperature Influence": 0,
+        "Concentration Influence": 0,
+        "Pressure Influence": 0,
+        "Catalyst Influence": 0,
+        "Mixing Influence": 0,
+        "By-Product Formation": 0,
+        "Safety Impact": 0,
+        "Energy Requirements": 0,
+        "Scalability": 0,
+        "Environmental Impact": 0,
+        "Impurities Influence": 0,
+        "Solvent Influence": 0,
+        "Product Quality": 0,
+        "Process Reproducibility": 0,
+        "External Factors Influence": 0,
+        "Downstream Processing Impact": 0,
+        "Process Control Strategies": 0,
+        "Monitoring Changes": 0,
+        "Crystallization Impact": 0,
+        "Filtration/Separation Impact": 0,
+        "Equipment Scale Requirements": 0
     };
 
     const impactMatrix = {
@@ -3759,8 +3759,8 @@ export function askQuestionRate(questionKey) {
                 renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
                 console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
 
-                // const reactionKineticsContainer = document.getElementById('reactionKineticsContainer');
-                // reactionKineticsContainer.style.display = 'block';
+                // Show the button to advance to the sequence analysis
+                document.getElementById('sequenceContainer').style.display = 'block';
             }
         });
         answersDiv.appendChild(button);

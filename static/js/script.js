@@ -8,6 +8,7 @@ import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
 import { askQuestionMixing } from './generateMixing.js';
 import { askQuestionRate } from './generateRate.js';
+import { askQuestionSequence } from './generateSequence.js';
 
 // static/js/script.js
 var reactantCount = 0;
@@ -284,5 +285,12 @@ document.getElementById('rateAnalysisButton').addEventListener('click', () => {
     document.getElementById('rateWizard').style.display = 'block';
     document.getElementById('rateScorePlotContainer').style.display = 'block';
     askQuestionRate('impactOnYield');
+});
+
+document.getElementById('sequenceAnalysisButton').addEventListener('click', () => {
+    document.getElementById('sequenceContainer').style.display = 'none';
+    document.getElementById('sequenceWizard').style.display = 'block';
+    document.getElementById('sequenceScorePlotContainer').style.display = 'block';
+    askQuestionRate('reactantAddition');
 });
 
