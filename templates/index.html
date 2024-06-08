@@ -12,19 +12,29 @@
         <h1>Chemical Reaction</h1>
         <button id="openReactionBtn">Open Reaction Container</button>
         <div id="reactionContainer" style="display: none;">
-            <h2>Reactants</h2>
+            <h2>Reactants <button id="addReactantBtn">Add Reactant</button></h2>
             <div id="reactants">
                 <!-- Reactant inputs will be added here dynamically -->
             </div>
-            <button id="addReactantBtn">Add Reactant</button>
-            <h2>Products</h2>
+            <h2>Products <button id="addProductBtn">Add Product</button></h2>
             <div id="products">
                 <!-- Product inputs will be added here dynamically -->
             </div>
-            <button id="addProductBtn">Add Product</button>
-            <button id="generateLCABtn">Generate Life Cycle Analysis</button>
-            <button id="generateScaleUpBtn">Scale Up Assesment</button>
-            <button id="generateAIScaleUpBtn">Generate Scale Up Assesment</button>
+            <h2>Catalysts <button id="addCatalystBtn">Add Catalyst</button></h2>
+            <div id="catalysts">
+                <!-- Catalyst inputs will be added here dynamically -->
+            </div>
+            <h2>Solvents <button id="addSolventBtn">Add Solvent</button></h2>
+            <div id="solvents">
+                <!-- Solvent inputs will be added here dynamically -->
+            </div>
+ 
+            <button id="generateLCABtn">Generate Life Cycle Analysis AI</button>
+            <button id="generateScaleUpBtn">Scale Up Assesment </button>
+            <button id="generateAIScaleUpBtn">Generate Scale Up Assesment AI</button>
+            <button id="generateCharacterisationFactors">Generate ReCiPe2016 Impact Assesment AI </button>
+            <button id="generateGasPhaseKinetics">Generate Gas Reaction Phase Kinetics </button>
+
         </div>
         <div id="environmentalReport" style="display: none;">
             <h2>Environmental Report</h2>
@@ -35,6 +45,10 @@
             <div id="reactantScorePlots"></div>
             <h3>Individual Product Score Radar Plots</h3>
             <div id="productScorePlots"></div>
+            <h3>Catalyst Score Radar Plots</h3>
+            <div id="catalystScorePlots"></div>
+            <h3>Solvent Score Radar Plots</h3>
+            <div id="solventScorePlots"></div>
         </div>
 
         <div id="scaleUpWizard" style="display: none;">

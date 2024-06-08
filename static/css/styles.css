@@ -116,3 +116,18 @@ button {
     margin-top: 20px;
 }
 
+/* New rule to make buttons vertical inside the reaction container */
+#reactionContainer button {
+    display: block;
+    margin: 10px 0;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 button {
+    margin-left: 10px;
+}

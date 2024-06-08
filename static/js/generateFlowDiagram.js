@@ -236,6 +236,14 @@ function generateResult(finalQuestionId) {
     const scores = evaluateFlowDiagram(result);
     renderRadarPlots(scores);
 
+    const flowDiagramOutput = result; // Assign the result to flowDiagramOutput
+    const analyzeButton = document.createElement('button');
+    analyzeButton.innerText = 'Analyze Flow Diagram Life Cycle Analysis';
+    analyzeButton.onclick = async () => {
+        await analyzeFlowDiagram(flowDiagramOutput);
+    };
+    outputContainer.appendChild(analyzeButton);
+
     const proceedButtonContainer = document.getElementById('safetyContainer');
     proceedButtonContainer.style.display = 'block';;
  
@@ -648,6 +656,32 @@ function renderRadarPlots(scores) {
     flowDiagramChart = new Chart(ctx, radarConfig);
 }
 
+async function analyzeFlowDiagram(flowDiagramOutput) {
+    try {
+        const response = await fetch('/api/analyze-flow-diagram', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ flowDiagramOutput }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            displayFlowDiagramAnalysis(data.text);
+        } else {
+            console.error('Error analyzing flow diagram:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error analyzing flow diagram:', error);
+    }
+}
+
+function displayFlowDiagramAnalysis(analysis) {
+    const analysisContainer = document.createElement('div');
+    analysisContainer.innerHTML = `<h3>LCA Analysis:</h3><p>${analysis}</p>`;
+    document.getElementById('flowDiagramOutput').appendChild(analysisContainer);
+}
 
 
 async function startDecisionTree() {

@@ -8,11 +8,13 @@ import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
 import { askQuestionMixing } from './generateMixing.js';
 import { askQuestionRate } from './generateRate.js';
-import { askQuestionSequence } from './generateSequence.js';
+//import { askQuestionSequence } from './generateSequence.js';
 
 // static/js/script.js
 var reactantCount = 0;
 var productCount = 0;
+var catalystCount = 0;
+var solventCount = 0;
 
 document.getElementById('openReactionBtn').addEventListener('click', function() {
     document.getElementById('reactionContainer').style.display = 'block';
@@ -28,9 +30,21 @@ document.getElementById('addProductBtn').addEventListener('click', function() {
     createProductInput(productCount);
 });
 
+document.getElementById('addCatalystBtn').addEventListener('click', function() {
+    catalystCount++;
+    createCatalystInput(catalystCount);
+});
+
+document.getElementById('addSolventBtn').addEventListener('click', function() {
+    solventCount++;
+    createSolventInput(solventCount);
+});
+
 document.getElementById('generateLCABtn').addEventListener('click', function() {
     var reactants = [];
     var products = [];
+    var catalysts = [];
+    var solvents = [];
 
     var reactantInputs = document.querySelectorAll('#reactants .input-group');
     reactantInputs.forEach(function(input) {
@@ -48,9 +62,27 @@ document.getElementById('generateLCABtn').addEventListener('click', function() {
         products.push({ name: name, smile: smile, mass: mass });
     });
 
+    var catalystInputs = document.querySelectorAll('#catalysts .input-group');
+    catalystInputs.forEach(function(input) {
+        var name = input.querySelector('input[name="catalyst_name"]').value;
+        var smile = input.querySelector('input[name="catalyst_smile"]').value;
+        var mass = input.querySelector('input[name="catalyst_mass"]').value;
+        catalysts.push({ name: name, smile: smile, mass: mass });
+    });
+
+    var solventInputs = document.querySelectorAll('#solvents .input-group');
+    solventInputs.forEach(function(input) {
+        var name = input.querySelector('input[name="solvent_name"]').value;
+        var smile = input.querySelector('input[name="solvent_smile"]').value;
+        var mass = input.querySelector('input[name="solvent_mass"]').value;
+        solvents.push({ name: name, smile: smile, mass: mass });
+    });
+
     var formData = new FormData();
     formData.append('reactants', JSON.stringify(reactants));
     formData.append('products', JSON.stringify(products));
+    formData.append('catalysts', JSON.stringify(catalysts));
+    formData.append('solvents', JSON.stringify(solvents));
 
     fetch('/get_chemical_info', {
         method: 'POST',
@@ -62,27 +94,50 @@ document.getElementById('generateLCABtn').addEventListener('click', function() {
         console.log('Aggregate Scores:', data.aggregate_scores);
         console.log('Reactant Scores:', data.reactant_scores);
         console.log('Product Scores:', data.product_scores);
+        console.log('Catalyst Scores:', data.catalyst_scores);
+        console.log('Solvent Scores:', data.solvent_scores);
 
         document.getElementById('environmentalReport').style.display = 'block';
         document.getElementById('reportContent').innerHTML = data.text;
 
         // Create aggregate score radar plot
         console.log('Calling createRadarPlot for aggregate scores');
-        createRadarPlot('aggregateScoreChart', data.aggregate_scores, null, false, true);
+        createRadarPlot('aggregateScoreChart', data.aggregate_scores, null, false, true, false, false);
 
         // Create individual reactant score radar plots
         console.log('Creating reactant score radar plots');
         for (var reactant in data.reactant_scores) {
             console.log('Calling createRadarPlot for reactant:', reactant);
-            createRadarPlot(`reactantScoreChart-${reactant}`, data.reactant_scores[reactant], reactant, true, false);
+            createRadarPlot(`reactantScoreChart-${reactant}`, data.reactant_scores[reactant], reactant, true, false,false,false);
         }
-
+        // Create individual catalyst score radar plots
+        if (Object.keys(data.catalyst_scores).length > 0) {
+            console.log('Creating catalyst score radar plots');
+            for (var catalyst in data.catalyst_scores) {
+                console.log('Calling createRadarPlot for catalyst:', catalyst);
+                createRadarPlot(`catalystScoreChart-${catalyst}`, data.catalyst_scores[catalyst], catalyst, false, false, true, false);
+            }
+        } else {
+            console.log('No catalysts found');
+        }
+        
         // Create individual product score radar plots
         console.log('Creating product score radar plots');
         for (var product in data.product_scores) {
             console.log('Calling createRadarPlot for product:', product);
-            createRadarPlot(`productScoreChart-${product}`, data.product_scores[product], product, false, false);
+            createRadarPlot(`productScoreChart-${product}`, data.product_scores[product], product, false, false, false,false);
         }
+
+        // Create individual solvent score radar plots
+        if (Object.keys(data.solvent_scores).length > 0) {
+            console.log('Creating solvent score radar plots');
+            for (var solvent in data.solvent_scores) {
+                console.log('Calling createRadarPlot for solvent:', solvent);
+                createRadarPlot(`solventScoreChart-${solvent}`, data.solvent_scores[solvent], solvent, false, false,false,true);
+            }
+        } else {
+            console.log('No solvents found');
+        }       
     })
     .catch(error => {
         console.error('Error:', error);
@@ -133,6 +188,46 @@ function createProductInput(index) {
     });
 }
 
+function createCatalystInput(index) {
+    var catalystsDiv = document.getElementById('catalysts');
+    var inputGroup = document.createElement('div');
+    inputGroup.className = 'input-group';
+    inputGroup.innerHTML = `
+        <label>Catalyst ${index}</label>
+        <input type="text" name="catalyst_name" placeholder="Name" required>
+        <input type="text" name="catalyst_smile" placeholder="SMILE" required>
+        <input type="number" name="catalyst_mass" placeholder="Mass" required>
+        <button class="deleteCatalystBtn">Delete</button>
+    `;
+    catalystsDiv.appendChild(inputGroup);
+
+    inputGroup.querySelector('.deleteCatalystBtn').addEventListener('click', function() {
+        catalystsDiv.removeChild(inputGroup);
+        catalystCount--;
+        updateCatalystLabels();
+    });
+}
+
+function createSolventInput(index) {
+    var solventsDiv = document.getElementById('solvents');
+    var inputGroup = document.createElement('div');
+    inputGroup.className = 'input-group';
+    inputGroup.innerHTML = `
+        <label>Solvent ${index}</label>
+        <input type="text" name="solvent_name" placeholder="Name" required>
+        <input type="text" name="solvent_smile" placeholder="SMILE" required>
+        <input type="number" name="solvent_mass" placeholder="Mass" required>
+        <button class="deleteSolventBtn">Delete</button>
+    `;
+    solventsDiv.appendChild(inputGroup);
+
+    inputGroup.querySelector('.deleteSolventBtn').addEventListener('click', function() {
+        solventsDiv.removeChild(inputGroup);
+        solventCount--;
+        updateSolventLabels();
+    });
+}
+
 function updateReactantLabels() {
     var reactantLabels = document.querySelectorAll('#reactants .input-group label');
     reactantLabels.forEach(function(label, index) {
@@ -147,14 +242,31 @@ function updateProductLabels() {
     });
 }
 
-function createRadarPlot(chartId, scores, title, isReactant, isAggregate) {
+function updateCatalystLabels() {
+    var catalystLabels = document.querySelectorAll('#catalysts .input-group label');
+    catalystLabels.forEach(function(label, index) {
+        label.textContent = `Catalyst ${index + 1}`;
+    });
+}
+
+function updateSolventLabels() {
+    var solventLabels = document.querySelectorAll('#solvents .input-group label');
+    solventLabels.forEach(function(label, index) {
+        label.textContent = `Solvent ${index + 1}`;
+    });
+}
+
+function createRadarPlot(chartId, scores, title, isReactant, isAggregate, isCatalyst, isSolvent) {
     console.log('Creating radar plot with chartId:', chartId);
     console.log('Scores object:', scores);
     console.log('Title:', title);
     console.log('Is Reactant:', isReactant);
     console.log('Is Aggregate:', isAggregate);
+    console.log('Is Catalyst:', isCatalyst);
+    console.log('Is Solvent:', isSolvent);
 
     var existingCtx = document.getElementById(chartId);
+    var ctx;
     if (!existingCtx) {
         ctx = document.createElement('canvas');
         ctx.id = chartId;
@@ -168,6 +280,12 @@ function createRadarPlot(chartId, scores, title, isReactant, isAggregate) {
             } else if (isReactant) {
                 document.getElementById('reactantScorePlots').appendChild(titleElement);
                 document.getElementById('reactantScorePlots').appendChild(ctx);
+            } else if (isCatalyst) {
+                document.getElementById('catalystScorePlots').appendChild(titleElement);
+                document.getElementById('catalystScorePlots').appendChild(ctx);
+            } else if (isSolvent) {
+                document.getElementById('solventScorePlots').appendChild(titleElement);
+                document.getElementById('solventScorePlots').appendChild(ctx);
             } else {
                 document.getElementById('productScorePlots').appendChild(titleElement);
                 document.getElementById('productScorePlots').appendChild(ctx);

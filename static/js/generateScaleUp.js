@@ -1,4 +1,5 @@
 // generateScaleUp.js
+const questionAnswerPairs = {};
 
 async function generateScaleUpAnalysis() {
     console.log("Generating scale-up analysis...");
@@ -85,6 +86,7 @@ function askQuestion(question, options) {
       buttons.forEach((button) => {
         button.addEventListener("click", () => {
           const answer = button.dataset.answer;
+          questionAnswerPairs[question] = answer; // Store the question and answer pair
           resolve(answer);
         });
       });
@@ -192,6 +194,8 @@ function displayRecommendation(recommendation) {
             break;
         }
     }
+    
+
 
     if (recommendedReactor && reactorScores[recommendedReactor]) {
         const scores = reactorScores[recommendedReactor];
@@ -243,8 +247,43 @@ function displayRecommendation(recommendation) {
     }
 
     hideScaleUpWizard();
+
+    // attach reactor suggestion also
+    questionAnswerPairs["Reactor Suggestion"] = recommendation;
+
+    // Create a button to send the question-answer pairs to the backend
+    const sendButton = document.createElement("button");
+    sendButton.textContent = "Analyse Reactor Life Cycle Impact";
+    sendButton.addEventListener("click", sendQuestionAnswerPairs);
+    document.getElementById("recommendationContainer").appendChild(sendButton);
 }
 
+async function sendQuestionAnswerPairs() {
+  try {
+    const response = await fetch("/api/analyze-life-cycle", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(questionAnswerPairs),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      displayLifeCycleAnalysis(data.text);
+    } else {
+      console.error("Error sending question-answer pairs:", response.statusText);
+    }
+  } catch (error) {
+    console.error("Error sending question-answer pairs:", error);
+  }
+}
+
+function displayLifeCycleAnalysis(analysis) {
+  const analysisContainer = document.createElement("div");
+  analysisContainer.textContent = analysis;
+  document.getElementById("recommendationContainer").appendChild(analysisContainer);
+}
  
   
   // Export the function to make it accessible from other files

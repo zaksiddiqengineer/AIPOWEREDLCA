@@ -517,10 +517,14 @@ def extract_scores(text):
 def get_chemical_info():
     reactants = json.loads(request.form['reactants'])
     products = json.loads(request.form['products'])
+    catalysts = json.loads(request.form['catalysts'])
+    solvents = json.loads(request.form['solvents'])
 
     environmental_report = ""
     reactant_scores = {}
     product_scores = {}
+    catalyst_scores = {}
+    solvent_scores = {}
     aggregate_scores = {'emissions': [], 'waste': [], 'energy': [], 'transportation': [], 'economic': [], 'innovations': [], 'soil': [], 'water': [], 'air': [], 'eol': []}
 
     for reactant in reactants:
@@ -600,32 +604,135 @@ def get_chemical_info():
         environmental_report += f"<div class='material-impacts-eol'><h3>End-of-Life Scenarios for Product: {product['name']}</h3><p>{response_eol['text']}</p></div>"
         product_scores[product['name']]['eol'] = extract_scores(response_eol['text'])
         aggregate_scores['eol'].append(extract_scores(response_eol['text']))
+    
+    for catalyst in catalysts:
+        catalyst_scores[catalyst['name']] = {'emissions': 0, 'waste': 0, 'energy': 0, 'transportation': 0, 'economic': 0, 'innovations':0}
+
+        # Emissions impact
+        prompt_emissions = f"List the 4 main environmental impacts of the production phase of {catalyst['name']} in regards to emissions. First  assign an Overall Score: high, medium, or low score to the emission category not indvidually ."
+        response_emissions = ask_koboldcpp(prompt_emissions)
+        environmental_report += f"<div class='material-impacts-emissions'><h3>Emissions Impact for Catalyst: {catalyst['name']}</h3><p>{response_emissions['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['emissions'] = extract_scores(response_emissions['text'])
+        aggregate_scores['emissions'].append(extract_scores(response_emissions['text']))
+
+        # Waste generation impact
+        
+        prompt_waste = f"List the 4 main environmental impacts of the production phase of {catalyst['name']} in regards to waste generation. First assign an Overall Score: high, medium, or low score to the waste category not indivudally."
+        response_waste = ask_koboldcpp(prompt_waste)
+        environmental_report += f"<div class='material-impacts-waste'><h3>Waste Generation Impact for Catalyst: {catalyst['name']}</h3><p>{response_waste['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['waste'] = extract_scores(response_waste['text'])
+        aggregate_scores['waste'].append(extract_scores(response_waste['text']))
+
+        # Energy consumption impact
+        prompt_energy = f"List the 4 main environmental impacts of the production phase of {catalyst['name']} in regards to energy consumption. First assign an Overall Score: high, medium, or low score to the energy category not indvidually."
+        response_energy = ask_koboldcpp(prompt_energy)
+        environmental_report += f"<div class='material-impacts-energy'><h3>Energy Consumption Impact for Catalyst: {catalyst['name']}</h3><p>{response_energy['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['energy'] = extract_scores(response_energy['text'])
+        aggregate_scores['energy'].append(extract_scores(response_energy['text']))
+
+        # Transportation impact
+        prompt_transportation = f"List the 4 main environmental impacts of the transportation phase of {catalyst['name']} . First assign an Overall Score: high, medium, or low score to the transporation category not indvidually."
+        response_transportation = ask_koboldcpp(prompt_transportation)
+        environmental_report += f"<div class='material-impacts-transportation'><h3>Transportation Impact for Catalyst: {catalyst['name']}</h3><p>{response_transportation['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['transportation'] = extract_scores(response_transportation['text'])
+        aggregate_scores['transportation'].append(extract_scores(response_transportation['text']))
+
+        # Economic impact of sustainable practices
+        prompt_economic = f"List the 4 main economic impacts of the sustainable pracices for {catalyst['name']} . First assign an Overall Score: high, medium, or low score to the economic category not indvidually."
+        response_economic = ask_koboldcpp(prompt_economic)
+        environmental_report += f"<div class='material-impacts-economic'><h3>Economic Impact of Sustainable Practices for Catalyst: {catalyst['name']}</h3><p>{response_economic['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['economic'] = extract_scores(response_economic['text'])
+        aggregate_scores['economic'].append(extract_scores(response_economic['text']))
+
+        # Green chemistry innovations
+        prompt_innovations = f"List the 4 main innovations in green chemistry that could replace {catalyst['name']} or make its use more sustainable but First start by assigning an Overall Score: high, medium, or low score to the innovations category ."
+        response_innovations = ask_koboldcpp(prompt_innovations)
+        environmental_report += f"<div class='material-innovations'><h3>Green Chemistry Innovations for Catalyst: {catalyst['name']}</h3><p>{response_innovations['text']}</p></div>"
+        catalyst_scores[catalyst['name']]['innovations'] = extract_scores(response_innovations['text'])
+        aggregate_scores['innovations'].append(extract_scores(response_innovations['text']))
+
+
+    for solvent in solvents:
+        solvent_scores[solvent['name']] = {'emissions': 0, 'waste': 0, 'energy': 0, 'transportation': 0, 'economic': 0, 'innovations':0}
+
+        # Emissions impact
+        prompt_emissions = f"List the 4 main environmental impacts of the production phase of {solvent['name']} in regards to emissions. First  assign an Overall Score: high, medium, or low score to the emission category not indvidually ."
+        response_emissions = ask_koboldcpp(prompt_emissions)
+        environmental_report += f"<div class='material-impacts-emissions'><h3>Emissions Impact for Solvent: {solvent['name']}</h3><p>{response_emissions['text']}</p></div>"
+        solvent_scores[solvent['name']]['emissions'] = extract_scores(response_emissions['text'])
+        aggregate_scores['emissions'].append(extract_scores(response_emissions['text']))
+
+         # Waste generation impact
+        prompt_waste = f"List the 4 main environmental impacts of the production phase of {solvent['name']} in regards to waste generation. First assign an Overall Score: high, medium, or low score to the waste category not indivudally."
+        response_waste = ask_koboldcpp(prompt_waste)
+        environmental_report += f"<div class='material-impacts-waste'><h3>Waste Generation Impact for Solvent: {solvent['name']}</h3><p>{response_waste['text']}</p></div>"
+        solvent_scores[solvent['name']]['waste'] = extract_scores(response_waste['text'])
+        aggregate_scores['waste'].append(extract_scores(response_waste['text']))
+
+        # Energy consumption impact
+        prompt_energy = f"List the 4 main environmental impacts of the production phase of {solvent['name']} in regards to energy consumption. First assign an Overall Score: high, medium, or low score to the energy category not indvidually."
+        response_energy = ask_koboldcpp(prompt_energy)
+        environmental_report += f"<div class='material-impacts-energy'><h3>Energy Consumption Impact for Solvent: {solvent['name']}</h3><p>{response_energy['text']}</p></div>"
+        solvent_scores[solvent['name']]['energy'] = extract_scores(response_energy['text'])
+        aggregate_scores['energy'].append(extract_scores(response_energy['text']))
+
+        # Transportation impact
+        prompt_transportation = f"List the 4 main environmental impacts of the transportation phase of {solvent['name']} . First assign an Overall Score: high, medium, or low score to the transporation category not indvidually."
+        response_transportation = ask_koboldcpp(prompt_transportation)
+        environmental_report += f"<div class='material-impacts-transportation'><h3>Transportation Impact for Solvent: {solvent['name']}</h3><p>{response_transportation['text']}</p></div>"
+        solvent_scores[solvent['name']]['transportation'] = extract_scores(response_transportation['text'])
+        aggregate_scores['transportation'].append(extract_scores(response_transportation['text']))
+
+        # Economic impact of sustainable practices
+        prompt_economic = f"List the 4 main economic impacts of the sustainable pracices for {solvent['name']} . First assign an Overall Score: high, medium, or low score to the economic category not indvidually."
+        response_economic = ask_koboldcpp(prompt_economic)
+        environmental_report += f"<div class='material-impacts-economic'><h3>Economic Impact of Sustainable Practices for Solvent: {solvent['name']}</h3><p>{response_economic['text']}</p></div>"
+        solvent_scores[solvent['name']]['economic'] = extract_scores(response_economic['text'])
+        aggregate_scores['economic'].append(extract_scores(response_economic['text']))
+
+        # Green chemistry innovations
+        prompt_innovations = f"List the 4 main innovations in green chemistry that could replace {solvent['name']} or make its use more sustainable but First start by assigning an Overall Score: high, medium, or low score to the innovations category ."
+        response_innovations = ask_koboldcpp(prompt_innovations)
+        environmental_report += f"<div class='material-innovations'><h3>Green Chemistry Innovations for Solvent: {solvent['name']}</h3><p>{response_innovations['text']}</p></div>"
+        solvent_scores[solvent['name']]['innovations'] = extract_scores(response_innovations['text'])
+        aggregate_scores['innovations'].append(extract_scores(response_innovations['text']))
+    
+
 
     return jsonify({
         "text": environmental_report,
         "reactant_scores": reactant_scores,
         "product_scores": product_scores,
+        "catalyst_scores": catalyst_scores,
+        "solvent_scores": solvent_scores,
         "aggregate_scores": {k: sum(v) / len(v) for k, v in aggregate_scores.items() if len(v) > 0}
     })
+
+
 
 
 def ask_koboldcpp(prompt):
     url = "http://localhost:5001/api/v1/generate"
     payload = {
         "prompt": prompt,
-        "max_length": 500,
+        "max_length": 1500,
         "temperature": 0.2,
         "top_p": 0.9
     }
     headers = {"Content-Type": "application/json"}
 
-    response = requests.post(url, json=payload, headers=headers)
-    
-    if response.status_code == 200:
-        # Return only the 'text' field from the first result
-        return {"text": response.json()['results'][0]['text']}
-    else:
-        return {"text": f"Error: Unable to fetch response from KoboldCpp. Status Code: {response.status_code}"}
+    try:
+        response = requests.post(url, json=payload, headers=headers)
+        
+        if response.status_code == 200:
+            try:
+                return {"text": response.json()['results'][0]['text']}
+            except requests.exceptions.JSONDecodeError:
+                return {"text": "Error: Invalid JSON response from KoboldCPP"}
+        else:
+            return {"text": f"Error: Unable to fetch response from KoboldCPP. Status Code: {response.status_code}"}
+    except requests.exceptions.RequestException as e:
+        return {"text": f"Error: {str(e)}"}
 
 def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hours_per_day, days_per_month, months_per_year, t_in, t_react, co2_ef, eff_cp, U, A):
     # Convert the production rate to moles per month
@@ -675,6 +782,38 @@ def calculate_emissions_and_mass(heat_of_reaction, production_rate_per_hour, hou
 
     return result
 
+@app.route("/api/analyze-life-cycle", methods=["POST"])
+def analyze_life_cycle():
+    question_answer_pairs = request.json
+
+    prompt = "Based on these decisions:\n"
+    for question, answer in question_answer_pairs.items():
+        if question != "Reactor Suggestion":
+            prompt += f"- {question}: {answer}\n"
+    
+    reactor_suggestion = question_answer_pairs.get("Reactor Suggestion", "")
+    prompt += f"\nThe suggested reactor is: {reactor_suggestion}\n"
+    prompt += "How will these decisions and the suggested reactor affect the life cycle analysis?"
+
+    response = ask_koboldcpp(prompt)
+    return jsonify(response)
+
+@app.route('/api/analyze-flow-diagram', methods=['POST'])
+def analyze_flow_diagram():
+    flow_diagram_output = request.json['flowDiagramOutput']
+
+    prompt = f"""
+    Analyze the following process flow diagram from a  Life Cycle Assessment  perspective:
+
+    {flow_diagram_output}
+
+   
+
+    Provide a detailed assessment of the environmental impacts associated with each part, and identify potential areas for improvement to reduce the overall environmental footprint of the process.
+    """
+
+    response = ask_koboldcpp(prompt)
+    return jsonify(response)
 
 
 
