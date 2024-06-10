@@ -22,13 +22,19 @@ export function generateGasPhaseKinetics() {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
-        // Update the HTML with the prediction results
         var resultContainer = document.getElementById('gasPhaseKineticsResult');
         resultContainer.innerHTML = 'Prediction: ' + data.predictions[0];
     })
     .catch(error => {
         console.error('Error:', error);
+        var resultContainer = document.getElementById('gasPhaseKineticsResult');
+        resultContainer.innerHTML = 'Error: ' + error.message;
     });
 }

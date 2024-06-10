@@ -13,6 +13,8 @@ import { askQuestionHeating } from './generateHeating.js';
 import { askQuestionGas } from './generateGas.js';
 import { askQuestionCorrosivity } from './generateCorrosivity.js';
 import { initializeFineTuneDataSubmission } from './generateFineTuneData.js';
+import { generateGasPhaseKinetics } from './generateActivationEnergy.js';
+
 //import { askQuestionSequence } from './generateSequence.js';
 
 // static/js/script.js

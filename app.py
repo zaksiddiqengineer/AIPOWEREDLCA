@@ -15,6 +15,7 @@ import numpy as np
 import torch
 from rxnfp.transformer_fingerprints import RXNBERTFingerprintGenerator, get_default_model_and_tokenizer
 from Activation.mlp_model import MLP
+from sklearn.preprocessing import RobustScaler
 
 app = Flask(__name__)
 
@@ -846,30 +847,34 @@ model.eval()  # Set the model to evaluation mode
 
 @app.route('/gas_phase_kinetics', methods=['POST'])
 def gas_phase_kinetics():
-    # Get the reactants and products from the request
-    reactants = request.form.getlist('reactants')
-    products = request.form.getlist('products')
+    try:
+        # Get the reactants and products from the request
+        reactants = request.form['reactants']
+        products = request.form['products']
 
-    # Convert reactants and products to a reaction SMILES string
-    reaction_smiles = '.'.join(reactants) + '>>' + '.'.join(products)
+        reactants = json.loads(reactants)
+        products = json.loads(products)
 
-    # Generate the reaction fingerprint using RxnFP
-    rxnfp = rxnfp_generator.convert(reaction_smiles)
+        # Convert reactants and products to a reaction SMILES string
+        reaction_smiles = '.'.join(reactants) + '>>' + '.'.join(products)
 
-    # Convert the reaction fingerprint to a tensor
-    input_tensor = torch.tensor(rxnfp).float()
+        # Generate the reaction fingerprint using RxnFP
+        rxnfp = rxnfp_generator.convert(reaction_smiles)
 
-    # Make predictions using the loaded model
-    with torch.no_grad():
-        output = model(input_tensor)
+        # Convert the reaction fingerprint to a tensor
+        input_tensor = torch.tensor(rxnfp).unsqueeze(0).float()
 
-    # Postprocess the model's output as needed
-    prediction = output.item()  # Get the scalar value from the tensor
+        # Make predictions using the loaded model
+        with torch.no_grad():
+            output = model(input_tensor)
 
-    # Return the prediction as a JSON response
-    return jsonify({'predictions': [prediction]})
-
-
+        # Postprocess the model's output as needed
+        prediction = output.item()  # Get the scalar value from the tensor
+    
+        # Return the prediction as a JSON response
+        return jsonify({'predictions': [prediction]})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 

@@ -3,7 +3,7 @@ import torch.nn as nn
 from collections import OrderedDict
 
 class MLP(nn.Module):
-    def __init__(self, drop_out=0.4, num_hidden_layers=3, num_neurons=256, num_input=256, active='ReLu'):
+    def __init__(self, drop_out=0.4, num_hidden_layers=3, num_neurons=128, num_input=256, active='ReLu'):
         super().__init__()
 
         # Define activation function dynamically based on the 'active' parameter
