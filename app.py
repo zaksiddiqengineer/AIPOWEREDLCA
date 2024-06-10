@@ -6,13 +6,15 @@ import os
 import csv
 import subprocess
 import shlex
+import pkg_resources
 import tempfile  
 import logging
 from rdkit import Chem
 from rdkit.Chem import AllChem
 import numpy as np
 import torch
-
+from rxnfp.transformer_fingerprints import RXNBERTFingerprintGenerator, get_default_model_and_tokenizer
+from Activation.mlp_model import MLP
 
 app = Flask(__name__)
 
@@ -831,33 +833,44 @@ def analyze_recycle_decision():
     return jsonify(response)
 
 
-from flask import request, jsonify
-import numpy as np
-import torch
+# Load the RxnFP generator
+rxnfp_model, rxnfp_tokenizer = get_default_model_and_tokenizer()
+rxnfp_generator = RXNBERTFingerprintGenerator(rxnfp_model, rxnfp_tokenizer)
+
+# Load the saved model
+model_path = 'Activation/models/fold_2.pth'
+model = MLP()  # Create an instance of your MLP model
+model.load_state_dict(torch.load(model_path))
+model.eval()  # Set the model to evaluation mode
 
 
 @app.route('/gas_phase_kinetics', methods=['POST'])
 def gas_phase_kinetics():
-    reactants = request.form.get('reactants')
-    products = request.form.get('products')
+    # Get the reactants and products from the request
+    reactants = request.form.getlist('reactants')
+    products = request.form.getlist('products')
 
-    reactants = json.loads(reactants)
-    products = json.loads(products)
-
+    # Convert reactants and products to a reaction SMILES string
     reaction_smiles = '.'.join(reactants) + '>>' + '.'.join(products)
 
-    model, tokenizer = get_default_model_and_tokenizer()
-    rxnfp_generator = RXNBERTFingerprintGenerator(model, tokenizer)
+    # Generate the reaction fingerprint using RxnFP
+    rxnfp = rxnfp_generator.convert(reaction_smiles)
 
-    fp = rxnfp_generator.convert(reaction_smiles)
+    # Convert the reaction fingerprint to a tensor
+    input_tensor = torch.tensor(rxnfp).float()
 
-    # Perform further processing or calculations with the fingerprint
+    # Make predictions using the loaded model
+    with torch.no_grad():
+        output = model(input_tensor)
 
-    result = {
-        'fingerprint': fp.tolist()
-    }
+    # Postprocess the model's output as needed
+    prediction = output.item()  # Get the scalar value from the tensor
 
-    return jsonify(result)
+    # Return the prediction as a JSON response
+    return jsonify({'predictions': [prediction]})
+
+
+
 
 
 

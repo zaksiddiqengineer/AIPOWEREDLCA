@@ -24,8 +24,9 @@ export function generateGasPhaseKinetics() {
     })
     .then(response => response.json())
     .then(data => {
-        // Handle the response data
-        console.log(data);
+        // Update the HTML with the prediction results
+        var resultContainer = document.getElementById('gasPhaseKineticsResult');
+        resultContainer.innerHTML = 'Prediction: ' + data.predictions[0];
     })
     .catch(error => {
         console.error('Error:', error);
