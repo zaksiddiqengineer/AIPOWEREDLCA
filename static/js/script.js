@@ -8,6 +8,11 @@ import { openMTSREconomicAnalysis } from './generateMTSREconomic.js';
 import { calculateMTSR } from './generateMTSR.js';
 import { askQuestionMixing } from './generateMixing.js';
 import { askQuestionRate } from './generateRate.js';
+import { askQuestionSequence } from './generateSequence.js';
+import { askQuestionHeating } from './generateHeating.js';
+import { askQuestionGas } from './generateGas.js';
+import { askQuestionCorrosivity } from './generateCorrosivity.js';
+import { initializeFineTuneDataSubmission } from './generateFineTuneData.js';
 //import { askQuestionSequence } from './generateSequence.js';
 
 // static/js/script.js
@@ -409,6 +414,36 @@ document.getElementById('sequenceAnalysisButton').addEventListener('click', () =
     document.getElementById('sequenceContainer').style.display = 'none';
     document.getElementById('sequenceWizard').style.display = 'block';
     document.getElementById('sequenceScorePlotContainer').style.display = 'block';
-    askQuestionRate('reactantAddition');
+    askQuestionSequence('reactantAddition');
 });
 
+
+document.getElementById('heatingAnalysisButton').addEventListener('click', () => {
+    document.getElementById('heatingContainer').style.display = 'none';
+    document.getElementById('heatingWizard').style.display = 'block';
+    document.getElementById('heatingScorePlotContainer').style.display = 'block';
+    askQuestionHeating('reactionExothermicity');
+});
+
+document.getElementById('gasAnalysisButton').addEventListener('click', () => {
+    document.getElementById('gasContainer').style.display = 'none';
+    document.getElementById('gasWizard').style.display = 'block';
+    document.getElementById('gasScorePlotContainer').style.display = 'block';
+    askQuestionGas('gasProduction');
+});
+
+document.getElementById('corrosivityAnalysisButton').addEventListener('click', () => {
+    document.getElementById('corrosivityContainer').style.display = 'none';
+    document.getElementById('corrosivityWizard').style.display = 'block';
+    document.getElementById('corrosivityScorePlotContainer').style.display = 'block';
+    askQuestionCorrosivity('chemicalComposition');
+});
+
+
+// Initialize Fine Tune Data Submission
+initializeFineTuneDataSubmission();
+
+// generation of gas phase kinetics
+document.getElementById('generateGasPhaseKinetics').addEventListener('click', function() {
+    generateGasPhaseKinetics();
+});

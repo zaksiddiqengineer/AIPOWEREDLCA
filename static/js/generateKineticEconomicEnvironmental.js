@@ -106,6 +106,13 @@ export function openEconomicEnvironmentalAnalysis() {
                 const result = await response.json();
                 displayCalculationResult(result);
 
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of recycle Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeRecycleDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('reactionKineticsEconomicalEnvironmentalContainer').appendChild(analyzeButton);
+
                 document.getElementById('reactionMTSRContainer').style.display = 'block';
             } catch (error) {
                 console.error('Error submitting data:', error);

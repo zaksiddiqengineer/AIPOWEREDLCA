@@ -5592,6 +5592,13 @@ export function askQuestionSequence(questionKey) {
                 renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
                 console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
 
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of recycle Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeRecycleDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('sequenceScorePlotContainer').appendChild(analyzeButton);
+
                 // Show the button to advance to the sequence analysis
                 document.getElementById('heatingContainer').style.display = 'block';
             }

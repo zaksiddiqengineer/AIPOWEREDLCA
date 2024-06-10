@@ -1,4 +1,5 @@
 const userInputs = {};
+const questionAnswerPairs = {};
 
 const decisionTree = {
     costConsiderations: {
@@ -239,17 +240,17 @@ const decisionTree = {
 
 function evaluateSafety() {
     const scores = {
-        "Economic Feasibility": 1,
-        "Technical Feasibility": 1,
-        "Safety and Environmental Impact": 1,
-        "Process Performance": 1,
-        "Scale-Up Considerations": 1,
-        "Additional Considerations": 1
+        "Economic Feasibility": 0,
+        "Technical Feasibility": 0,
+        "Safety and Environmental Impact": 0,
+        "Process Performance": 0,
+        "Scale-Up Considerations": 0,
+        "Additional Considerations": 0
     };
     
     const impactMatrix = {
         // Cost Considerations
-        "Yes, they are very expensive.": {
+        "costConsiderations_Yes, they are very expensive.": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -257,8 +258,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-
-        "Moderately expensive.": {
+        "costConsiderations_Moderately expensive.": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -266,7 +266,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Not very expensive.": {
+        "costConsiderations_Not very expensive.": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -274,7 +274,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "No, they are cheap.": {
+        "costConsiderations_No, they are cheap.": {
             "Economic Feasibility": -1,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -284,7 +284,7 @@ function evaluateSafety() {
         },
     
         // Process Duration
-        "Long-term (years)": {
+        "processDuration_Long-term (years)": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 0,
@@ -292,7 +292,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Medium-term (months)": {
+        "processDuration_Medium-term (months)": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0,
@@ -300,7 +300,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Short-term (weeks)": {
+        "processDuration_Short-term (weeks)": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -308,7 +308,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "One-time process": {
+        "processDuration_One-time process": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": 0,
@@ -317,8 +317,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Chemical and Reaction Analysis
-        "Yes, significant impurities.": {
+        // Chemical and Reaction Analysis 1
+        "chemicalAndReactionAnalysis1_Yes, significant impurities.": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -326,7 +326,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Yes, but minor impurities.": {
+        "chemicalAndReactionAnalysis1_Yes, but minor impurities.": {
             "Economic Feasibility": 0,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -334,7 +334,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "No known impurities.": {
+        "chemicalAndReactionAnalysis1_No known impurities.": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -342,7 +342,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "chemicalAndReactionAnalysis1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -350,7 +350,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Yes, significantly.": {
+    
+        // Chemical and Reaction Analysis 2
+        "chemicalAndReactionAnalysis2_Yes, significantly.": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -358,7 +360,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Yes, but only slightly.": {
+        "chemicalAndReactionAnalysis2_Yes, but only slightly.": {
             "Economic Feasibility": -0.5,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -366,7 +368,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "No, they don't affect it.": {
+        "chemicalAndReactionAnalysis2_No, they don't affect it.": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -374,7 +376,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "chemicalAndReactionAnalysis2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -382,7 +384,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Yes, likely.": {
+    
+        // Chemical and Reaction Analysis 3
+        "chemicalAndReactionAnalysis3_Yes, likely.": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -390,7 +394,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Possibly.": {
+        "chemicalAndReactionAnalysis3_Possibly.": {
             "Economic Feasibility": -0.5,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -398,7 +402,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Unlikely.": {
+        "chemicalAndReactionAnalysis3_Unlikely.": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -406,7 +410,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "No": {
+        "chemicalAndReactionAnalysis3_No": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -415,8 +419,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Separation and Purification Needs
-        "Distillation": {
+        // Separation and Purification Needs 1
+        "separationAndPurificationNeeds1_Distillation": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 0.5,
@@ -424,7 +428,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Filtration": {
+        "separationAndPurificationNeeds1_Filtration": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -432,7 +436,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Crystallization": {
+        "separationAndPurificationNeeds1_Crystallization": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -440,7 +444,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Other (specify)": {
+        "separationAndPurificationNeeds1_Other (specify)": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -448,7 +452,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "separationAndPurificationNeeds1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -456,7 +460,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Very effective": {
+    
+        // Separation and Purification Needs 2
+        "separationAndPurificationNeeds2_Very effective": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -464,7 +470,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Moderately effective": {
+        "separationAndPurificationNeeds2_Moderately effective": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -472,7 +478,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Slightly effective": {
+        "separationAndPurificationNeeds2_Slightly effective": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -480,7 +486,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Ineffective": {
+        "separationAndPurificationNeeds2_Ineffective": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -489,8 +495,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Material Compatibility
-        "Yes, fully resistant": {
+        // Material Compatibility 1
+        "materialCompatibility1_Yes, fully resistant": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -498,7 +504,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Partially resistant": {
+        "materialCompatibility1_Partially resistant": {
             "Economic Feasibility": 0,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -506,7 +512,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Not resistant": {
+        "materialCompatibility1_Not resistant": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -514,7 +520,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "materialCompatibility1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -522,7 +528,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Yes, very likely": {
+    
+        // Material Compatibility 2
+        "materialCompatibility2_Yes, very likely": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -530,7 +538,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Possibly": {
+        "materialCompatibility2_Possibly": {
             "Economic Feasibility": -0.5,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -538,7 +546,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Unlikely": {
+        "materialCompatibility2_Unlikely": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -546,7 +554,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "No": {
+        "materialCompatibility2_No": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -555,8 +563,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Safety Risks
-        "Yes, high risks": {
+        // Safety Risks 1
+        "safetyRisks1_Yes, high risks": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -564,7 +572,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Moderate risks": {
+        "safetyRisks1_Moderate risks": {
             "Economic Feasibility": -0.5,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -572,7 +580,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Low risks": {
+        "safetyRisks1_Low risks": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -580,7 +588,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "No risks": {
+        "safetyRisks1_No risks": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -588,7 +596,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Inert atmospheres": {
+    
+        // Safety Risks 2
+        "safetyRisks2_Inert atmospheres": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 1,
@@ -596,7 +606,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Regular cleaning": {
+        "safetyRisks2_Regular cleaning": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0.5,
@@ -604,7 +614,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Safety protocols": {
+        "safetyRisks2_Safety protocols": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 1,
@@ -612,7 +622,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Other (specify)": {
+        "safetyRisks2_Other (specify)": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -620,7 +630,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "safetyRisks2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -629,8 +639,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Waste Management
-        "Hazardous waste disposal service": {
+        // Waste Management 1
+        "wasteManagement1_Hazardous waste disposal service": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -638,7 +648,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Neutralization and safe disposal": {
+        "wasteManagement1_Neutralization and safe disposal": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -646,7 +656,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Incineration": {
+        "wasteManagement1_Incineration": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": -0.5,
@@ -654,7 +664,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Other (specify)": {
+        "wasteManagement1_Other (specify)": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -662,7 +672,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "wasteManagement1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -670,7 +680,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Yes, strict regulations": {
+    
+        // Waste Management 2
+        "wasteManagement2_Yes, strict regulations": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -678,7 +690,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Some guidelines": {
+        "wasteManagement2_Some guidelines": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -686,7 +698,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Minimal guidelines": {
+        "wasteManagement2_Minimal guidelines": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -694,7 +706,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "No regulations": {
+        "wasteManagement2_No regulations": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -703,8 +715,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Process Performance
-        "Improves yield and purity": {
+        // Process Performance 1
+        "reactionEfficiency1_Improves yield and purity": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -712,7 +724,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "No significant effect": {
+        "reactionEfficiency1_No significant effect": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -720,7 +732,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Slightly decreases yield/purity": {
+        "reactionEfficiency1_Slightly decreases yield/purity": {
             "Economic Feasibility": -0.5,
             "Technical Feasibility": -0.5,
             "Safety and Environmental Impact": -0.5,
@@ -728,7 +740,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -0.5,
             "Additional Considerations": 0
         },
-        "Significantly decreases yield/purity": {
+        "reactionEfficiency1_Significantly decreases yield/purity": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -736,39 +748,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Increases reaction rate": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "No significant change": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Decreases reaction rate": {
-            "Economic Feasibility": -1,
-            "Technical Feasibility": -1,
-            "Safety and Environmental Impact": -1,
-            "Process Performance": -1,
-            "Scale-Up Considerations": -1,
-            "Additional Considerations": 0
-        },
-        "Unsure": {
+        "reactionEfficiency1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -777,8 +757,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Catalyst and Reagent Stability
-        "Very stable": {
+        // Process Performance 2
+        "reactionEfficiency2_Increases reaction rate": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -786,15 +766,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Moderately stable": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Slightly stable": {
+        "reactionEfficiency2_No significant change": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -802,7 +774,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Unstable": {
+        "reactionEfficiency2_Decreases reaction rate": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -810,47 +782,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Yes, every cycle": {
-            "Economic Feasibility": -1,
-            "Technical Feasibility": -1,
-            "Safety and Environmental Impact": -1,
-            "Process Performance": -1,
-            "Scale-Up Considerations": -1,
-            "Additional Considerations": 0
-        },
-        "After several cycles": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Rarely": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Never": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Unsure": {
+        "reactionEfficiency2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -859,8 +791,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Pilot Testing
-        "Yes, with successful results": {
+        // Catalyst and Reagent Stability 1
+        "catalystAndReagentStability1_Very stable": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -868,7 +800,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Yes, with mixed results": {
+        "catalystAndReagentStability1_Moderately stable": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -876,15 +808,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "No, not tested": {
-            "Economic Feasibility": -1,
-            "Technical Feasibility": -1,
-            "Safety and Environmental Impact": -1,
-            "Process Performance": -1,
-            "Scale-Up Considerations": -1,
-            "Additional Considerations": 0
-        },
-        "Unsure": {
+        "catalystAndReagentStability1_Slightly stable": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -892,23 +816,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Positive, promising": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Neutral, needs improvement": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Negative, not feasible": {
+        "catalystAndReagentStability1_Unstable": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -916,7 +824,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "catalystAndReagentStability1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -925,24 +833,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // System Integration
-        "Easily integrates": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Requires some modifications": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Requires significant modifications": {
+        // Catalyst and Reagent Stability 2
+        "catalystAndReagentStability2_Yes, every cycle": {
             "Economic Feasibility": -1,
             "Technical Feasibility": -1,
             "Safety and Environmental Impact": -1,
@@ -950,23 +842,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Yes, major equipment": {
-            "Economic Feasibility": -1,
-            "Technical Feasibility": -1,
-            "Safety and Environmental Impact": -1,
-            "Process Performance": -1,
-            "Scale-Up Considerations": -1,
-            "Additional Considerations": 0
-        },
-        "Yes, minor equipment": {
+        "catalystAndReagentStability2_After several cycles": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -974,7 +850,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "No additional equipment": {
+        "catalystAndReagentStability2_Rarely": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -982,7 +858,15 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "catalystAndReagentStability2_Never": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "catalystAndReagentStability2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -991,16 +875,8 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Data and Monitoring
-        "Regular chemical analysis": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Automated sensors": {
+        // Pilot Testing 1
+        "pilotTesting1_Yes, with successful results": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -1008,7 +884,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Periodic testing": {
+        "pilotTesting1_Yes, with mixed results": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -1016,55 +892,15 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Other (specify)": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
+        "pilotTesting1_No, not tested": {
+            "Economic Feasibility": -1,
+            "Technical Feasibility": -1,
+            "Safety and Environmental Impact": -1,
+            "Process Performance": -1,
+            "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Unsure": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Impurity levels": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "Reaction yield and purity": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Equipment performance": {
-            "Economic Feasibility": 0.5,
-            "Technical Feasibility": 0.5,
-            "Safety and Environmental Impact": 0.5,
-            "Process Performance": 0.5,
-            "Scale-Up Considerations": 0.5,
-            "Additional Considerations": 0
-        },
-        "All of the above": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
-            "Additional Considerations": 0
-        },
-        "Unsure": {
+        "pilotTesting1_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -1073,8 +909,16 @@ function evaluateSafety() {
             "Additional Considerations": 0
         },
     
-        // Documentation and Reporting
-        "Detailed logs": {
+        // Pilot Testing 2
+        "pilotTesting2_Positive, promising": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "pilotTesting2_Neutral, needs improvement": {
             "Economic Feasibility": 0.5,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -1082,15 +926,15 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Regular reports": {
-            "Economic Feasibility": 1,
-            "Technical Feasibility": 1,
-            "Safety and Environmental Impact": 1,
-            "Process Performance": 1,
-            "Scale-Up Considerations": 1,
+        "pilotTesting2_Negative, not feasible": {
+            "Economic Feasibility": -1,
+            "Technical Feasibility": -1,
+            "Safety and Environmental Impact": -1,
+            "Process Performance": -1,
+            "Scale-Up Considerations": -1,
             "Additional Considerations": 0
         },
-        "Minimal documentation": {
+        "pilotTesting2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -1098,15 +942,9 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0,
             "Additional Considerations": 0
         },
-        "Unsure": {
-            "Economic Feasibility": 0,
-            "Technical Feasibility": 0,
-            "Safety and Environmental Impact": 0,
-            "Process Performance": 0,
-            "Scale-Up Considerations": 0,
-            "Additional Considerations": 0
-        },
-        "Performance metrics": {
+    
+        // System Integration 1
+        "systemIntegration1_Easily integrates": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -1114,7 +952,193 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Cost analysis": {
+        "systemIntegration1_Requires some modifications": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "systemIntegration1_Requires significant modifications": {
+            "Economic Feasibility": -1,
+            "Technical Feasibility": -1,
+            "Safety and Environmental Impact": -1,
+            "Process Performance": -1,
+            "Scale-Up Considerations": -1,
+            "Additional Considerations": 0
+        },
+        "systemIntegration1_Unsure": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+    
+        // System Integration 2
+        "systemIntegration2_Yes, major equipment": {
+            "Economic Feasibility": -1,
+            "Technical Feasibility": -1,
+            "Safety and Environmental Impact": -1,
+            "Process Performance": -1,
+            "Scale-Up Considerations": -1,
+            "Additional Considerations": 0
+        },
+        "systemIntegration2_Yes, minor equipment": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "systemIntegration2_No additional equipment": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "systemIntegration2_Unsure": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+    
+        // Data and Monitoring 1
+        "dataAndMonitoring1_Regular chemical analysis": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring1_Automated sensors": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring1_Periodic testing": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring1_Other (specify)": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring1_Unsure": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+    
+        // Data and Monitoring 2
+        "dataAndMonitoring2_Impurity levels": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring2_Reaction yield and purity": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring2_Equipment performance": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring2_All of the above": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "dataAndMonitoring2_Unsure": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+    
+        // Documentation and Reporting 1
+        "documentationAndReporting1_Detailed logs": {
+            "Economic Feasibility": 0.5,
+            "Technical Feasibility": 0.5,
+            "Safety and Environmental Impact": 0.5,
+            "Process Performance": 0.5,
+            "Scale-Up Considerations": 0.5,
+            "Additional Considerations": 0
+        },
+        "documentationAndReporting1_Regular reports": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "documentationAndReporting1_Minimal documentation": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+        "documentationAndReporting1_Unsure": {
+            "Economic Feasibility": 0,
+            "Technical Feasibility": 0,
+            "Safety and Environmental Impact": 0,
+            "Process Performance": 0,
+            "Scale-Up Considerations": 0,
+            "Additional Considerations": 0
+        },
+    
+        // Documentation and Reporting 2
+        "documentationAndReporting2_Performance metrics": {
+            "Economic Feasibility": 1,
+            "Technical Feasibility": 1,
+            "Safety and Environmental Impact": 1,
+            "Process Performance": 1,
+            "Scale-Up Considerations": 1,
+            "Additional Considerations": 0
+        },
+        "documentationAndReporting2_Cost analysis": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 0.5,
             "Safety and Environmental Impact": 0.5,
@@ -1122,7 +1146,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 0.5,
             "Additional Considerations": 0
         },
-        "Safety observations": {
+        "documentationAndReporting2_Safety observations": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -1130,7 +1154,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "All of the above": {
+        "documentationAndReporting2_All of the above": {
             "Economic Feasibility": 1,
             "Technical Feasibility": 1,
             "Safety and Environmental Impact": 1,
@@ -1138,7 +1162,7 @@ function evaluateSafety() {
             "Scale-Up Considerations": 1,
             "Additional Considerations": 0
         },
-        "Unsure": {
+        "documentationAndReporting2_Unsure": {
             "Economic Feasibility": 0,
             "Technical Feasibility": 0,
             "Safety and Environmental Impact": 0,
@@ -1147,6 +1171,7 @@ function evaluateSafety() {
             "Additional Considerations": 0
         }
     };
+    
 
     console.log("User Inputs: ", userInputs);
 
@@ -1154,34 +1179,36 @@ function evaluateSafety() {
     for (let questionKey in userInputs) {
         const answerIndex = userInputs[questionKey];
         const answerKey = decisionTree[questionKey].options[answerIndex];
+        const combinedKey = `${questionKey}_${answerKey}`;
 
         console.log(`Question: ${questionKey}, Answer: ${answerKey}`);
 
-        if (impactMatrix[answerKey]) {
-            const impacts = impactMatrix[answerKey];
-            console.log(`Impacts for ${questionKey} - ${answerKey}: `, impacts)
+        if (impactMatrix[combinedKey]) {
+            const impacts = impactMatrix[combinedKey];
+            console.log(`Impacts for ${combinedKey}: `, impacts);
             for (let category in impacts) {
                 scores[category] += impacts[category];
                 console.log(`Updated score for ${category}: `, scores[category]);
             }
         } else {
-            console.warn(`No impacts found for ${questionKey} - ${answerKey}`);
+            console.warn(`No impacts found for ${combinedKey}`);
         }
     }
 
-    // Normalize scores to a maximum of 5 and minimum of 1
+    // Normalize scores to a maximum of 5 and minimum of 0
     for (let key in scores) {
         if (scores[key] > 5) {
             scores[key] = 5;
         }
-        if (scores[key] < 1) {
-            scores[key] = 1;
+        if (scores[key] < 0) {
+            scores[key] = 0;
         }
     }
 
     console.log("Final Scores: ", scores);
+    console.log("Question-Answer Pairs: ", questionAnswerPairs);
 
-    return scores;
+    return { scores, questionAnswerPairs };
 }
 
 export function askQuestionRecycle(questionKey) {
@@ -1197,13 +1224,22 @@ export function askQuestionRecycle(questionKey) {
         button.textContent = option;
         button.addEventListener('click', () => {
             userInputs[questionKey] = index;
+            questionAnswerPairs[question.question] = option;
             const nextQuestionKey = Object.keys(decisionTree)[Object.keys(decisionTree).indexOf(questionKey) + 1];
             if (nextQuestionKey) {
                 askQuestionRecycle(nextQuestionKey);
             } else {
-                const scores = evaluateSafety();
-                renderRadarPlot(scores);
-
+                const result = evaluateSafety();
+                renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
+                console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
+                
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of recycle Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeRecycleDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('recycleScorePlotContainer').appendChild(analyzeButton);
+                
                 const reactionKineticsContainer = document.getElementById('reactionKineticsContainer');
                 reactionKineticsContainer.style.display = 'block';
             }
@@ -1211,6 +1247,7 @@ export function askQuestionRecycle(questionKey) {
         answersDiv.appendChild(button);
     });
 }
+
 
 export function renderRadarPlot(scores) {
     const ctx = document.getElementById('recycleScorePlots').getContext('2d');
@@ -1242,4 +1279,36 @@ export function renderRadarPlot(scores) {
             }
         }
     });
+}
+
+async function analyzeRecycleDecisions(questionAnswerPairs) {
+    const analysisContainer = document.createElement('div');
+    analysisContainer.innerHTML = '<h3>Life Cycle Assessment and Scale-Up Effects:</h3>';
+
+    for (const [question, answer] of Object.entries(questionAnswerPairs)) {
+        try {
+            const prompt = `Determine the life cycle impacts and scale-up effects of the following recycle decision:
+            - ${question}: ${answer}`;
+
+            const response = await fetch('/api/analyze-recycle-decision', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const analysis = `<p><strong>${question}</strong><br>${data.text}</p>`;
+                analysisContainer.innerHTML += analysis;
+            } else {
+                console.error('Error analyzing recycle decision:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error analyzing recycle decision:', error);
+        }
+    }
+
+    document.getElementById('recycleScorePlotContainer').appendChild(analysisContainer);
 }

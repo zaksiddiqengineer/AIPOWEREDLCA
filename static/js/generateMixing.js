@@ -5519,6 +5519,14 @@ export function askQuestionMixing(questionKey) {
                 const scores = evaluateSafety();
                 renderRadarPlot(scores);
 
+            
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of recycle Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeRecycleDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('mixingScorePlotContainer').appendChild(analyzeButton);
+
                 // const reactionKineticsContainer = document.getElementById('reactionKineticsContainer');
                 // reactionKineticsContainer.style.display = 'block';
                 document.getElementById('rateContainer').style.display = 'block';

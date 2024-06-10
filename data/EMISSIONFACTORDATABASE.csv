@@ -131,3 +131,927 @@ Refrigerant 3,5.88E-06,1.341,USTitle40: Tires,8.15E-05,Shell & Tube,500,500,500,
 Refrigerant 4,8.53E-06,1.341,USTitle40: Tires,8.15E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
 Very Low Temperature,8.90E-06,1.341,USTitle40: Tires,8.15E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
 Power,1.58E-05,---,USTitle40: Tires,8.15E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Solid Byproducts,1.00E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Solid Byproducts,1.00E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Solid Byproducts,1.00E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Solid Byproducts,1.00E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Solid Byproducts,1.00E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Solid Byproducts,1.00E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Solid Byproducts,1.00E-04,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Solid Byproducts,1.00E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Solid Byproducts,1.00E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Solid Byproducts,1.00E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Solid Byproducts,1.00E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Solid Byproducts,1.00E-04,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Rendered Animal Fat,6.74E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Rendered Animal Fat,6.74E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Rendered Animal Fat,6.74E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Rendered Animal Fat,6.74E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Rendered Animal Fat,6.74E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Rendered Animal Fat,6.74E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Rendered Animal Fat,6.74E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Rendered Animal Fat,6.74E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Rendered Animal Fat,6.74E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Rendered Animal Fat,6.74E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Rendered Animal Fat,6.74E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Rendered Animal Fat,6.74E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Refinery feedstocks,6.73E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Refinery feedstocks,6.73E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Refinery feedstocks,6.73E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Refinery feedstocks,6.73E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Refinery feedstocks,6.73E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Refinery feedstocks,6.73E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Refinery feedstocks,6.73E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Refinery feedstocks,6.73E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Refinery feedstocks,6.73E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Refinery feedstocks,6.73E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Refinery feedstocks,6.73E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Refinery feedstocks,6.73E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Propylene,6.42E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Propylene,6.42E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Propylene,6.42E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Propylene,6.42E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Propylene,6.42E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Propylene,6.42E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Propylene,6.42E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Propylene,6.42E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Propylene,6.42E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Propylene,6.42E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Propylene,6.42E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Propylene,6.42E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Propylene,6.42E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Propane Gas,5.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Propane Gas,5.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Propane Gas,5.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Propane Gas,5.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Propane Gas,5.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Propane Gas,5.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Propane Gas,5.83E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Propane Gas,5.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Propane Gas,5.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Propane Gas,5.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Propane Gas,5.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Propane Gas,5.83E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Propane,5.96E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Propane,5.96E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Propane,5.96E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Propane,5.96E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Propane,5.96E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Propane,5.96E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Propane,5.96E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Propane,5.96E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Propane,5.96E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Propane,5.96E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Propane,5.96E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Propane,5.96E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Propane,5.96E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Plastics,7.11E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Plastics,7.11E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Plastics,7.11E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Plastics,7.11E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Plastics,7.11E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Plastics,7.11E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Plastics,7.11E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Plastics,7.11E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Plastics,7.11E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Plastics,7.11E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Plastics,7.11E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Plastics,7.11E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Plastics,7.11E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Petroleum coke,9.71E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Petroleum coke,9.71E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Petroleum coke,9.71E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Petroleum coke,9.71E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Petroleum coke,9.71E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Petroleum coke,9.71E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Petroleum coke,9.71E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Petroleum coke,9.71E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Petroleum coke,9.71E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Petroleum coke,9.71E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Petroleum coke,9.71E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Petroleum coke,9.71E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Pentanes Plus (C5+),6.64E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Pentanes Plus (C5+),6.64E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Pentanes Plus (C5+),6.64E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Pentanes Plus (C5+),6.64E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Pentanes Plus (C5+),6.64E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Pentanes Plus (C5+),6.64E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Pentanes Plus (C5+),6.64E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Peat,1.06E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Peat,1.06E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Peat,1.06E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Peat,1.06E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Peat,1.06E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Peat,1.06E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Peat,1.06E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Peat,1.06E-04,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Peat,1.06E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Peat,1.06E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Peat,1.06E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Peat,1.06E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Peat,1.06E-04,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Agricultural Byproducts,1.12E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Agricultural Byproducts,1.12E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Agricultural Byproducts,1.12E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Agricultural Byproducts,1.12E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Agricultural Byproducts,1.12E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Agricultural Byproducts,1.12E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Agricultural Byproducts,1.12E-04,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Agricultural Byproducts,1.12E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Agricultural Byproducts,1.12E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Agricultural Byproducts,1.12E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Agricultural Byproducts,1.12E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Agricultural Byproducts,1.12E-04,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Asphalt,7.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Asphalt,7.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Asphalt,7.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Asphalt,7.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Asphalt,7.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Asphalt,7.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Asphalt,7.14E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Asphalt,7.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Asphalt,7.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Asphalt,7.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Asphalt,7.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Asphalt,7.14E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Biodiesel (100%),7.00E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Biodiesel (100%),7.00E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Biodiesel (100%),7.00E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Biodiesel (100%),7.00E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Biodiesel (100%),7.00E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Biodiesel (100%),7.00E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Biodiesel (100%),7.00E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Biodiesel (100%),7.00E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Biodiesel (100%),7.00E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Biodiesel (100%),7.00E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Biodiesel (100%),7.00E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Biodiesel (100%),7.00E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Blast furnace gas,2.60E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Blast furnace gas,2.60E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Blast furnace gas,2.60E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Blast furnace gas,2.60E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Blast furnace gas,2.60E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Blast furnace gas,2.60E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Blast furnace gas,2.60E-04,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Blast furnace gas,2.60E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Blast furnace gas,2.60E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Blast furnace gas,2.60E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Blast furnace gas,2.60E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Blast furnace gas,2.60E-04,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Butylene,6.51E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Butylene,6.51E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Butylene,6.51E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Butylene,6.51E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Butylene,6.51E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Butylene,6.51E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Butylene,6.51E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Butylene,6.51E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Butylene,6.51E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Butylene,6.51E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Butylene,6.51E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Butylene,6.51E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Butylene,6.51E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Other Biomass Gases,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Other Biomass Gases,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Other Biomass Gases,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Other Biomass Gases,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Other Biomass Gases,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Other Biomass Gases,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Other Biomass Gases,4.94E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Other Biomass Gases,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Other Biomass Gases,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Other Biomass Gases,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Other Biomass Gases,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Other Biomass Gases,4.94E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: N-butane,6.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: N-butane,6.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: N-butane,6.14E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: N-butane,6.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: N-butane,6.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: N-butane,6.14E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: N-butane,6.14E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: N-butane,6.14E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: N-butane,6.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: N-butane,6.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: N-butane,6.14E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: N-butane,6.14E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: N-butane,6.14E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Natural gas,5.03E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Natural gas,5.03E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Natural gas,5.03E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Natural gas,5.03E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Natural gas,5.03E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Natural gas,5.03E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Natural gas,5.03E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Natural gas,5.03E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Natural gas,5.03E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Natural gas,5.03E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Natural gas,5.03E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Natural gas,5.03E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Naphtha - light (<401F),6.45E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Naphtha - light (<401F),6.45E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Naphtha - light (<401F),6.45E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Naphtha - light (<401F),6.45E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Naphtha - light (<401F),6.45E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Naphtha - light (<401F),6.45E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Naphtha - light (<401F),6.45E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Municipal solid wastes,8.60E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Municipal solid wastes,8.60E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Municipal solid wastes,8.60E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Municipal solid wastes,8.60E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Municipal solid wastes,8.60E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Municipal solid wastes,8.60E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Municipal solid wastes,8.60E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Municipal solid wastes,8.60E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Municipal solid wastes,8.60E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Municipal solid wastes,8.60E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Municipal solid wastes,8.60E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Municipal solid wastes,8.60E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Lubricants,7.04E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Lubricants,7.04E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Lubricants,7.04E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Lubricants,7.04E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Lubricants,7.04E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Lubricants,7.04E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Lubricants,7.04E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Lubricants,7.04E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Lubricants,7.04E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Lubricants,7.04E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Lubricants,7.04E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Lubricants,7.04E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Liquefied petroleum gas,5.85E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Liquefied petroleum gas,5.85E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Liquefied petroleum gas,5.85E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Liquefied petroleum gas,5.85E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Liquefied petroleum gas,5.85E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Liquefied petroleum gas,5.85E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Liquefied petroleum gas,5.85E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Lignite,9.26E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Lignite,9.26E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Lignite,9.26E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Lignite,9.26E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Lignite,9.26E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Lignite,9.26E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Lignite,9.26E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Lignite,9.26E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Lignite,9.26E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Lignite,9.26E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Lignite,9.26E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Lignite,9.26E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Lignite,9.26E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Landfill gas,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Landfill gas,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Landfill gas,4.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Landfill gas,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Landfill gas,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Landfill gas,4.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Landfill gas,4.94E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Landfill gas,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Landfill gas,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Landfill gas,4.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Landfill gas,4.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Landfill gas,4.94E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Kerosene,7.13E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Kerosene,7.13E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Kerosene,7.13E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Kerosene,7.13E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Kerosene,7.13E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Kerosene,7.13E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Kerosene,7.13E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Kerosene,7.13E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Kerosene,7.13E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Kerosene,7.13E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Kerosene,7.13E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Kerosene,7.13E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Isobutylene,6.53E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Isobutylene,6.53E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Isobutylene,6.53E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Isobutylene,6.53E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Isobutylene,6.53E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Isobutylene,6.53E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Isobutylene,6.53E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Isobutylene,6.53E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Isobutylene,6.53E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Isobutylene,6.53E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Isobutylene,6.53E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Isobutylene,6.53E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Isobutane,6.16E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Isobutane,6.16E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Isobutane,6.16E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Isobutane,6.16E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Isobutane,6.16E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Isobutane,6.16E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Isobutane,6.16E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Isobutane,6.16E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Isobutane,6.16E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Isobutane,6.16E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Isobutane,6.16E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Isobutane,6.16E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Heavy Gas Oils,7.10E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Heavy Gas Oils,7.10E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Heavy Gas Oils,7.10E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Heavy Gas Oils,7.10E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Heavy Gas Oils,7.10E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Heavy Gas Oils,7.10E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Heavy Gas Oils,7.10E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Heavy Gas Oils,7.10E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Heavy Gas Oils,7.10E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Heavy Gas Oils,7.10E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Heavy Gas Oils,7.10E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Heavy Gas Oils,7.10E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Gasoline - natural,6.34E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Gasoline - natural,6.34E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Gasoline - natural,6.34E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Gasoline - natural,6.34E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Gasoline - natural,6.34E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Gasoline - natural,6.34E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Gasoline - natural,6.34E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Gasoline - natural,6.34E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Gasoline - natural,6.34E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Gasoline - natural,6.34E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Gasoline - natural,6.34E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Gasoline - natural,6.34E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Ethanol,6.49E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Ethanol,6.49E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Ethanol,6.49E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Ethanol,6.49E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Ethanol,6.49E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Ethanol,6.49E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Ethanol,6.49E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Ethanol,6.49E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Ethanol,6.49E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Ethanol,6.49E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Ethanol,6.49E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Ethanol,6.49E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Gasoline - aviation,6.56E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Gasoline - aviation,6.56E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Gasoline - aviation,6.56E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Gasoline - aviation,6.56E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Gasoline - aviation,6.56E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Gasoline - aviation,6.56E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Gasoline - aviation,6.56E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Gasoline - aviation,6.56E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Gasoline - aviation,6.56E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Gasoline - aviation,6.56E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Gasoline - aviation,6.56E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Gasoline - aviation,6.56E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Fuel Gas,5.59E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Fuel Gas,5.59E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Fuel Gas,5.59E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Fuel Gas,5.59E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Fuel Gas,5.59E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Fuel Gas,5.59E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Fuel Gas,5.59E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Fuel Gas,5.59E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Fuel Gas,5.59E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Fuel Gas,5.59E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Fuel Gas,5.59E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Fuel Gas,5.59E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Ethylene,6.25E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Ethylene,6.25E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Ethylene,6.25E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Ethylene,6.25E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Ethylene,6.25E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Ethylene,6.25E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Ethylene,6.25E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Ethylene,6.25E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Ethylene,6.25E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Ethylene,6.25E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Ethylene,6.25E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Ethylene,6.25E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Ethane,5.65E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Ethane,5.65E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Ethane,5.65E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Ethane,5.65E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Ethane,5.65E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Ethane,5.65E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Ethane,5.65E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Ethane,5.65E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Ethane,5.65E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Ethane,5.65E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Ethane,5.65E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Ethane,5.65E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Ethane,5.65E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Crude Oil,7.07E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Crude Oil,7.07E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Crude Oil,7.07E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Crude Oil,7.07E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Crude Oil,7.07E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Crude Oil,7.07E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Crude Oil,7.07E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Crude Oil,7.07E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Crude Oil,7.07E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Crude Oil,7.07E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Crude Oil,7.07E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Crude Oil,7.07E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - commercial,8.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - commercial,8.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - commercial,8.94E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - commercial,8.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - commercial,8.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - commercial,8.94E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - commercial,8.94E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - commercial,8.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - commercial,8.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - commercial,8.94E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - commercial,8.94E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - commercial,8.94E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - electric power,9.05E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - electric power,9.05E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - electric power,9.05E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - electric power,9.05E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - electric power,9.05E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - electric power,9.05E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - electric power,9.05E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - electric power,9.05E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - electric power,9.05E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - electric power,9.05E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - electric power,9.05E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - electric power,9.05E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - industrial,8.97E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - industrial,8.97E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - industrial,8.97E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - industrial,8.97E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - industrial,8.97E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - industrial,8.97E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - industrial,8.97E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - industrial,8.97E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - industrial,8.97E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - industrial,8.97E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - industrial,8.97E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - industrial,8.97E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coke,1.08E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coke,1.08E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coke,1.08E-04,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coke,1.08E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coke,1.08E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coke,1.08E-04,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coke,1.08E-04,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coke,1.08E-04,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coke,1.08E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coke,1.08E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coke,1.08E-04,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coke,1.08E-04,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coke,1.08E-04,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - bituminous,8.84E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - bituminous,8.84E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - bituminous,8.84E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - bituminous,8.84E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - bituminous,8.84E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - bituminous,8.84E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - bituminous,8.84E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - bituminous,8.84E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - bituminous,8.84E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - bituminous,8.84E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - bituminous,8.84E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - bituminous,8.84E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - coking,8.90E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - coking,8.90E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - coking,8.90E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - coking,8.90E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - coking,8.90E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - coking,8.90E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - coking,8.90E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - coking,8.90E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - coking,8.90E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - coking,8.90E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - coking,8.90E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - coking,8.90E-05,Electricity,1,1,1,1,1,1,1,1
+LP Steam,1.90E-06,2196.4,USTitle40: Coal - anthracite,9.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+MP Steam,2.20E-06,1981.4,USTitle40: Coal - anthracite,9.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+HP Steam,2.50E-06,1703.1,USTitle40: Coal - anthracite,9.83E-05,Steam Reboiler,1100,1200,1400,1600,"10,000",5000,1000,500
+Hot Oil,3.50E-06,3,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Fired Heat (1000),4.25E-06,1,USTitle40: Coal - anthracite,9.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Fired Heat (2000),6.34E-06,1,USTitle40: Coal - anthracite,9.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Very High Temperature,8.90E-06,1,USTitle40: Coal - anthracite,9.83E-05,Fired Heater,40,50,60,70,"6,000",3000,600,300
+Refrigerant 1 Generation,-2.71E-06,4,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2 Generation,-3.33E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 3 Generation,-5.82E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Refrigerant 4 Generation,-8.45E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Cooling Water,2.12E-07,4.183,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,600,700,850,"8,000",4000,800,400
+Air,1.00E-09,1,USTitle40: Coal - anthracite,9.83E-05,Air Cooler,30,40,50,60,"12,000",6000,1200,600
+LP Steam Generation,-1.89E-06,2196.4,USTitle40: Coal - anthracite,9.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+MP Steam Generation,-2.19E-06,1981.4,USTitle40: Coal - anthracite,9.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+HP Steam Generation,-2.49E-06,1703.1,USTitle40: Coal - anthracite,9.83E-05,Steam Generator,1450,1600,2000,2500,"15,000",7500,1500,750
+Refrigerant 1,2.74E-06,4,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 2,3.36E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 3,5.88E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Refrigerant 4,8.53E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Very Low Temperature,8.90E-06,1.341,USTitle40: Coal - anthracite,9.83E-05,Shell & Tube,500,500,500,500,"8,000",4000,800,400
+Power,1.58E-05,---,USTitle40: Coal - anthracite,9.83E-05,Electricity,1,1,1,1,1,1,1,1

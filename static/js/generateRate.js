@@ -3758,6 +3758,13 @@ export function askQuestionRate(questionKey) {
                 const result = evaluateSafety();
                 renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
                 console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
+                
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of rate Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeRecycleDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('rateScorePlotContainer').appendChild(analyzeButton);
 
                 // Show the button to advance to the sequence analysis
                 document.getElementById('sequenceContainer').style.display = 'block';

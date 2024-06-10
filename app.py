@@ -10,6 +10,9 @@ import tempfile
 import logging
 from rdkit import Chem
 from rdkit.Chem import AllChem
+import numpy as np
+import torch
+
 
 app = Flask(__name__)
 
@@ -815,7 +818,49 @@ def analyze_flow_diagram():
     response = ask_koboldcpp(prompt)
     return jsonify(response)
 
+@app.route('/api/analyze-safety-decision', methods=['POST'])
+def analyze_safety_decision():
+    prompt = request.json['prompt']
+    response = ask_koboldcpp(prompt)
+    return jsonify(response)
+
+@app.route('/api/analyze-recycle-decision', methods=['POST'])
+def analyze_recycle_decision():
+    prompt = request.json['prompt']
+    response = ask_koboldcpp(prompt)
+    return jsonify(response)
+
+
+from flask import request, jsonify
+import numpy as np
+import torch
+
+
+@app.route('/gas_phase_kinetics', methods=['POST'])
+def gas_phase_kinetics():
+    reactants = request.form.get('reactants')
+    products = request.form.get('products')
+
+    reactants = json.loads(reactants)
+    products = json.loads(products)
+
+    reaction_smiles = '.'.join(reactants) + '>>' + '.'.join(products)
+
+    model, tokenizer = get_default_model_and_tokenizer()
+    rxnfp_generator = RXNBERTFingerprintGenerator(model, tokenizer)
+
+    fp = rxnfp_generator.convert(reaction_smiles)
+
+    # Perform further processing or calculations with the fingerprint
+
+    result = {
+        'fingerprint': fp.tolist()
+    }
+
+    return jsonify(result)
+
 
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+

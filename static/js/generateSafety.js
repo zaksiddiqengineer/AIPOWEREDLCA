@@ -1,4 +1,5 @@
 const userInputs = {};
+const questionAnswerPairs = {};
 
 const decisionTree = {
     newChemicalUsage: {
@@ -399,20 +400,20 @@ const decisionTree = {
 
 function evaluateSafety() {
     const scores = {
-        "Risk of Chemical Exposure": 1,
-        "Training Requirements": 1,
-        "Regulatory Compliance": 1,
-        "Emergency Preparedness": 1,
-        "Process Stability": 1,
-        "Equipment Safety": 1,
-        "Environmental Impact": 1,
-        "Waste Management": 1,
-        "Operational Efficiency": 1,
-        "Communication and Coordination": 1
+        "Risk of Chemical Exposure": 0,
+        "Training Requirements": 0,
+        "Regulatory Compliance": 0,
+        "Emergency Preparedness": 0,
+        "Process Stability": 0,
+        "Equipment Safety": 0,
+        "Environmental Impact": 0,
+        "Waste Management": 0,
+        "Operational Efficiency": 0,
+        "Communication and Coordination": 0
     };
 
     const impactMatrix = {
-        "No new chemicals": {
+        "newChemicalUsage_No new chemicals": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -424,7 +425,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Some new chemicals, all assessed": {
+        "newChemicalUsage_Some new chemicals, all assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -436,7 +437,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "New chemicals, not fully assessed": {
+        "newChemicalUsage_New chemicals, not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -448,7 +449,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No changes": {
+        "chemicalHandlingConditions_No changes": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -460,7 +461,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor changes, tested": {
+        "chemicalHandlingConditions_Minor changes, tested": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -472,7 +473,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major changes, not fully tested": {
+        "chemicalHandlingConditions_Major changes, not fully tested": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -484,7 +485,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No changes": {
+        "chemicalDeliveryPurity_No changes": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -496,7 +497,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor changes, risks assessed": {
+        "chemicalDeliveryPurity_Minor changes, risks assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -508,7 +509,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major changes, risks not fully assessed": {
+        "chemicalDeliveryPurity_Major changes, risks not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -520,7 +521,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No larger quantities": {
+        "hazardousMaterialStorageShipping_No larger quantities": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -532,7 +533,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Larger quantities, requirements met": {
+        "hazardousMaterialStorageShipping_Larger quantities, requirements met": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -544,7 +545,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Larger quantities, requirements not fully met": {
+        "hazardousMaterialStorageShipping_Larger quantities, requirements not fully met": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -556,7 +557,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No impact": {
+        "chemicalLoadingUnloading_No changes": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -568,7 +569,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor impact, risks assessed": {
+        "chemicalLoadingUnloading_Minor changes, risks assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -580,7 +581,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major impact, risks not fully assessed": {
+        "chemicalLoadingUnloading_Major changes, risks not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -592,7 +593,43 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No new by-products": {
+        "sharedFacilitiesImpact_No impact": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": -1,
+            "Equipment Safety": -1,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "sharedFacilitiesImpact_Minor impact, risks assessed": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "sharedFacilitiesImpact_Major impact, risks not fully assessed": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "byProductsDisposal_No new by-products": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -604,7 +641,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor increase, disposal methods assessed": {
+        "byProductsDisposal_Minor increase, disposal methods assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -616,7 +653,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major increase, disposal methods not fully assessed": {
+        "byProductsDisposal_Major increase, disposal methods not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -628,7 +665,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No vacuum used": {
+        "vacuumOxygenUsage_No vacuum used": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -640,7 +677,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Vacuum used, risks managed": {
+        "vacuumOxygenUsage_Vacuum used, risks managed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -652,7 +689,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Vacuum used, risks not fully managed": {
+        "vacuumOxygenUsage_Vacuum used, risks not fully managed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -664,7 +701,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No new designs": {
+        "designProceduralChanges_No new designs": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -676,7 +713,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor new designs, risks assessed": {
+        "designProceduralChanges_Minor new designs, risks assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -688,7 +725,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major new designs, risks not fully assessed": {
+        "designProceduralChanges_Major new designs, risks not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -700,7 +737,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No exothermic reactions": {
+        "thermalHazards_No exothermic reactions": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -712,7 +749,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor exothermic reactions, controlled": {
+        "thermalHazards_Minor exothermic reactions, controlled": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -724,7 +761,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major exothermic reactions, not fully controlled": {
+        "thermalHazards_Major exothermic reactions, not fully controlled": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -736,7 +773,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No significant change": {
+        "reactionKinetics_No significant change": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -748,7 +785,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor change, managed": {
+        "reactionKinetics_Minor change, managed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -760,7 +797,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major change, not fully managed": {
+        "reactionKinetics_Major change, not fully managed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -772,7 +809,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No change": {
+        "mixingHomogeneity_No change": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -784,7 +821,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor change, assessed": {
+        "mixingHomogeneity_Minor change, assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -796,7 +833,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major change, not fully assessed": {
+        "mixingHomogeneity_Major change, not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -808,7 +845,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No additional waste": {
+        "wasteManagement_No additional waste": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -820,7 +857,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Additional waste, regulations met": {
+        "wasteManagement_Additional waste, regulations met": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -832,7 +869,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Additional waste, regulations not fully met": {
+        "wasteManagement_Additional waste, regulations not fully met": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -844,7 +881,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No instability issues": {
+        "chemicalStability_No instability issues": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -856,7 +893,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor instability, managed": {
+        "chemicalStability_Minor instability, managed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -868,7 +905,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major instability, not fully managed": {
+        "chemicalStability_Major instability, not fully managed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -880,7 +917,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "No changes needed": {
+        "disposalMethods_No changes needed": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -892,7 +929,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Minor changes needed, assessed": {
+        "disposalMethods_Minor changes needed, assessed": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -904,7 +941,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Major changes needed, not fully assessed": {
+        "disposalMethods_Major changes needed, not fully assessed": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -916,7 +953,1087 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Yes, fully trained": {
+        "compatibilityWithOtherReagents_Yes, all reagents are compatible": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "compatibilityWithOtherReagents_No, some reagents are incompatible": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 2,
+            "Equipment Safety": 2,
+            "Environmental Impact": 2,
+            "Waste Management": 2,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "compatibilityWithOtherReagents_Compatibility not fully assessed": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "compatibilityWithContaminants_Yes, all reagents are compatible with contaminants": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "compatibilityWithContaminants_No, some reagents are incompatible with contaminants": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 2,
+            "Equipment Safety": 2,
+            "Environmental Impact": 2,
+            "Waste Management": 2,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "compatibilityWithContaminants_Compatibility with contaminants not fully assessed": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "compatibilityWithConstructionMaterials_Yes, all reagents are compatible with construction materials": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "compatibilityWithConstructionMaterials_No, some reagents are incompatible with construction materials": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 2,
+            "Equipment Safety": 2,
+            "Environmental Impact": 2,
+            "Waste Management": 2,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "compatibilityWithConstructionMaterials_Compatibility with construction materials not fully assessed": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "compatibilityWithEnvironmentalFactors_Yes, all products are compatible with environmental factors": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "compatibilityWithEnvironmentalFactors_No, some products are incompatible with environmental factors": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 2,
+            "Equipment Safety": 2,
+            "Environmental Impact": 2,
+            "Waste Management": 2,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "compatibilityWithEnvironmentalFactors_Compatibility with environmental factors not fully assessed": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "shockSensitivityTesting_Yes, tested and stable": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "shockSensitivityTesting_Yes, tested and shock sensitive": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "shockSensitivityTesting_No, not tested": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "decompositionEnergy_No": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "decompositionEnergy_Yes, high decomposition energy": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "functionalGroups_No": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "functionalGroups_Yes, mixture of oxidant and reductant": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "transportationAndStorageRestrictions_No restrictions": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "transportationAndStorageRestrictions_Yes, restrictions in place": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "formOfChemical_Not applicable": {
+            "Risk of Chemical Exposure": 0,
+            "Training Requirements": 0,
+            "Regulatory Compliance": 0,
+            "Emergency Preparedness": 0,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "formOfChemical_Yes, stable form used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "formOfChemical_No, unstable form used": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "functionalGroupListReference_No": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "functionalGroupListReference_Yes, contains listed functional groups": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "functionalGroupListReference_Needs further assessment": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "massBalanceUnderstanding_Yes, fully understood": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "massBalanceUnderstanding_Partially understood, needs more analysis": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "massBalanceUnderstanding_No, not fully understood": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "wasteStreamStorageConditions_Yes, clearly defined and regularly monitored": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "wasteStreamStorageConditions_Partially defined, occasional monitoring": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "wasteStreamStorageConditions_No, not clearly defined or monitored": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "temperatureVariabilityInWasteStorage_Yes, temperature variations are accounted for": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "temperatureVariabilityInWasteStorage_Partially accounted for": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "temperatureVariabilityInWasteStorage_No, not considered": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "mixingWasteStreams_No mixing of waste streams": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "mixingWasteStreams_Yes, reactivity is assessed before mixing": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "mixingWasteStreams_No, reactivity is not assessed": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "wasteTransferAndCompositionKnowledge_Yes, detailed composition is provided": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "wasteTransferAndCompositionKnowledge_Partially detailed composition provided": {
+            "Risk of Chemical Exposure": 0.5,
+            "Training Requirements": 0.5,
+            "Regulatory Compliance": 0.5,
+            "Emergency Preparedness": 0.5,
+            "Process Stability": 0.5,
+            "Equipment Safety": 0.5,
+            "Environmental Impact": 0.5,
+            "Waste Management": 0.5,
+            "Operational Efficiency": 0.5,
+            "Communication and Coordination": 0.5
+        },
+        "wasteTransferAndCompositionKnowledge_No, limited information provided": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "handlingWaterReactiveChemicals_No water-reactive chemicals used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingWaterReactiveChemicals_Yes, decomposed under controlled conditions": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingWaterReactiveChemicals_No, not decomposed properly": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "neutralizingStrongAcids_No strong acids used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "neutralizingStrongAcids_Yes, neutralized before disposal": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "neutralizingStrongAcids_No, not neutralized": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "handlingNitricAcidWaste_No nitric acid used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingNitricAcidWaste_Yes, specific procedures are followed": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingNitricAcidWaste_No, specific procedures not followed": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "neutralizingUnstableReagents_No unstable reagents used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "neutralizingUnstableReagents_Yes, neutralized before disposal": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "neutralizingUnstableReagents_No, not neutralized": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "disposingOfSpentCatalysts_No catalysts used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "disposingOfSpentCatalysts_Yes, special precautions taken": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "disposingOfSpentCatalysts_No, precautions not taken": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "managingGasGeneratingWaste_No gas-generating waste": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "managingGasGeneratingWaste_Yes, managed to prevent pressure buildup": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "managingGasGeneratingWaste_No, not managed properly": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "monitoringReactiveWasteShelfLife_No reactive waste with shelf life concerns": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "monitoringReactiveWasteShelfLife_Yes, shelf life is monitored": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "monitoringReactiveWasteShelfLife_No, shelf life is not monitored": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "flashPointKnowledge_Yes, flash point known": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "flashPointKnowledge_No, flash point not known": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "suitabilityOfEquipment_Yes, appropriate equipment used": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "suitabilityOfEquipment_No, equipment suitability not verified": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "storageAndTransportationCompliance_Yes, documented": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "storageAndTransportationCompliance_No, not documented": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "dustExplosionPotential_No, not prone": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "dustExplosionPotential_Yes, prone to dust explosions": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "formationOfDustClouds_No, such conditions do not exist": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "formationOfDustClouds_Yes, such conditions exist and are managed": {
+            "Risk of Chemical Exposure": 0,
+            "Training Requirements": 0,
+            "Regulatory Compliance": 0,
+            "Emergency Preparedness": 0,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "formationOfDustClouds_Yes, such conditions exist but are not managed": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "flammableAtmospherePresence_No, flammable atmosphere not present": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "flammableAtmospherePresence_Yes, flammable atmosphere possible": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "riskOfStaticElectricity_No, not prone": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "riskOfStaticElectricity_Yes, prone to static electricity": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "groundingMeasures_Yes, equipment is grounded": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "groundingMeasures_No, equipment is not grounded": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "handlingOfStaticProneMaterials_Yes, precautions taken": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingOfStaticProneMaterials_No, precautions not taken": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "testingForStaticElectricity_Yes, tests conducted": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "testingForStaticElectricity_No, tests not conducted": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "reactivityWithIgnitionSources_No, not highly flammable": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "reactivityWithIgnitionSources_Yes, highly flammable": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "handlingOfReactiveByProducts_No reactive by-products": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "handlingOfReactiveByProducts_Yes, reactive by-products generated": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "solventAndReagentSafetyDataSheets_Yes, always refer to SDS": {
+            "Risk of Chemical Exposure": -1,
+            "Training Requirements": -1,
+            "Regulatory Compliance": -1,
+            "Emergency Preparedness": -1,
+            "Process Stability": 0,
+            "Equipment Safety": 0,
+            "Environmental Impact": 0,
+            "Waste Management": 0,
+            "Operational Efficiency": 0,
+            "Communication and Coordination": 0
+        },
+        "solventAndReagentSafetyDataSheets_No, do not refer to SDS": {
+            "Risk of Chemical Exposure": 1,
+            "Training Requirements": 1,
+            "Regulatory Compliance": 1,
+            "Emergency Preparedness": 1,
+            "Process Stability": 1,
+            "Equipment Safety": 1,
+            "Environmental Impact": 1,
+            "Waste Management": 1,
+            "Operational Efficiency": 1,
+            "Communication and Coordination": 1
+        },
+        "safetyTrainingCommunication_Yes, fully trained": {
             "Risk of Chemical Exposure": -1,
             "Training Requirements": -1,
             "Regulatory Compliance": -1,
@@ -928,7 +2045,7 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Some training needed, plan in place": {
+        "safetyTrainingCommunication_Some training needed, plan in place": {
             "Risk of Chemical Exposure": 0.5,
             "Training Requirements": 0.5,
             "Regulatory Compliance": 0.5,
@@ -939,8 +2056,8 @@ function evaluateSafety() {
             "Waste Management": 0,
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
-        },  
-        "Major training needed, no plan in place": {
+        },
+        "safetyTrainingCommunication_Major training needed, no plan in place": {
             "Risk of Chemical Exposure": 1,
             "Training Requirements": 1,
             "Regulatory Compliance": 1,
@@ -952,1148 +2069,8 @@ function evaluateSafety() {
             "Operational Efficiency": 0,
             "Communication and Coordination": 0
         },
-        "Yes, all reagents are compatible": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, some reagents are incompatible": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 2,
-            "Equipment Safety": 2,
-            "Environmental Impact": 2,
-            "Waste Management": 2,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Compatibility not fully assessed": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-
-        "Yes, all reagents are compatible with contaminants": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, some reagents are incompatible with contaminants": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 2,
-            "Equipment Safety": 2,
-            "Environmental Impact": 2,
-            "Waste Management": 2,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Compatibility with contaminants not fully assessed": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-
-        "Yes, all reagents are compatible with construction materials": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, some reagents are incompatible with construction materials": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 2,
-            "Equipment Safety": 2,
-            "Environmental Impact": 2,
-            "Waste Management": 2,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Compatibility with construction materials not fully assessed": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-
-        "Yes, all products are compatible with environmental factors": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, some products are incompatible with environmental factors": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 2,
-            "Equipment Safety": 2,
-            "Environmental Impact": 2,
-            "Waste Management": 2,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Yes, tested and stable": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, tested and shock sensitive": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "No, not tested": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-
-        // Decomposition Energy
-        "No": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, high decomposition energy": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Functional Groups
-        "No": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, mixture of oxidant and reductant": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Transportation and Storage Restrictions
-        "No restrictions": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, restrictions in place": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Form of Chemical
-        "Not applicable": {
-            "Risk of Chemical Exposure": 0,
-            "Training Requirements": 0,
-            "Regulatory Compliance": 0,
-            "Emergency Preparedness": 0,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, stable form used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, unstable form used": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Functional Group List Reference
-        "No": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, contains listed functional groups": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Needs further assessment": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-        "Yes, fully understood": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Partially understood, needs more analysis": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-        "No, not fully understood": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Waste Stream Storage Conditions
-        "Yes, clearly defined and regularly monitored": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Partially defined, occasional monitoring": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-        "No, not clearly defined or monitored": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Temperature Variability in Waste Storage
-        "Yes, temperature variations are accounted for": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Partially accounted for": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-        "No, not considered": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Mixing Waste Streams
-        "No mixing of waste streams": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, reactivity is assessed before mixing": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, reactivity is not assessed": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Waste Transfer and Composition Knowledge
-        "Yes, detailed composition is provided": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Partially detailed composition provided": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 0.5,
-            "Equipment Safety": 0.5,
-            "Environmental Impact": 0.5,
-            "Waste Management": 0.5,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-        "No, limited information provided": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Handling Water-Reactive Chemicals
-        "No water-reactive chemicals used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, decomposed under controlled conditions": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, not decomposed properly": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Neutralizing Strong Acids
-        "No strong acids used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, neutralized before disposal": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, not neutralized": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Handling Nitric Acid Waste
-        "No nitric acid used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, specific procedures are followed": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, specific procedures not followed": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Neutralizing Unstable Reagents
-        "No unstable reagents used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, neutralized before disposal": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, not neutralized": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Disposing of Spent Catalysts
-        "No catalysts used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, special precautions taken": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, precautions not taken": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Managing Gas-Generating Waste
-        "No gas-generating waste": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, managed to prevent pressure buildup": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, not managed properly": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Monitoring Reactive Waste Shelf Life
-        "No reactive waste with shelf life concerns": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, shelf life is monitored": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, shelf life is not monitored": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-        "Yes, flash point known": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, flash point not known": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Suitability of Equipment
-        "Yes, appropriate equipment used": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, equipment suitability not verified": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Storage and Transportation Compliance
-        "Yes, documented": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, not documented": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Dust Explosion Potential
-        "No, not prone": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, prone to dust explosions": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Formation of Dust Clouds
-        "No, such conditions do not exist": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, such conditions exist and are managed": {
-            "Risk of Chemical Exposure": 0,
-            "Training Requirements": 0,
-            "Regulatory Compliance": 0,
-            "Emergency Preparedness": 0,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, such conditions exist but are not managed": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Flammable Atmosphere Presence
-        "No, flammable atmosphere not present": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, flammable atmosphere possible": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Risk of Static Electricity
-        "No, not prone": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, prone to static electricity": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Grounding Measures
-        "Yes, equipment is grounded": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, equipment is not grounded": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Handling of Static-Prone Materials
-        "Yes, precautions taken": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, precautions not taken": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Testing for Static Electricity
-        "Yes, tests conducted": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, tests not conducted": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Reactivity with Ignition Sources
-        "No, not highly flammable": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, highly flammable": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Handling of Reactive By-products
-        "No reactive by-products": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "Yes, reactive by-products generated": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        // Solvent and Reagent Safety Data Sheets
-        "Yes, always refer to SDS": {
-            "Risk of Chemical Exposure": -1,
-            "Training Requirements": -1,
-            "Regulatory Compliance": -1,
-            "Emergency Preparedness": -1,
-            "Process Stability": 0,
-            "Equipment Safety": 0,
-            "Environmental Impact": 0,
-            "Waste Management": 0,
-            "Operational Efficiency": 0,
-            "Communication and Coordination": 0
-        },
-        "No, do not refer to SDS": {
-            "Risk of Chemical Exposure": 1,
-            "Training Requirements": 1,
-            "Regulatory Compliance": 1,
-            "Emergency Preparedness": 1,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 1,
-            "Communication and Coordination": 1
-        },
-
-        "Compatibility with environmental factors not fully assessed": {
-            "Risk of Chemical Exposure": 0.5,
-            "Training Requirements": 0.5,
-            "Regulatory Compliance": 0.5,
-            "Emergency Preparedness": 0.5,
-            "Process Stability": 1,
-            "Equipment Safety": 1,
-            "Environmental Impact": 1,
-            "Waste Management": 1,
-            "Operational Efficiency": 0.5,
-            "Communication and Coordination": 0.5
-        },
-
     };
+    
 
     console.log("User Inputs: ", userInputs);
 
@@ -2101,34 +2078,36 @@ function evaluateSafety() {
     for (let questionKey in userInputs) {
         const answerIndex = userInputs[questionKey];
         const answerKey = decisionTree[questionKey].options[answerIndex];
+        const combinedKey = `${questionKey}_${answerKey}`;
 
         console.log(`Question: ${questionKey}, Answer: ${answerKey}`);
 
-        if (impactMatrix[answerKey]) {
-            const impacts = impactMatrix[answerKey];
-            console.log(`Impacts for ${questionKey} - ${answerKey}: `, impacts)
+        if (impactMatrix[combinedKey]) {
+            const impacts = impactMatrix[combinedKey];
+            console.log(`Impacts for ${combinedKey}: `, impacts);
             for (let category in impacts) {
                 scores[category] += impacts[category];
                 console.log(`Updated score for ${category}: `, scores[category]);
             }
         } else {
-            console.warn(`No impacts found for ${questionKey} - ${answerKey}`);
+            console.warn(`No impacts found for ${combinedKey}`);
         }
     }
 
-    // Normalize scores to a maximum of 5 and minimum of 1
+    // Normalize scores to a maximum of 5 and minimum of 0
     for (let key in scores) {
         if (scores[key] > 5) {
             scores[key] = 5;
         }
-        if (scores[key] < 1) {
-            scores[key] = 1;
+        if (scores[key] < 0) {
+            scores[key] = 0;
         }
     }
 
     console.log("Final Scores: ", scores);
+    console.log("Question-Answer Pairs: ", questionAnswerPairs);
 
-    return scores;
+    return { scores, questionAnswerPairs };
 }
 
 export function askQuestion(questionKey) {
@@ -2144,13 +2123,22 @@ export function askQuestion(questionKey) {
         button.textContent = option;
         button.addEventListener('click', () => {
             userInputs[questionKey] = index;
+            questionAnswerPairs[question.question] = option;
             const nextQuestionKey = Object.keys(decisionTree)[Object.keys(decisionTree).indexOf(questionKey) + 1];
             if (nextQuestionKey) {
                 askQuestion(nextQuestionKey);
             } else {
-                const scores = evaluateSafety();
-                renderRadarPlot(scores);
-
+                const result = evaluateSafety();
+                renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
+                console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
+                
+                const analyzeButton = document.createElement('button');
+                analyzeButton.textContent = 'Analyse LCA and scale up of Safety Decisions';
+                analyzeButton.addEventListener('click', () => {
+                    analyzeSafetyDecisions(result.questionAnswerPairs);
+                });
+                document.getElementById('safetyScorePlotContainer').appendChild(analyzeButton);
+                
                 const recycleContainer = document.getElementById('recycleContainer');
                 recycleContainer.style.display = 'block';
             }
@@ -2190,3 +2178,36 @@ export function renderRadarPlot(scores) {
         }
     });
 }
+
+async function analyzeSafetyDecisions(questionAnswerPairs) {
+    const analysisContainer = document.createElement('div');
+    analysisContainer.innerHTML = '<h3>Life Cycle Assessment Effects:</h3>';
+
+    for (const [question, answer] of Object.entries(questionAnswerPairs)) {
+        try {
+            const prompt = `Determine the life cycle impacts of the following safety decision:
+            - ${question}: ${answer}`;
+
+            const response = await fetch('/api/analyze-safety-decision', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const analysis = `<p><strong>${question}</strong><br>${data.text}</p>`;
+                analysisContainer.innerHTML += analysis;
+            } else {
+                console.error('Error analyzing safety decision:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error analyzing safety decision:', error);
+        }
+    }
+
+    document.getElementById('safetyScorePlotContainer').appendChild(analysisContainer);
+}
+

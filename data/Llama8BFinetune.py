@@ -1043,6 +1043,9 @@ lca_data.extend([
         "input": "",
         "output": "Long-term effects can include groundwater contamination and soil degradation if not properly neutralized and disposed of."
     },
+    
+])
+
     # Chloroform (CHCl₃)
 lca_data.append({
     "instruction": "What are the sources of the raw materials used to produce chloroform (CHCl₃)?",
@@ -2063,7 +2066,7 @@ lca_data.append({
     "output": "LOW - Long-term effects can include soil and water acidification if citric acid is not properly managed and disposed of."
 }),
 
-])
+
 
 # Write the data to a JSONL file
 with open('lca_dataset.jsonl', 'w') as f:
