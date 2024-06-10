@@ -2074,7 +2074,6 @@ function evaluateSafety() {
 
     console.log("User Inputs: ", userInputs);
 
-    // Apply the impacts based on the user's answers
     for (let questionKey in userInputs) {
         const answerIndex = userInputs[questionKey];
         const answerKey = decisionTree[questionKey].options[answerIndex];
@@ -2094,13 +2093,12 @@ function evaluateSafety() {
         }
     }
 
-    // Normalize scores to a maximum of 5 and minimum of 0
     for (let key in scores) {
-        if (scores[key] > 5) {
-            scores[key] = 5;
+        if (scores[key] > 10) {
+            scores[key] = 10;
         }
-        if (scores[key] < 0) {
-            scores[key] = 0;
+        if (scores[key] < 1) {
+            scores[key] = 1;
         }
     }
 
@@ -2109,6 +2107,7 @@ function evaluateSafety() {
 
     return { scores, questionAnswerPairs };
 }
+
 
 export function askQuestion(questionKey) {
     const question = decisionTree[questionKey];
@@ -2124,13 +2123,17 @@ export function askQuestion(questionKey) {
         button.addEventListener('click', () => {
             userInputs[questionKey] = index;
             questionAnswerPairs[question.question] = option;
+
+            // Evaluate and log updated scores after each answer
+            const result = evaluateSafety();
+            console.log("Updated Scores after answering:", result.scores);
+
             const nextQuestionKey = Object.keys(decisionTree)[Object.keys(decisionTree).indexOf(questionKey) + 1];
             if (nextQuestionKey) {
                 askQuestion(nextQuestionKey);
             } else {
-                const result = evaluateSafety();
-                renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
-                console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
+                renderRadarPlot(result.scores); 
+                console.log(result.questionAnswerPairs);
                 
                 const analyzeButton = document.createElement('button');
                 analyzeButton.textContent = 'Analyse LCA and scale up of Safety Decisions';
@@ -2172,7 +2175,7 @@ export function renderRadarPlot(scores) {
                         display: false
                     },
                     suggestedMin: 0,
-                    suggestedMax: 5
+                    suggestedMax: 10
                 }
             }
         }

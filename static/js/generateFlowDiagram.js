@@ -339,14 +339,14 @@ function evaluateFlowDiagram(flowDiagramOutput) {
         },
         question4: {
             yes: {
-                "Waste Generation": 0.5,
+                "Waste Generation": 1,
                 "Energy Consumption": 0.5,
                 "Emissions Potential": 0.5,
                 "Equipment Cost": 0.5,
                 "Installation Cost": 0.5,
                 "Materials of Construction": 0.5,
                 "Operational Energy Consumption": 0.5,
-                "Maintenance": 0.5,
+                "Maintenance": 1,
                 "Labor": 0.5
             },
             no: {
@@ -363,50 +363,50 @@ function evaluateFlowDiagram(flowDiagramOutput) {
         },
         question5: {
             yes: {
-                "Waste Generation": 1,
+                "Waste Generation": 1.5,
                 "Energy Consumption": 0.5,
                 "Emissions Potential": 1,
-                "Equipment Cost": 0.5,
-                "Installation Cost": 0.5,
-                "Materials of Construction": 0.5,
-                "Operational Energy Consumption": 0.5,
-                "Maintenance": 0.5,
+                "Equipment Cost": 1,
+                "Installation Cost": 1,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1,
                 "Labor": 0.5
             },
             no: {
-                "Waste Generation": -1,
+                "Waste Generation": -1.5,
                 "Energy Consumption": -0.5,
                 "Emissions Potential": -1,
-                "Equipment Cost": -0.5,
-                "Installation Cost": -0.5,
-                "Materials of Construction": -0.5,
-                "Operational Energy Consumption": -0.5,
-                "Maintenance": -0.5,
+                "Equipment Cost": -1,
+                "Installation Cost": -1,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1,
                 "Labor": -0.5
             }
         },
         question6: {
             yes: {
-                "Waste Generation": 0.5,
-                "Energy Consumption": 0.5,
-                "Emissions Potential": 0.5,
-                "Equipment Cost": 0.5,
-                "Installation Cost": 0.5,
-                "Materials of Construction": 0.5,
-                "Operational Energy Consumption": 0.5,
-                "Maintenance": 0.5,
-                "Labor": 0.5
+                "Waste Generation": 1,
+                "Energy Consumption": 1,
+                "Emissions Potential": 1,
+                "Equipment Cost": 1.5,
+                "Installation Cost": 1.5,
+                "Materials of Construction": 1,
+                "Operational Energy Consumption": 1,
+                "Maintenance": 1.5,
+                "Labor": 1
             },
             no: {
-                "Waste Generation": -0.5,
-                "Energy Consumption": -0.5,
-                "Emissions Potential": -0.5,
-                "Equipment Cost": -0.5,
-                "Installation Cost": -0.5,
-                "Materials of Construction": -0.5,
-                "Operational Energy Consumption": -0.5,
-                "Maintenance": -0.5,
-                "Labor": -0.5
+                "Waste Generation": -1,
+                "Energy Consumption": -1,
+                "Emissions Potential": -1,
+                "Equipment Cost": -1.5,
+                "Installation Cost": -1.5,
+                "Materials of Construction": -1,
+                "Operational Energy Consumption": -1,
+                "Maintenance": -1.5,
+                "Labor": -1
             }
         },
         question7: {
@@ -486,23 +486,23 @@ function evaluateFlowDiagram(flowDiagramOutput) {
                 "Waste Generation": 0.5,
                 "Energy Consumption": 0.5,
                 "Emissions Potential": 0.5,
-                "Equipment Cost": 1,
-                "Installation Cost": 1,
+                "Equipment Cost": 1.5,
+                "Installation Cost": 1.5,
                 "Materials of Construction": 1,
                 "Operational Energy Consumption": 1,
-                "Maintenance": 1,
-                "Labor": 0.5
+                "Maintenance": 1.5,
+                "Labor": 1
             },
             no: {
                 "Waste Generation": -0.5,
                 "Energy Consumption": -0.5,
                 "Emissions Potential": -0.5,
-                "Equipment Cost": -1,
-                "Installation Cost": -1,
+                "Equipment Cost": -1.5,
+                "Installation Cost": -1.5,
                 "Materials of Construction": -1,
                 "Operational Energy Consumption": -1,
-                "Maintenance": -1,
-                "Labor": -0.5
+                "Maintenance": -1.5,
+                "Labor": -1
             }
         },
         question11: {
@@ -576,34 +576,8 @@ function evaluateFlowDiagram(flowDiagramOutput) {
                 "Maintenance": -1,
                 "Labor": -0.5
             }
-        },
-        question14: {
-            yes: {
-                "Waste Generation": 0.5,
-                "Energy Consumption": 0.5,
-                "Emissions Potential": 0.5,
-                "Equipment Cost": 1,
-                "Installation Cost": 1,
-                "Materials of Construction": 1,
-                "Operational Energy Consumption": 1,
-                "Maintenance": 1,
-                "Labor": 0.5
-            },
-            no: {
-                "Waste Generation": -0.5,
-                "Energy Consumption": -0.5,
-                "Emissions Potential": -0.5,
-                "Equipment Cost": -1,
-                "Installation Cost": -1,
-                "Materials of Construction": -1,
-                "Operational Energy Consumption": -1,
-                "Maintenance": -1,
-                "Labor": -0.5
-            }
         }
     };
-    
-
 
     // Apply the impacts based on the user's answers
     for (let questionId in userInputs) {
@@ -611,9 +585,7 @@ function evaluateFlowDiagram(flowDiagramOutput) {
         if (impactMatrix[questionId] && impactMatrix[questionId][answer]) {
             let impacts = impactMatrix[questionId][answer];
             for (let category in impacts) {
-                if (scores.hasOwnProperty(category)) {
-                    scores[category] += impacts[category];
-                }
+                scores[category] += impacts[category];
             }
         }
     }
@@ -623,8 +595,8 @@ function evaluateFlowDiagram(flowDiagramOutput) {
         if (scores[key] > 5) {
             scores[key] = 5;
         }
-        if (scores[key] < 0) {
-            scores[key] = 0;
+        if (scores[key] < 1) {
+            scores[key] = 1;
         }
     }
 

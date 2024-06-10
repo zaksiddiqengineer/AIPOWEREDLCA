@@ -1225,13 +1225,17 @@ export function askQuestionRecycle(questionKey) {
         button.addEventListener('click', () => {
             userInputs[questionKey] = index;
             questionAnswerPairs[question.question] = option;
+            
+            // Call evaluateSafety after each answer and log the scores
+            const result = evaluateSafety();
+            console.log('Current Scores:', result.scores);
+
             const nextQuestionKey = Object.keys(decisionTree)[Object.keys(decisionTree).indexOf(questionKey) + 1];
             if (nextQuestionKey) {
                 askQuestionRecycle(nextQuestionKey);
             } else {
-                const result = evaluateSafety();
-                renderRadarPlot(result.scores); // Pass only the scores to the radar plot function
-                console.log(result.questionAnswerPairs); // Use or display question-answer pairs as needed
+                renderRadarPlot(result.scores);
+                console.log(result.questionAnswerPairs);
                 
                 const analyzeButton = document.createElement('button');
                 analyzeButton.textContent = 'Analyse LCA and scale up of recycle Decisions';
